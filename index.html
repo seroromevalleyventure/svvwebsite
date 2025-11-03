@@ -10,19 +10,24 @@
       font-family: 'Segoe UI', sans-serif;
       color: white;
       text-align: center;
-      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1607083205799-8913f23a09d5') no-repeat center center fixed;
       background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: multiply;
     }
+
     header {
       background: rgba(0, 0, 0, 0.5);
       padding: 20px;
     }
+
     nav a {
       color: gold;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
+
     .content {
       margin-top: 100px;
       background: rgba(0, 0, 0, 0.4);
@@ -30,6 +35,7 @@
       display: inline-block;
       border-radius: 20px;
     }
+
     button {
       background-color: gold;
       color: black;
@@ -39,6 +45,10 @@
       border-radius: 8px;
       cursor: pointer;
     }
+
+    button:hover {
+      background-color: #ffd700;
+    }
   </style>
 </head>
 <body>
@@ -46,12 +56,13 @@
     <h1>Serorome Valley Ventures</h1>
     <p>Premium Southern Africa Travel</p>
     <nav>
-      <a href="#">Destinations</a>
-      <a href="#">Safari Itinerary</a>
-      <a href="#">Contact</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="itinerary.html">Safari Itinerary</a>
+      <a href="contact.html">Contact</a>
       <a href="mailto:seroromevalleyventures@gmail.com">Book Journey</a>
     </nav>
   </header>
+
   <div class="content">
     <h2>Travel with Confidence</h2>
     <p>Your Companion Across Southern Africa</p>
@@ -60,8 +71,3 @@
   </div>
 </body>
 </html>
-`background: url('https://images.unsplash.com/photo-1607083205799-8913f23a09d5') no-repeat center center fixed;
-background-size: cover;
-background-attachment: fixed;
-background-blend-mode: multiply;
-
