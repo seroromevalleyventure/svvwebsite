@@ -9,8 +9,9 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: #f1f5f9;
-      background: linear-gradient(180deg, #1a1a1a 0%, #000 100%), 
-                  url('livingstonebackgroundpic.png') no-repeat center center fixed;
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%),
+        url('livingstonebackgroundpic.png') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
       background-blend-mode: multiply;
@@ -37,27 +38,31 @@
 
     .content {
       background: rgba(0, 0, 0, 0.65);
-      margin: 40px;
-      padding: 25px;
+      margin: 40px auto;
+      padding: 35px;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      max-width: 950px;
     }
 
     h1, h2, h3 {
       color: goldenrod;
+      text-align: center;
     }
 
     ul {
       list-style-type: square;
-      padding-left: 20px;
+      padding-left: 25px;
+      line-height: 1.8;
     }
 
     img {
       width: 90%;
-      max-width: 600px;
-      margin: 10px auto;
+      max-width: 650px;
+      margin: 15px auto;
       display: block;
       border-radius: 10px;
+      border: 2px solid goldenrod;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
     }
 
@@ -88,6 +93,16 @@
       font-size: 1.1em;
       line-height: 1.6;
       margin-bottom: 20px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ffda77;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+      border-top: 2px solid goldenrod;
     }
   </style>
 </head>
@@ -158,5 +173,9 @@
     <p class="caption">Experience the rhythm of Africa with the Boma Dinner & Drum Show — dance, drum, and dine under the stars.</p>
     <img src="Boma-Dinner-Victoria-Falls-1.jpg" alt="Traditional Boma dinner setup under the stars">
   </div>
+
+  <footer>
+    © 2025 Serorome Valley Ventures • All Rights Reserved
+  </footer>
 </body>
 </html>
