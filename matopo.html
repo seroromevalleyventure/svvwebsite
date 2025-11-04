@@ -9,17 +9,21 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: white;
-      background: url('matopo_khami_background.png') no-repeat center center fixed;
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%),
+        url('matopo_khami_background.png') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
       background-blend-mode: multiply;
     }
+
     header {
       background: rgba(0, 0, 0, 0.7);
       padding: 25px;
       text-align: center;
       border-bottom: 3px solid goldenrod;
     }
+
     nav a {
       color: gold;
       text-decoration: none;
@@ -27,51 +31,82 @@
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #ffda77;
     }
+
     .content {
       background: rgba(0, 0, 0, 0.65);
       margin: 40px auto;
       padding: 30px;
       border-radius: 15px;
-      max-width: 900px;
+      max-width: 950px;
       text-align: center;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     }
+
     h1, h2 {
       color: gold;
     }
+
     .highlight {
       font-size: 1.1em;
       line-height: 1.6;
       margin-bottom: 25px;
     }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin-top: 20px;
+      margin-top: 25px;
     }
-    .gallery img {
+
+    .gallery-item {
+      text-align: center;
       width: 270px;
+    }
+
+    .gallery img {
+      width: 100%;
       height: 180px;
       object-fit: cover;
       border-radius: 10px;
       border: 2px solid goldenrod;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .gallery img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px gold;
     }
+
+    .caption {
+      font-size: 0.9em;
+      margin-top: 5px;
+      color: #ffda77;
+      font-style: italic;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       color: #ffda77;
       font-size: 0.9em;
       background: rgba(0, 0, 0, 0.5);
+      border-top: 2px solid goldenrod;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -95,7 +130,7 @@
     </p>
 
     <h2>Highlights</h2>
-    <ul style="list-style: none; padding: 0; line-height: 1.8; text-align: left; max-width: 600px; margin: 0 auto;">
+    <ul>
       <li>• UNESCO World Heritage Site</li>
       <li>• Ancient San rock art galleries</li>
       <li>• Spiritual hills and sacred caves</li>
@@ -107,14 +142,50 @@
 
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="matopo hill birds eye view.jpg" alt="Matopos Hills Aerial View">
-      <img src="matopo hills rock painting.jpg" alt="Matopos Rock Paintings">
-      <img src="matopo hills cave painting.jpg" alt="Ancient San Rock Art">
-      <img src="rhodes grave.jpg" alt="Cecil Rhodes Grave at World's View">
-      <img src="king mzilikazi matopo grave.jpg" alt="King Mzilikazi Grave">
-      <img src="mzilikazi main original grave.jpg" alt="Mzilikazi Original Grave Site">
-      <img src="big-cave-lodge-on-the-rocks.jpg" alt="Big Cave Lodge">
-      <img src="White-rhino-crash-under-a-tree-in-Matobo-National-Park-Zimbabwe.jpg.webp" alt="White Rhinos in Matobo">
+      <div class="gallery-item">
+        <img src="matopo hill birds eye view.jpg" alt="Matopos Hills Aerial View">
+        <p class="caption">Aerial view over the majestic Matopos Hills</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="matopo hills rock painting.jpg" alt="Ancient Rock Painting">
+        <p class="caption">Ancient rock painting — timeless San artistry</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="matopo hills cave painting.jpg" alt="San Rock Art">
+        <p class="caption">Ancient rock painting — storytelling through stone</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="rhodes grave.jpg" alt="Cecil John Rhodes Grave">
+        <p class="caption">Cecil John Rhodes’ grave — World’s View</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="king mzilikazi matopo grave.jpg" alt="King Mzilikazi Grave">
+        <p class="caption">King Mzilikazi’s resting place — Ndebele heritage</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="mzilikazi main original grave.jpg" alt="Mzilikazi Original Grave Site">
+        <p class="caption">Mzilikazi’s original grave site — sacred and historic</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="matopohillsrocks.jpg" alt="Rocks Upon Rocks Matopos">
+        <p class="caption">Rocks upon rocks — only in Matopo Hills</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="big-cave-lodge-on-the-rocks.jpg" alt="Big Cave Lodge">
+        <p class="caption">Big Cave Lodge — stay among the rocks</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="White-rhino-crash-under-a-tree-in-Matobo-National-Park-Zimbabwe.jpg.webp" alt="White Rhinos in Matobo">
+        <p class="caption">White rhinos resting under the African sun</p>
+      </div>
     </div>
   </div>
 
