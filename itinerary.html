@@ -10,13 +10,18 @@
       font-family: 'Segoe UI', sans-serif;
       color: white;
       text-align: center;
-      background: url('https://images.unsplash.com/photo-1508675801607-142379f04e07') no-repeat center center fixed;
+      background: url('itinerarypicbackground.png') no-repeat center center fixed;
       background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: multiply;
     }
+
     header {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 25px;
+      border-bottom: 3px solid goldenrod;
     }
+
     nav a {
       color: gold;
       text-decoration: none;
@@ -24,29 +29,54 @@
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #ffda77;
     }
+
     .content {
-      margin: 40px auto;
+      margin: 50px auto;
       background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 15px;
-      max-width: 800px;
+      padding: 50px;
+      border-radius: 18px;
+      max-width: 900px;
+      text-align: left;
     }
+
     h1, h2 {
       color: gold;
+      text-align: center;
     }
+
     .day {
-      text-align: left;
-      margin-top: 30px;
+      margin-top: 35px;
       border-left: 4px solid gold;
-      padding-left: 15px;
+      padding-left: 20px;
     }
+
+    h3 {
+      color: #ffda77;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.05em;
+    }
+
     img {
       width: 100%;
       border-radius: 10px;
-      margin-top: 10px;
+      margin-top: 15px;
+    }
+
+    a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffda77;
     }
   </style>
 </head>
@@ -63,8 +93,8 @@
   </header>
 
   <div class="content">
-    <h2>Detailed Itinerary</h2>
-    <p>Day-by-day breakdown of your Southern African adventure</p>
+    <h2>14-Day Southern Africa Safari Itinerary</h2>
+    <p style="text-align:center;">A day-by-day journey through Botswana, Zambia, and Zimbabwe</p>
 
     <div class="day">
       <h3>Day 1 — Francistown, Botswana</h3>
@@ -100,14 +130,14 @@
       <h3>Day 13 — Khami Ruins, Zimbabwe</h3>
       <p><strong>Archaeological & Cultural Heritage</strong></p>
       <p>After Great Zimbabwe was abandoned in the mid-16th century, Khami became the capital of the Torwa dynasty. This UNESCO World Heritage Site showcases intricate dry-stone walls and artifacts from China and Europe, proving it was a key trade center. Discover the second largest stone-built monument in the country and learn about its link to Great Zimbabwe’s legacy.</p>
-      <a href="khami.html" style="color:gold; text-decoration:none; font-weight:bold;">→ Explore Khami Ruins</a>
+      <a href="khami.html"><strong>→ Explore Khami Ruins</strong></a>
     </div>
 
     <div class="day">
       <h3>Day 14 — Great Zimbabwe Ruins & Chapel of St Francis of Assisi, Zimbabwe</h3>
       <p><strong>Ancient Kingdoms & Spiritual Heritage</strong></p>
       <p>Explore the magnificent ruins of Great Zimbabwe — the largest ancient structure south of the Sahara and once the capital of the Kingdom of Zimbabwe. Visit the Hill Complex, the Great Enclosure, and view the symbolic Zimbabwe Bird. Later, experience the peaceful Chapel of St Francis of Assisi in Masvingo, a colonial-era church that complements your historical exploration.</p>
-      <a href="greatzimbabwe.html" style="color:gold; text-decoration:none; font-weight:bold;">→ Discover Great Zimbabwe</a>
+      <a href="greatzimbabwe.html"><strong>→ Discover Great Zimbabwe</strong></a>
     </div>
 
     <div class="day">
@@ -115,8 +145,7 @@
       <p><strong>Namibia • Botswana • Zambia • Zimbabwe</strong></p>
       <p>Stand at the extraordinary point where four nations converge — Namibia, Botswana, Zambia, and Zimbabwe. This is the only place on Earth where you can be in four countries simultaneously.</p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Quadripoint.png" alt="Aerial view of the quadripoint where four countries meet">
-      <p>The quadripoint is located at the confluence of the Zambezi and Chobe rivers, where the borders of four sovereign nations meet at a single point. This extraordinary geographical feature is the only one of its kind on Earth.</p>
-      <p>During your safari journey, you'll have the rare opportunity to stand at this historic convergence point and experience being in four countries at once — a truly unforgettable moment for any traveler.</p>
+      <p>The quadripoint is located at the confluence of the Zambezi and Chobe rivers. During your safari journey, you'll have the rare opportunity to stand at this historic convergence point — a truly unforgettable moment for any traveler.</p>
     </div>
   </div>
 </body>
