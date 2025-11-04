@@ -41,6 +41,7 @@
       display: inline-block;
       border-radius: 20px;
       max-width: 850px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
 
     h1 {
@@ -76,10 +77,11 @@
 
     footer {
       margin-top: 80px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 25px;
       border-top: 2px solid goldenrod;
       font-size: 0.95em;
+      color: #ffda77;
     }
 
     footer a {
@@ -91,6 +93,17 @@
 
     footer a:hover {
       color: #ffda77;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .content {
+        margin-top: 80px;
+        padding: 30px;
+      }
     }
   </style>
 </head>
@@ -118,7 +131,7 @@
       <a href="privacy.html">Privacy Policy</a> |
       <a href="disclaimer.html">Disclaimer</a>
     </p>
-    <p>&copy; 2025 Serorome Valley Ventures. All rights reserved.</p>
+    <p>© 2025 Serorome Valley Ventures. All rights reserved.</p>
   </footer>
 </body>
 </html>
