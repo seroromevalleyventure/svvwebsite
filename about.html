@@ -12,13 +12,16 @@
       background: url('indexpicbackground.png') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
+      background-blend-mode: multiply;
     }
+
     header {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.55);
       padding: 25px;
       text-align: center;
       border-bottom: 3px solid goldenrod;
     }
+
     nav a {
       color: gold;
       text-decoration: none;
@@ -26,32 +29,63 @@
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #ffda77;
     }
+
     .content {
-      background: rgba(0, 0, 0, 0.7);
-      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 60px auto;
       padding: 40px;
-      border-radius: 15px;
+      border-radius: 20px;
       max-width: 950px;
       line-height: 1.8;
+      text-align: center;
     }
+
     h1, h2 {
       color: gold;
       text-align: center;
     }
+
     .highlight {
       color: #ffda77;
       font-weight: bold;
     }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8em;
+    }
+
+    li::before {
+      content: "• ";
+      color: gold;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       color: #ffda77;
       font-size: 0.9em;
-      background: rgba(0, 0, 0, 0.5);
-      margin-top: 40px;
+      background: rgba(0, 0, 0, 0.6);
+      border-top: 2px solid goldenrod;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: #ffda77;
     }
   </style>
 </head>
@@ -61,10 +95,11 @@
     <p>Premium Southern Africa Travel</p>
     <nav>
       <a href="index.html">Home</a>
-      <a href="itinerary.html">Safari Itinerary</a>
       <a href="destinations.html">Destinations</a>
+      <a href="itinerary.html">Safari Itinerary</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="mailto:seroromevalleyventures@gmail.com">Book Journey</a>
     </nav>
   </header>
 
@@ -91,12 +126,12 @@
     </p>
 
     <h2>Why Choose Us</h2>
-    <ul style="list-style:none; padding-left:0; text-align:left; max-width:700px; margin:0 auto;">
-      <li>• Professional security escorts for all guests</li>
-      <li>• Multilingual, knowledgeable travel companions</li>
-      <li>• Affordable yet premium experience</li>
-      <li>• Cultural respect and community integration</li>
-      <li>• 24/7 safety, transparency, and identification assurance</li>
+    <ul>
+      <li>Professional security escorts for all guests</li>
+      <li>Multilingual, knowledgeable travel companions</li>
+      <li>Affordable yet premium experience</li>
+      <li>Cultural respect and community integration</li>
+      <li>24/7 safety, transparency, and identification assurance</li>
     </ul>
 
     <h2>Our Vision</h2>
@@ -107,7 +142,11 @@
   </div>
 
   <footer>
-    © 2025 Serorome Valley Ventures • All Rights Reserved
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="disclaimer.html">Disclaimer</a>
+    </p>
+    <p>© 2025 Serorome Valley Ventures. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
