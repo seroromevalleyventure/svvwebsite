@@ -10,15 +10,16 @@
       font-family: 'Segoe UI', sans-serif;
       color: white;
       text-align: center;
-      background: url('https://images.unsplash.com/photo-1607083205799-8913f23a09d5') no-repeat center center fixed;
+      background: url('indexpicbackground.png') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
       background-blend-mode: multiply;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 25px;
+      border-bottom: 3px solid goldenrod;
     }
 
     nav a {
@@ -26,28 +27,51 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffda77;
     }
 
     .content {
-      margin-top: 100px;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 40px;
+      margin-top: 120px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 50px;
       display: inline-block;
       border-radius: 20px;
+      max-width: 850px;
+    }
+
+    h1 {
+      color: gold;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: goldenrod;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6em;
     }
 
     button {
       background-color: gold;
       color: black;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #ffd700;
+      background-color: #ffda77;
     }
   </style>
 </head>
