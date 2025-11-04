@@ -9,7 +9,7 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: #f1f5f9;
-      background: url('https://images.unsplash.com/photo-1502786129293-79981df4e689') no-repeat center center fixed;
+      background: url('custom-waterfall-bg.jpg') no-repeat center center fixed; /* ← to be replaced with your custom misty waterfall background */
       background-size: cover;
       background-attachment: fixed;
       background-blend-mode: multiply;
@@ -54,7 +54,8 @@
     img {
       width: 90%;
       max-width: 600px;
-      margin: 10px;
+      margin: 10px auto;
+      display: block;
       border-radius: 10px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
     }
@@ -73,6 +74,14 @@
       border-radius: 10px;
       border: 1px solid goldenrod;
     }
+
+    .caption {
+      text-align: center;
+      font-style: italic;
+      margin-top: -8px;
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
   </style>
 </head>
 <body>
@@ -90,13 +99,13 @@
   <div class="content">
     <h2>Livingstone & Victoria Falls Experience</h2>
     <p>Experience the thundering power of <strong>"Mosi-oa-Tunya" - The Smoke That Thunders</strong>.</p>
-    <p>Witness one of the Seven Natural Wonders of the World and immerse yourself in authentic African culture through traditional Boma dinner experiences and exploration of the historic town of Livingstone.</p>
+    <p>Witness one of the Seven Natural Wonders of the World and immerse yourself in authentic African culture through traditional Boma dinner experiences and explore the historic town of Livingstone.</p>
 
     <h3>Highlights</h3>
     <ul>
       <li>View the magnificent falls from multiple vantage points</li>
       <li>Traditional Boma dinner experiences with African culture</li>
-      <li>Historic Livingstone town and railway museum exploration</li>
+      <li>Historic Livingstone town exploration</li>
       <li>Optional adventure activities (bungee jumping, white water rafting)</li>
       <li>Sunset cruise on the Zambezi River</li>
       <li>Visit to the Devil's Pool (seasonal)</li>
@@ -118,14 +127,25 @@
     </div>
 
     <h3>Gallery</h3>
-    <img src="livingstone-town.jpg" alt="Historic Livingstone Town">
-    <img src="livingstone-railway-museum.jpg" alt="Livingstone Railway Museum locomotives">
-    <img src="victoria-falls-rainbow.jpg" alt="Victoria Falls with rainbow formation">
-    <img src="victoria-falls-panoramic.jpg" alt="Panoramic view of Victoria Falls">
-    <img src="victoria-falls-forest-walk.jpg" alt="Walkway through Victoria Falls rainforest">
-    <img src="victoria-falls-aerial.jpg" alt="Aerial view of Victoria Falls gorge">
-    <img src="boma-dinner.jpg" alt="Traditional Boma dinner experience">
-    <img src="cultural-dancers.jpg" alt="Traditional African dancers performing under the stars">
+
+    <img src="300px-David_Livingstone_Statue.jpg" alt="David Livingstone Statue">
+    <img src="vic-falls-livingston-statue-590x608.jpg" alt="Statue of David Livingstone near Victoria Falls">
+    <img src="livingston bridge.jpg" alt="Livingstone Bridge connecting Zambia and Zimbabwe">
+    <img src="livingstone museam.jpg" alt="Livingstone Museum showing local history and artifacts">
+    <img src="old-sawmills-train livingstone.jpg" alt="Historic train and sawmills in Livingstone">
+    <img src="livingston town.jpg" alt="Livingstone Town streets and markets">
+    <img src="Millet-grinding-by-women.jpg" alt="Traditional millet grinding demonstration by local women">
+    <p class="caption">Cultural Experience: Learn how millet is traditionally ground by women — an authentic hands-on experience of rural African life.</p>
+
+    <img src="livingstone swim.jpg" alt="Guests swimming near the Devil's Pool, Victoria Falls">
+    <img src="vic falls raindow1.jpg" alt="Victoria Falls rainbow view">
+    <img src="vic falls birds eye1.jpg" alt="Bird's eye view of Victoria Falls gorge">
+    <img src="vic falls birds eye 2.jpg" alt="Aerial view of Victoria Falls at sunset">
+    <img src="vic falls lunar.jpg" alt="Victoria Falls during the Lunar Rainbow event">
+    <img src="The-Boma-Dinner-And-Drum-Show-2.jpg" alt="Boma Dinner and Drum Show">
+    <p class="caption">Enjoy a magnificent evening of traditional dance, drumming, and cuisine at the famous Boma Dinner experience.</p>
+    <img src="Boma-Dinner-Victoria-Falls-1.jpg" alt="Traditional Boma dinner setup under the stars">
+
   </div>
 </body>
 </html>
