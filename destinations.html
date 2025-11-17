@@ -1,181 +1,128 @@
-<!-- Updated destinations.html with pricing panel template included; per-destination specific pricing will be applied later -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Destinations - Serorome Valley Ventures</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      background: url('destinationpicbackground.png') no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
-      background-blend-mode: multiply;
+      background: url('images/svv_background_contacts.png') no-repeat center center/cover;
+      color: #fff;
     }
 
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      text-align: center;
-      padding: 25px;
-      border-bottom: 3px solid goldenrod;
-    }
-
-    header h1 {
-      margin-bottom: 5px;
-      color: gold;
-    }
-
-    header p {
-      margin-top: 0;
-      color: #ffda77;
-      font-size: 1.1em;
-    }
-
-    nav a {
-      color: gold;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffda77;
-    }
-
-    .content {
+    .overlay {
       background: rgba(0, 0, 0, 0.65);
-      margin: 40px auto;
+      min-height: 100vh;
       padding: 40px;
-      border-radius: 15px;
-      max-width: 1100px;
+    }
+
+    h1 {
       text-align: center;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      font-size: 42px;
+      margin-bottom: 40px;
+      color: #f4d27a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
-    .destination {
-      margin: 20px;
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      backdrop-filter: blur(6px);
+      padding: 20px;
+      transition: 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #f4d27a;
+    }
+
+    .price {
+      font-size: 20px;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #ffe9a6;
+    }
+
+    .btn {
       display: inline-block;
-      width: 260px;
-      background: rgba(255, 215, 0, 0.1);
-      border: 1px solid goldenrod;
-      border-radius: 12px;
-      padding: 15px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      vertical-align: top;
-    }
-
-    .destination:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-    }
-
-    .destination img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .destination h3 {
-      color: goldenrod;
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-
-    .destination p {
-      font-size: 0.95em;
-      line-height: 1.4;
-    }
-
-    .destination a {
-      display: inline-block;
-      margin-top: 10px;
-      color: gold;
+      background: #f4d27a;
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      border: 1px solid goldenrod;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: background 0.3s ease, color 0.3s ease;
+      margin-top: 10px;
     }
 
-    .destination a:hover {
-      background: goldenrod;
-      color: black;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #ffda77;
-      border-top: 2px solid goldenrod;
-      margin-top: 40px;
-      font-size: 0.9em;
+    .btn:hover {
+      background: #ffe9a6;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Destinations</h1>
-    <p>Explore Southern Africa with Serorome Valley Ventures</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="itinerary.html">Safari Itinerary</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="overlay">
+    <h1>Our Destinations</h1>
 
-  <div class="content">
-    <div class="destination">
-      <img src="getty-elephant-in-chobe.jpg" alt="Chobe National Park">
-      <h3>Chobe National Park</h3>
-      <p>Wildlife paradise in northern Botswana.</p>
-      <a href="chobe.html">Explore</a>
-    </div>
+    <div class="dest-grid">
 
-    <div class="destination">
-      <img src="vic falls raindow1.jpg" alt="Livingstone & Victoria Falls">
-      <h3>Livingstone & Victoria Falls</h3>
-      <p>The Smoke That Thunders – Zambia & Zimbabwe.</p>
-      <a href="livingstone.html">Explore</a>
-    </div>
+      <!-- Johannesburg New Package -->
+      <div class="card">
+        <h2>Johannesburg Arrival Experience</h2>
+        <p>
+          First stop: Johannesburg OR Tambo Airport. Guests are driven to their hotel or rest site to refresh, enjoy a meal,
+          and explore Johannesburg during their 24-hour stopover before travelling to Botswana.
+        </p>
+        <p>
+          Optional activities include Hector Pieterson Memorial (June 16 Uprising history) and Soweto's famous Vilakazi Street.
+          Approx. 30–45 min per site.
+        </p>
+        <p class="price">Van (Full Day): R4000 (~$240)</p>
+        <p class="price">Meals: R1800–R2000 ($50 pp x 5–7 guests)</p>
+        <p class="price">Site Fees: R1000 ($50–$60 pp)</p>
+        <a href="johannesburg.html" class="btn">View Johannesburg Experience</a>
+      </div>
 
-    <div class="destination">
-      <img src="matopo hills rock painting.jpg" alt="Matopos National Park">
-      <h3>Matopos National Park</h3>
-      <p>Granite hills, ancient rock art, and royal heritage.</p>
-      <a href="matopo.html">Explore</a>
-    </div>
+      <!-- Existing Destinations -->
 
-    <div class="destination">
-      <img src="khami air view.jpg" alt="Khami Ruins">
-      <h3>Khami Ruins</h3>
-      <p>Second capital after Great Zimbabwe, rich in trade history.</p>
-      <a href="khami.html">Explore</a>
-    </div>
+      <div class="card">
+        <h2>Chobe National Park</h2>
+        <p>One of Africa's greatest wildlife destinations with river cruises and big-game viewing.</p>
+        <p class="price">Starting from $650</p>
+        <a href="chobe.html" class="btn">View Details</a>
+      </div>
 
-    <div class="destination">
-      <img src="Great-Zimbabwe-palace.jpg" alt="Great Zimbabwe Ruins">
-      <h3>Great Zimbabwe Ruins</h3>
-      <p>Largest ancient stone structure south of the Sahara.</p>
-      <a href="greatzimbabwe.html">Explore</a>
-    </div>
+      <div class="card">
+        <h2>Livingstone & Victoria Falls</h2>
+        <p>See the Smoke That Thunders – one of the Seven Natural Wonders of the World.</p>
+        <p class="price">Starting from $780</p>
+        <a href="livingstone.html" class="btn">View Details</a>
+      </div>
 
-    <div class="destination">
-      <img src="livingstone ariel townview.jpg" alt="Local Cities & Towns">
-      <h3>Local Cities & Towns</h3>
-      <p>Experience the rhythm of Southern Africa’s living culture — from Skys to Kasane.</p>
-      <a href="localcities.html">Explore</a>
+      <div class="card">
+        <h2>Great Zimbabwe</h2>
+        <p>Explore the ancient stone city, a UNESCO World Heritage archaeological site.</p>
+        <p class="price">Starting from $720</p>
+        <a href="greatzimbabwe.html" class="btn">View Details</a>
+      </div>
+
     </div>
   </div>
-
-  <footer>
-    © 2025 Serorome Valley Ventures • All Rights Reserved
-  </footer>
 </body>
 </html>
