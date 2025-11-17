@@ -93,18 +93,20 @@
         <p><strong>Reference:</strong> Your Name + Travel</p>
       </div>
 
-      <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">Send Proof of Payment</a>
+      <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">
+        Send Proof of Payment
+      </a>
     </div>
   </div>
 
   <script>
-    // Load order
+    // Load order from booking.html
     const order = JSON.parse(localStorage.getItem("svvOrder"));
 
     if (!order) {
       document.getElementById("summary").innerHTML = "<p>No booking info found.</p>";
     } else {
-      let seasonal = order.season === "high" ? 0.15 : 0;
+      let seasonal = (order.season === "high") ? 0.15 : 0;
       let surcharge = order.total * seasonal;
       let finalTotal = order.total + surcharge;
 
