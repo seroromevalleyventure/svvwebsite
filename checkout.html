@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout - Serorome Valley Ventures</title>
+
   <style>
     body {
       margin: 0;
@@ -20,18 +21,19 @@
     }
 
     .checkout-box {
-      max-width: 600px;
+      max-width: 650px;
       margin: auto;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 25px;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 30px;
       border-radius: 12px;
       border: 1px solid rgba(255, 215, 0, 0.5);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
     }
 
-    h2 {
+    h2, h3 {
       text-align: center;
       color: gold;
+      margin-top: 0;
     }
 
     .summary-item {
@@ -43,20 +45,66 @@
     #paypal-button-container {
       margin-top: 25px;
     }
+
+    .bank-box {
+      margin-top: 35px;
+      padding: 20px;
+      background: rgba(255, 215, 0, 0.08);
+      border-left: 4px solid gold;
+      border-radius: 10px;
+    }
+
+    .bank-box h3 {
+      text-align: left;
+      color: gold;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .eft-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 18px;
+      background: goldenrod;
+      color: black;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .eft-btn:hover {
+      background: #ffda77;
+    }
   </style>
 </head>
 
 <body>
   <div class="overlay">
     <div class="checkout-box">
+
       <h2>Booking Summary</h2>
 
       <div id="summary"></div>
 
-      <h3 style="color: gold;">Total: <span id="totalDisplay"></span></h3>
+      <h3>Total: <span id="totalDisplay"></span></h3>
 
       <!-- PayPal Smart Buttons -->
       <div id="paypal-button-container"></div>
+
+      <!-- EFT / BANK PAYMENT OPTION -->
+      <div class="bank-box">
+        <h3>Pay via EFT / Bank Transfer</h3>
+
+        <p><strong>Account Name:</strong> SOBA Entertainment (PTY)</p>
+        <p><strong>Bank:</strong> FNB — First National Bank</p>
+        <p><strong>Account Number:</strong> 63183109967</p>
+        <p><strong>Branch Code:</strong> 250655 (Universal)</p>
+        <p><strong>SWIFT Code:</strong> FIRNZAJJ</p>
+        <p><strong>Reference:</strong> Your Full Name + Travel Date</p>
+
+        <a class="eft-btn" href="payment-success.html">I Have Paid via EFT</a>
+      </div>
+
     </div>
   </div>
 
@@ -64,7 +112,6 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
-    // Load order from booking.html
     const order = JSON.parse(localStorage.getItem("svvOrder"));
 
     if (!order) {
@@ -74,7 +121,6 @@
       let surcharge = order.total * seasonal;
       let finalTotal = order.total + surcharge;
 
-      // Save final total for PayPal
       localStorage.setItem("svvFinalTotal", finalTotal);
 
       document.getElementById("summary").innerHTML = `
@@ -90,7 +136,6 @@
       document.getElementById("totalDisplay").innerText = "R" + finalTotal.toFixed(2);
     }
 
-    // PAYPAL BUTTONS
     paypal.Buttons({
       createOrder: function(data, actions) {
         let finalTotal = localStorage.getItem("svvFinalTotal");
@@ -98,21 +143,19 @@
 
         return actions.order.create({
           purchase_units: [{
-            amount: {
-              value: usdAmount
-            },
+            amount: { value: usdAmount },
             description: "Serorome Valley Ventures Travel Booking"
           }]
         });
       },
 
       onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
+        return actions.order.capture().then(function() {
           window.location.href = "payment-success.html";
         });
       },
 
-      onCancel: function(data) {
+      onCancel: function() {
         window.location.href = "payment-cancelled.html";
       }
 
