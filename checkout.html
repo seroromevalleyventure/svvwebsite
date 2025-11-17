@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout - Serorome Valley Ventures</title>
-
   <style>
     body {
       margin: 0;
@@ -24,56 +23,53 @@
       max-width: 650px;
       margin: auto;
       background: rgba(0, 0, 0, 0.75);
-      padding: 30px;
+      padding: 25px;
       border-radius: 12px;
       border: 1px solid rgba(255, 215, 0, 0.5);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
     }
 
-    h2, h3 {
+    h2 {
       text-align: center;
       color: gold;
       margin-top: 0;
     }
 
     .summary-item {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    #paypal-button-container {
-      margin-top: 25px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .bank-box {
-      margin-top: 35px;
+      margin-top: 25px;
       padding: 20px;
-      background: rgba(255, 215, 0, 0.08);
-      border-left: 4px solid gold;
+      background: rgba(0, 0, 0, 0.55);
       border-radius: 10px;
+      border: 1px solid rgba(255, 215, 0, 0.5);
     }
 
     .bank-box h3 {
-      text-align: left;
       color: gold;
-      margin-bottom: 10px;
       margin-top: 0;
     }
 
-    .eft-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 18px;
-      background: goldenrod;
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: gold;
       color: black;
-      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
       font-weight: bold;
       text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 8px gold;
     }
 
-    .eft-btn:hover {
-      background: #ffda77;
+    .btn:hover {
+      background: #ffe66e;
     }
   </style>
 </head>
@@ -81,47 +77,36 @@
 <body>
   <div class="overlay">
     <div class="checkout-box">
-
       <h2>Booking Summary</h2>
 
       <div id="summary"></div>
 
-      <h3>Total: <span id="totalDisplay"></span></h3>
+      <h3 style="color: gold;">Total Due: <span id="totalDisplay"></span></h3>
 
-      <!-- PayPal Smart Buttons -->
-      <div id="paypal-button-container"></div>
-
-      <!-- EFT / BANK PAYMENT OPTION -->
       <div class="bank-box">
-        <h3>Pay via EFT / Bank Transfer</h3>
-
-        <p><strong>Account Name:</strong> SOBA Entertainment (PTY)</p>
-        <p><strong>Bank:</strong> FNB — First National Bank</p>
+        <h3>Bank EFT Details</h3>
+        <p><strong>Account Name:</strong> SOBA Entertainment (PTY) LTD</p>
+        <p><strong>Bank:</strong> FNB – First National Bank</p>
         <p><strong>Account Number:</strong> 63183109967</p>
         <p><strong>Branch Code:</strong> 250655 (Universal)</p>
         <p><strong>SWIFT Code:</strong> FIRNZAJJ</p>
-        <p><strong>Reference:</strong> Your Full Name + Travel Date</p>
-
-        <a class="eft-btn" href="payment-success.html">I Have Paid via EFT</a>
+        <p><strong>Reference:</strong> Your Name + Travel</p>
       </div>
 
+      <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">Send Proof of Payment</a>
     </div>
   </div>
 
-  <!-- PayPal SDK with your LIVE client ID -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
-
   <script>
+    // Load order
     const order = JSON.parse(localStorage.getItem("svvOrder"));
 
     if (!order) {
-      document.getElementById("summary").innerHTML = "<p>No booking found.</p>";
+      document.getElementById("summary").innerHTML = "<p>No booking info found.</p>";
     } else {
       let seasonal = order.season === "high" ? 0.15 : 0;
       let surcharge = order.total * seasonal;
       let finalTotal = order.total + surcharge;
-
-      localStorage.setItem("svvFinalTotal", finalTotal);
 
       document.getElementById("summary").innerHTML = `
         <div class="summary-item"><strong>Destination:</strong> ${order.destination}</div>
@@ -135,31 +120,6 @@
 
       document.getElementById("totalDisplay").innerText = "R" + finalTotal.toFixed(2);
     }
-
-    paypal.Buttons({
-      createOrder: function(data, actions) {
-        let finalTotal = localStorage.getItem("svvFinalTotal");
-        let usdAmount = (finalTotal * 0.06).toFixed(2); // simple conversion
-
-        return actions.order.create({
-          purchase_units: [{
-            amount: { value: usdAmount },
-            description: "Serorome Valley Ventures Travel Booking"
-          }]
-        });
-      },
-
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function() {
-          window.location.href = "payment-success.html";
-        });
-      },
-
-      onCancel: function() {
-        window.location.href = "payment-cancelled.html";
-      }
-
-    }).render('#paypal-button-container');
   </script>
 
 </body>
