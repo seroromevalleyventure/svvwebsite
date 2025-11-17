@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Destinations - Serorome Valley Ventures</title>
   <style>
     body {
@@ -107,6 +107,50 @@
       color: black;
     }
 
+    /* New pricing panel styles */
+    .pricing-panel {
+      margin: 30px auto 10px;
+      max-width: 980px;
+      text-align: left;
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      padding: 20px;
+      border: 2px solid rgba(255,215,0,0.15);
+    }
+
+    .pricing-panel h2 {
+      color: gold;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .price-row {
+      background: rgba(255,215,0,0.03);
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 4px solid goldenrod;
+    }
+
+    .price-row h3 {
+      margin: 0 0 6px 0;
+      color: #ffd86b;
+    }
+
+    .price-row p { margin: 0; line-height: 1.5; color: #fffdf2; }
+
+    .note {
+      margin-top: 10px;
+      font-style: italic;
+      color: #f5e6b3;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -115,6 +159,12 @@
       border-top: 2px solid goldenrod;
       margin-top: 40px;
       font-size: 0.9em;
+    }
+
+    /* Responsive small screens */
+    @media (min-width: 900px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .content { max-width: 1200px; }
     }
   </style>
 </head>
@@ -130,6 +180,7 @@
   </header>
 
   <div class="content">
+    <!-- Existing destination cards -->
     <div class="destination">
       <img src="getty-elephant-in-chobe.jpg" alt="Chobe National Park">
       <h3>Chobe National Park</h3>
@@ -171,6 +222,62 @@
       <p>Experience the rhythm of Southern Africa’s living culture — from Skys to Kasane.</p>
       <a href="localcities.html">Explore</a>
     </div>
+
+    <!-- NEW: Pricing & Extras panel -->
+    <div class="pricing-panel" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Pricing & Extras — Key Costs (displayed here)</h2>
+
+      <p style="text-align:center; color:#fffde7;">
+        The site lists key shuttle, meals and excursion charges so visitors can see expected costs. All prices are approximate — contact us for a tailored quote. Note: <strong>Dec 1 → Mar 31</strong> is high season and prices will be higher (seasonal surcharge applied).
+      </p>
+
+      <div class="pricing-grid">
+        <!-- Johannesburg / OR Tambo day transfer -->
+        <div class="price-row">
+          <h3>Johannesburg — OR Tambo Arrival & Day Transfer</h3>
+          <p><strong>Van (per day):</strong> <strong>R 4,000</strong> (approx. <strong>US$ 240</strong>) — full-day private van for group transfers and local stops.</p>
+          <p><strong>Meals (lunch only for group):</strong> <strong>R 1,800 – R 2,000</strong> total (approx. <strong>US$ 50 per person</strong> for groups of 5–7).</p>
+          <p><strong>Group size note:</strong> pricing above is typical for groups of 5–7 people. For smaller or larger groups, contact us for a specific quote.</p>
+        </div>
+
+        <!-- Site visits: Hector Pieterson & Vilakazi Street -->
+        <div class="price-row">
+          <h3>Heritage & Short Site Visits (Soweto)</h3>
+          <p><strong>Hector Pieterson Memorial (approx.):</strong> R 1,000 (approx. US$ 55) — typical group charge; alternatively billed at approx. <strong>R 900–R 1,100 per group</strong> or <strong>R 50–R 60 per person</strong> depending on guide/entry/crowd control fees and time on site (30 minutes recommended).</p>
+          <p><strong>Vilakazi Street visit (walking & quick stops):</strong> approx. <strong>R 900–R 1,100 per group</strong> or <strong>R 50–R 60 per person</strong> for a short 30–45 minute walk and photo stops.</p>
+          <p>These are approximate site charges and guide/tip costs; exact fees can vary by day and group size.</p>
+        </div>
+
+        <!-- Travel on to Botswana -->
+        <div class="price-row">
+          <h3>Travel onward to Botswana</h3>
+          <p>After the Johannesburg day tour, guests are transported to the border/flight to Botswana as requested. Transport charge for cross-border transfer is quoted per trip — contact us for exact routing and quote (vehicle + driver + border formalities).</p>
+        </div>
+
+        <!-- Seasonal surcharge -->
+        <div class="price-row">
+          <h3>Seasonal Surcharge (High season)</h3>
+          <p><strong>Dec 1 → Mar 31:</strong> high-season increase will apply. <strong>Standard example:</strong> +25% seasonal surcharge on shuttle and some package rates during these dates. Exact surcharge may vary by service — final price will show at checkout.</p>
+        </div>
+
+        <!-- Booking & payments -->
+        <div class="price-row">
+          <h3>Booking & Payments</h3>
+          <p>We will accept online payments. Payments for SVV excursions can be processed via PayPal / bank transfer. Reminder: SOBA Entertainment (South Africa) and Serorome Valley Ventures (Botswana) will have separate business accounts — we can support linking both PayPals later.</p>
+          <p class="note">We do not publish live checkout on this page — contact us to receive a tailored invoice or book online via the booking page (checkout with PayPal will be added to the site).</p>
+        </div>
+
+        <!-- Contact for tailored quotes -->
+        <div class="price-row">
+          <h3>Want a tailored quote?</h3>
+          <p>Contact us with your dates, group size, preferred stops and any special requests. We will return a detailed itinerary & final cost (including any seasonal surcharges and optional extras).</p>
+          <p><strong>Contact:</strong> <a href="contact.html" style="color: #ffd86b;">Contact page</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- end pricing panel -->
+
   </div>
 
   <footer>
