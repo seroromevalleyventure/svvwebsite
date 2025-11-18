@@ -14,31 +14,51 @@
 
     .overlay {
       background: rgba(0, 0, 0, 0.65);
-      min-height: 100vh;
-      padding: 20px;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 15px;
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
-      font-size: 42px;
-      margin-top: 20px;
+      color: #ffd700;
       text-shadow: 2px 2px 8px black;
     }
 
-    .intro {
-      max-width: 900px;
-      margin: 20px auto;
-      font-size: 20px;
+    h2.section-title {
+      margin-top: 30px;
+      font-size: 1.8em;
+      color: #f4d27a;
+    }
+
+    p, li {
       line-height: 1.6;
-      text-align: center;
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+    }
+
+    .price-box {
+      background: rgba(255, 215, 0, 0.3);
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .price-box p {
+      margin: 6px 0;
+      font-weight: bold;
+      color: black;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      max-width: 1200px;
-      margin: 40px auto;
+      margin: 30px 0;
     }
 
     .gallery img {
@@ -52,7 +72,7 @@
 
     .back {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .back a {
@@ -82,21 +102,38 @@
   <div class="overlay">
     <h1>Johannesburg 24-Hour Cultural Experience</h1>
 
-    <p class="intro">
-      Before your Botswana journey begins, enjoy a powerful and immersive 1-day experience in Johannesburg.
-      Explore historical landmarks, taste South African cuisine, and visit SOWETO — the heart of South Africa’s
-      liberation history.
+    <p>
+      Johannesburg, proudly known as the <strong>City of Gold</strong>, is the heartbeat of South Africa and the economic capital of the continent.
+      Located in the vibrant Gauteng Province, Joburg is home to Africa's largest financial district, Sandton, and is a dynamic blend of history, culture, and modern city life.
     </p>
 
-    <div class="gallery">
+    <p>
+      Guests arrive at <strong>OR Tambo International Airport</strong> and enjoy a premium 24-hour cultural stopover before heading to Botswana (Francistown). This optional excursion allows travelers to rest, refresh, enjoy a meal, and explore iconic heritage sites at a relaxed pace.
+    </p>
 
-      <!-- THESE ARE THE ONLY FILES THAT EXIST IN YOUR REPO -->
+    <h2 class="section-title">Optional Day 1 Cultural Excursion</h2>
+    <p>After settling in at the lodge or hotel, guests may take a short guided city experience featuring:</p>
+    <ul>
+      <li>Hector Pieterson Memorial – honoring the June 16 Soweto Uprising</li>
+      <li>Vilakazi Street – the only street where two Nobel Prize Laureates lived (Nelson Mandela & Desmond Tutu)</li>
+      <li>Soweto Towers – iconic bungee jumping landmark</li>
+      <li>Sandton City & Nelson Mandela Square – Africa’s “Wall Street”</li>
+    </ul>
+
+    <div class="price-box">
+      <p>Van (Full Day Transport): R4000 (~$240)</p>
+      <p>Meals (Lunch Only): R1800–R2000 per group (≈$50 pp for 5–7 guests)</p>
+      <p>Hector Pieterson Visit: R1000 per person ($50–$60)</p>
+      <p>Vilakazi Street Experience: R1000 per person ($50–$60)</p>
+    </div>
+
+    <h2 class="section-title">Johannesburg Photo Gallery</h2>
+    <div class="gallery">
       <img src="joburg%20city.jpg" alt="Johannesburg City" />
       <img src="mandela%20house%20vilakazi%20street.jpg" alt="Mandela House Vilakazi Street" />
       <img src="sandton%20city.jpg" alt="Sandton City" />
       <img src="Soweto-Towers%20full%20view.jpg" alt="Soweto Towers" />
       <img src="aerial-view-vilikazi%20street.webp" alt="Vilikazi Street Aerial View" />
-
     </div>
 
     <div class="button-box">
