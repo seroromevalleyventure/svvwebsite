@@ -117,7 +117,6 @@
       }
     }
 
-    /* Johannesburg Add-On Button */
     .add-on-btn {
       display:inline-block; 
       background: goldenrod; 
@@ -202,5 +201,40 @@
   <footer>
     © 2025 Serorome Valley Ventures • All Rights Reserved
   </footer>
+
+  <!-- LocalStorage script for checkout integration -->
+  <script>
+    const form = document.getElementById('booking-form');
+
+    form.addEventListener('submit', function(e){
+      // Save data before Formspree sends it
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const destination = document.getElementById('destination').value;
+      const dates = document.getElementById('dates').value;
+      const guests = parseInt(document.getElementById('guests').value) || 1;
+      const message = document.getElementById('message').value;
+
+      // Placeholder fees (will update per destination later)
+      const svvOrder = {
+        name, email, phone, destination, dates, guests, message,
+        vanFee: 0, meals: 0, siteFees: 0, season: 'low'
+      };
+
+      localStorage.setItem('svvOrder', JSON.stringify(svvOrder));
+      console.log('Booking saved for checkout:', svvOrder);
+
+      // Form submission continues normally (Formspree)
+    });
+
+    // Add-On Button stores Johannesburg in localStorage if clicked
+    const addOnBtn = document.querySelector('.add-on-btn');
+    addOnBtn.addEventListener('click', () => {
+      let currentOrder = JSON.parse(localStorage.getItem('svvOrder')) || {};
+      currentOrder.destination = 'Johannesburg';
+      localStorage.setItem('svvOrder', JSON.stringify(currentOrder));
+    });
+  </script>
 </body>
 </html>
