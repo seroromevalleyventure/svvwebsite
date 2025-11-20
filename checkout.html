@@ -85,7 +85,7 @@
 
       <div id="summary"></div>
 
-      <h3 style="color: gold;">Total Due: <span id="totalDisplay"></span></h3>
+      <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
 
       <!-- PAYPAL BUTTON -->
       <div id="paypal-button-container"></div>
@@ -107,46 +107,53 @@
   </div>
 
   <!-- PAYPAL SCRIPT -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=ZAR"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
-    // Load order from booking.html
-    const order = JSON.parse(localStorage.getItem("svvOrder"));
-    let finalTotal = 0;
+    // CART FORMAT:
+    // [
+    //   { id:"...", title:"...", qty:1, unit_usd:430, subtotal_usd:430, meta:{...} }
+    // ]
 
-    if (!order) {
-      document.getElementById("summary").innerHTML = "<p>No booking info found.</p>";
-      document.getElementById("totalDisplay").innerText = "R0.00";
+    const cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+    let totalUSD = 0;
+
+    const summary = document.getElementById("summary");
+
+    if (cart.length === 0) {
+      summary.innerHTML = "<p>No items in cart.</p>";
+      document.getElementById("totalDisplay").innerText = "$0.00";
     } else {
-      let seasonal = (order.season === "high") ? 0.15 : 0;
-      let surcharge = order.total * seasonal;
-      finalTotal = order.total + surcharge;
+      let html = "";
+      cart.forEach(item => {
+        html += `
+          <div class="summary-item">
+            <strong>${item.title}</strong><br>
+            Quantity: ${item.qty}<br>
+            Unit Price: $${item.unit_usd}<br>
+            Subtotal: <strong>$${item.subtotal_usd}</strong>
+          </div>
+        `;
+        totalUSD += item.subtotal_usd;
+      });
 
-      document.getElementById("summary").innerHTML = `
-        <div class="summary-item"><strong>Destination:</strong> ${order.destination}</div>
-        <div class="summary-item"><strong>Travel Dates:</strong> ${order.start} to ${order.end}</div>
-        <div class="summary-item"><strong>Travellers:</strong> ${order.people}</div>
-        <div class="summary-item"><strong>Van Fee:</strong> R${order.vanFee}</div>
-        <div class="summary-item"><strong>Meals:</strong> R${order.meals}</div>
-        <div class="summary-item"><strong>Site Fees:</strong> R${order.siteFees}</div>
-        <div class="summary-item"><strong>Seasonal Surcharge:</strong> R${surcharge.toFixed(2)}</div>
-      `;
-
-      document.getElementById("totalDisplay").innerText = "R" + finalTotal.toFixed(2);
+      summary.innerHTML = html;
+      document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
     }
 
-    // Render PayPal buttons
+    // PAYPAL BUTTON
     paypal.Buttons({
       createOrder: function(data, actions) {
         return actions.order.create({
           purchase_units: [{
-            amount: { value: finalTotal.toFixed(2) } // dynamic total
+            amount: { value: totalUSD.toFixed(2) }
           }]
         });
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
           alert('Payment successful! Thank you, ' + details.payer.name.given_name + '.');
+          localStorage.removeItem("svvCart");
         });
       },
       onError: function(err) {
@@ -155,5 +162,6 @@
       }
     }).render('#paypal-button-container');
   </script>
+
 </body>
 </html>
