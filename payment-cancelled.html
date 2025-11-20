@@ -1,70 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Payment Cancelled - Serorome Valley Ventures</title>
-
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('svv background contacts.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      background: url('svv background contacts.png') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
     }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.70);
-      min-height: 100vh;
+    .container {
+      background: rgba(0, 0, 0, 0.65);
       padding: 40px;
-    }
-
-    .message-box {
+      border-radius: 15px;
       max-width: 600px;
       margin: auto;
-      background: rgba(0, 0, 0, 0.75);
-      padding: 30px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.5);
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
-
-    h2 {
-      color: gold;
-      margin-bottom: 10px;
+    h1 { 
+      color: #ff5252; 
+      font-size: 2.4rem; 
+      margin-bottom: 20px;
     }
-
-    a.button {
+    p { 
+      font-size: 1.1rem; 
+      line-height: 1.6; 
+      margin-bottom: 15px;
+    }
+    a.btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: gold;
-      color: #000;
+      margin-top: 20px;
+      background: #ff5252;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 1rem;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
       transition: 0.3s;
     }
-
-    a.button:hover {
-      background: #e6c200;
-    }
+    a.btn:hover { background: #e04848; }
   </style>
 </head>
-
 <body>
-  <div class="overlay">
-    <div class="message-box">
-      <h2>Payment Cancelled</h2>
-      <p>Your payment was cancelled before completion.</p>
-
-      <p style="margin-top:15px;">If this was a mistake or you would like to try again, you may return to the checkout page.</p>
-
-      <a href="booking.html" class="button">Return to Booking</a>
-    </div>
+  <div class="container">
+    <h1>Payment Cancelled</h1>
+    <p>Your payment was not completed.</p>
+    <p>If this was a mistake, you can try again or contact Serorome Valley Ventures for assistance.</p>
+    <a href="booking.html" class="btn">Try Again</a>
   </div>
 </body>
 </html>
-
