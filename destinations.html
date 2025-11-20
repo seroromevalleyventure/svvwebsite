@@ -34,7 +34,7 @@
       padding: 20px;
     }
 
-    .card, .destination-card {
+    .card {
       background: rgba(255, 255, 255, 0.12);
       border-radius: 14px;
       backdrop-filter: blur(6px);
@@ -44,33 +44,12 @@
       text-align: center;
     }
 
-    .card:hover, .destination-card:hover {
+    .card:hover {
       transform: translateY(-6px);
       background: rgba(255, 255, 255, 0.18);
     }
 
-    .card h2, .destination-card h3 {
-      margin-top: 0;
-      color: #f4d27a;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #f4d27a;
-      color: #000;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .btn:hover {
-      background: #ffe9a6;
-    }
-
-    /* Destination image card */
-    .card img, .destination-card img.destination-img {
+    .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
@@ -80,12 +59,18 @@
       margin-bottom: 12px;
     }
 
-    .card img:hover, .destination-card img.destination-img:hover {
+    .card img:hover {
       transform: scale(1.05);
       box-shadow: 0 0 10px gold;
     }
 
-    .destination-card p, .card p {
+    .card h2 {
+      color: #f4d27a;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
       color: #ffda77;
       font-size: 0.95em;
       margin-top: 8px;
@@ -98,7 +83,7 @@
 
     <div class="dest-grid">
 
-      <!-- Johannesburg Card -->
+      <!-- Johannesburg -->
       <div class="card">
         <a href="johannesburg.html">
           <img src="johannesburgPNG.png" alt="Johannesburg Arrival Experience">
@@ -108,10 +93,9 @@
           Start your journey at OR Tambo Airport and enjoy a short 24-hour stay in Johannesburg.
           Optional visits include the Hector Pieterson Memorial and Vilakazi Street in Soweto.
         </p>
-        <a href="johannesburg.html" class="btn">View Johannesburg Experience</a>
       </div>
 
-      <!-- Chobe National Park -->
+      <!-- Chobe -->
       <div class="card">
         <a href="chobe.html">
           <img src="chobePNG.png" alt="Chobe National Park">
@@ -120,10 +104,9 @@
         <p>
           Experience Africa's wildlife with river cruises and thrilling big-game viewing at one of the continent's best safari parks.
         </p>
-        <a href="chobe.html" class="btn">View Details</a>
       </div>
 
-      <!-- Livingstone & Victoria Falls -->
+      <!-- Livingstone -->
       <div class="card">
         <a href="livingstone.html">
           <img src="livingstonePNG.png" alt="Livingstone & Victoria Falls">
@@ -132,7 +115,6 @@
         <p>
           Witness the awe-inspiring Victoria Falls, explore Livingstone’s rich history, and enjoy authentic cultural experiences.
         </p>
-        <a href="livingstone.html" class="btn">View Details</a>
       </div>
 
       <!-- Great Zimbabwe -->
@@ -144,29 +126,28 @@
         <p>
           Discover the ancient stone city, a UNESCO World Heritage Site, and explore its historical and cultural significance.
         </p>
-        <a href="greatzimbabwe.html" class="btn">View Details</a>
       </div>
 
-      <!-- Matopos National Park -->
-      <div class="destination-card">
+      <!-- Matopos -->
+      <div class="card">
         <a href="matopo.html">
-          <img src="matopo_khami_background.png" alt="Matopos National Park" class="destination-img">
-          <h3>Matopos National Park</h3>
-          <p>
-            Explore the mystical granite hills, ancient San rock art, and rhino sanctuary at this UNESCO World Heritage Site.
-          </p>
+          <img src="matopoPNG.png" alt="Matopos National Park">
         </a>
+        <h2>Matopos National Park</h2>
+        <p>
+          Explore the mystical granite hills, ancient San rock art, and rhino sanctuary at this UNESCO World Heritage Site.
+        </p>
       </div>
 
-      <!-- Local Cities & Towns -->
-      <div class="destination-card">
+      <!-- Local Cities -->
+      <div class="card">
         <a href="localcities.html">
-          <img src="maptravels.png" alt="Local Cities & Towns" class="destination-img">
-          <h3>Local Cities & Towns</h3>
-          <p>
-            Discover vibrant cities and historic towns, each offering culture, charm, and unique local experiences.
-          </p>
+          <img src="localcitiesPNG.png" alt="Local Cities & Towns">
         </a>
+        <h2>Local Cities & Towns</h2>
+        <p>
+          Discover vibrant cities and historic towns, each offering culture, charm, and unique local experiences.
+        </p>
       </div>
 
     </div>
