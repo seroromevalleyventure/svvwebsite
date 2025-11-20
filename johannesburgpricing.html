@@ -1,0 +1,63 @@
+<!-- JOHANNESBURG PRICING SECTION (dynamic, embedded in johannesburg.html) -->
+<div id="pricing-section" style="margin-top:40px; padding:20px; background: rgba(0,0,0,0.7); border-radius:12px;">
+  <h2 style="color: gold; text-align:center;">Johannesburg Stopover Pricing & Travel Advisory</h2>
+
+  <p style="color:#ffd77a; font-style:italic;">
+    In South Africa, the accepted currency is <strong>Rands (ZAR)</strong>. All monetary transactions should preferably be done in local currency. Credit and debit cards are accepted in some establishments. Travellers should always ask their Serorome Valley Ventures guide to escort them when using ATMs. Costs may vary depending on season, weather, and group size.
+  </p>
+
+  <h3 style="color:#f4d27a;">Transportation</h3>
+  <p>Van for full-day transport: <strong>R4000 / $220 per day</strong></p>
+
+  <h3 style="color:#f4d27a;">Meals & Refreshments</h3>
+  <p>Meals for a group of 5–7 travelers: <strong>R4500 / $250</strong></p>
+
+  <h3 style="color:#f4d27a;">Destination Fees</h3>
+  <p>Standard sightseeing: <strong>$15 per person per destination</strong></p>
+  <ul style="color:#ffd77a;">
+    <li>Hector Pieterson Memorial – 45 minutes</li>
+    <li>Vilakazi Street / Nelson Mandela’s House – 45 minutes</li>
+    <li>Cradle of Humankind – Historical site</li>
+    <li>Sandton & Nelson Mandela Square – 45 minutes</li>
+  </ul>
+
+  <p style="color:#ffd77a; font-style:italic;">
+    Clients can pick and choose destinations; all travelers in a group must stick together at all times. Some destinations may have separate prices. All travellers should carry local currency, and debit/credit cards (Visa or MasterCard accepted widely).
+  </p>
+
+  <h3 style="color:#f4d27a;">Optional Refresh & Accommodation</h3>
+  <p>Travellers may choose to refresh and relax. Maximum cost per person: <strong>$180</strong>. Accommodation must be specified in advance.</p>
+
+  <h3 style="color:#f4d27a;">How to Use This Section</h3>
+  <p style="color:#ffd77a;">
+    Select the destinations and services your group wants. Prices are calculated per person for each activity. Your Serorome Valley Ventures guide will assist and ensure your group stays safe and together.
+  </p>
+
+  <!-- Dynamic selector example (optional JS) -->
+  <div style="margin-top:20px; text-align:center;">
+    <label for="dest-select" style="color:#ffd77a; font-weight:bold;">Choose your destination(s):</label><br>
+    <select id="dest-select" multiple style="padding:10px; border-radius:8px; width:80%; margin-top:10px;">
+      <option value="hector">Hector Pieterson Memorial ($15 pp)</option>
+      <option value="vilakazi">Vilakazi Street / Mandela House ($15 pp)</option>
+      <option value="cradle">Cradle of Humankind ($15 pp)</option>
+      <option value="sandton">Sandton & Mandela Square ($15 pp)</option>
+    </select>
+  </div>
+
+  <div style="margin-top:20px; text-align:center;">
+    <button onclick="calculateJohannesburgTotal()" style="background:gold; color:black; padding:12px 25px; border-radius:8px; font-weight:bold; cursor:pointer;">Calculate Total</button>
+  </div>
+
+  <div id="total-output" style="margin-top:20px; text-align:center; font-weight:bold; color:#ffd77a; font-size:1.2em;"></div>
+
+</div>
+
+<script>
+  function calculateJohannesburgTotal() {
+    const select = document.getElementById('dest-select');
+    const selected = Array.from(select.selectedOptions).length;
+    const perPerson = 15; // USD per destination
+    const total = selected * perPerson;
+    document.getElementById('total-output').innerText = `Estimated Total for selected destinations: $${total} per person`;
+  }
+</script>
