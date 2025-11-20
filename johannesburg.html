@@ -13,7 +13,7 @@
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.68);
       max-width: 1000px;
       margin: 30px auto;
       padding: 30px;
@@ -37,14 +37,10 @@
       margin: 10px 0;
     }
 
-    ul {
-      margin: 10px 0 20px 20px;
-    }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 22px;
       margin: 30px 0;
     }
 
@@ -57,15 +53,52 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     }
 
-    .back {
+    .caption {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 6px;
+      font-size: 0.95em;
+      color: #ffeb9c;
+      font-style: italic;
+      text-shadow: 1px 1px 3px black;
     }
 
-    .back a {
-      color: gold;
-      font-size: 22px;
-      text-decoration: none;
+    .pricing-box {
+      background: rgba(255, 215, 0, 0.10);
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 12px;
+      border: 2px solid gold;
+    }
+
+    .pricing-toggle {
+      background: gold;
+      padding: 14px;
+      width: 100%;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .pricing-content {
+      display: none;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: white;
+    }
+
+    table td, table th {
+      border: 1px solid #ffd700;
+      padding: 10px;
+      text-align: left;
     }
 
     .button-box {
@@ -82,7 +115,25 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back a {
+      color: gold;
+      font-size: 22px;
+      text-decoration: none;
+    }
   </style>
+
+  <script>
+    function togglePricing() {
+      const content = document.getElementById("pricing-content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </head>
 
 <body>
@@ -90,34 +141,109 @@
     <h1>Johannesburg 24-Hour Cultural Experience</h1>
 
     <p>
-      Johannesburg, proudly known as the <strong>City of Gold</strong>, is the heartbeat of South Africa and the economic capital of the continent.
-      Located in the vibrant Gauteng Province, Joburg is home to Africa's largest financial district, Sandton, and is a dynamic blend of history, culture, and modern city life.
+      Johannesburg—fondly known as the <strong>City of Gold</strong>—is South Africa’s powerhouse of culture, economics, and heritage. 
+      A melting pot of history and modern urban luxury, Joburg welcomes guests with warm hospitality, iconic locations, and unforgettable African vibrance.
     </p>
 
     <p>
-      Guests arrive at <strong>OR Tambo International Airport</strong> and enjoy a premium 24-hour cultural stopover before heading to Botswana (Francistown). This optional excursion allows travelers to rest, refresh, enjoy a meal, and explore iconic heritage sites at a relaxed pace.
+      Travelers arriving at <strong>OR Tambo International Airport</strong> may enjoy a special <strong>24-hour cultural stopover</strong> before departing to Botswana (Francistown). This experience provides time to refresh, enjoy a meal, and explore some of the most significant heritage sites in South Africa.
     </p>
 
     <h2 class="section-title">Optional Day 1 Cultural Excursion</h2>
-    <p>After settling in at the lodge or hotel, guests may take a short guided city experience featuring:</p>
+    <p>After check-in, guests may enjoy a guided cultural experience featuring:</p>
+
     <ul>
-      <li>Hector Pieterson Memorial – honoring the June 16 Soweto Uprising</li>
-      <li>Vilakazi Street – the only street where two Nobel Prize Laureates lived (Nelson Mandela & Desmond Tutu)</li>
-      <li>Soweto Towers – iconic bungee jumping landmark</li>
-      <li>Sandton City & Nelson Mandela Square – Africa’s “Wall Street”</li>
+      <li><strong>Hector Pieterson Memorial</strong> – powerful tribute to the 1976 Soweto Uprising</li>
+      <li><strong>Vilakazi Street</strong> – home of Nelson Mandela & Archbishop Desmond Tutu</li>
+      <li><strong>Soweto Towers</strong> – famous bungee jumping site (Leap of Faith!)</li>
+      <li><strong>Sandton City & Mandela Square</strong> – luxury shopping & iconic statue</li>
     </ul>
 
     <p style="font-style:italic; text-align:center; color:#ffd700;">
-      US and other North American nations passport holders do not need a visa for tourist or business stays of up to 90 days in South Africa.
+      South Africa uses the South African Rand (ZAR). Travelers must use Rands for purchases.  
+      Credit/Debit cards (Visa & Mastercard) are accepted at most establishments.
+      Please avoid using ATMs alone—always request escort assistance from your Serorome Valley Ventures guide.
     </p>
 
     <h2 class="section-title">Johannesburg Photo Gallery</h2>
+
     <div class="gallery">
-      <img src="joburg%20city.jpg" alt="Johannesburg City" />
-      <img src="mandela%20house%20vilakazi%20street.jpg" alt="Mandela House Vilakazi Street" />
-      <img src="sandton%20city.jpg" alt="Sandton City" />
-      <img src="Soweto-Towers%20full%20view.jpg" alt="Soweto Towers" />
-      <img src="aerial-view-vilikazi%20street.webp" alt="Vilikazi Street Aerial View" />
+      <div>
+        <img src="joburg city.jpg" alt="Johannesburg City Skyline" />
+        <div class="caption">Johannesburg CBD – The City of Gold Awakens</div>
+      </div>
+
+      <div>
+        <img src="mandela house vilakazi street.jpg" alt="Mandela House Vilakazi Street" />
+        <div class="caption">Mandela House – Walk Through the Footsteps of History</div>
+      </div>
+
+      <div>
+        <img src="sandton city.jpg" alt="Sandton City" />
+        <div class="caption">Sandton City – Africa’s Premier Luxury District</div>
+      </div>
+
+      <div>
+        <img src="Soweto-Towers full view.jpg" alt="Soweto Towers" />
+        <div class="caption">Soweto Towers – The Legendary Leap of Faith Bungee</div>
+      </div>
+
+      <div>
+        <img src="aerial-view-vilikazi street.webp" alt="Vilakazi Street Aerial" />
+        <div class="caption">Vilakazi Street – The Only Street of Two Nobel Laureates</div>
+      </div>
+
+      <div>
+        <img src="soweto bungee jumping leap of faith.jpg" alt="Soweto Bungee Jumping" />
+        <div class="caption">Take the Leap! Soweto Bungee Jumping Experience</div>
+      </div>
+    </div>
+
+    <!-- PRICING SECTION (johannesburgpricing.html inserted here) -->
+    <h2 class="section-title">Johannesburg Pricing (Dynamic)</h2>
+
+    <div class="pricing-box">
+      <div class="pricing-toggle" onclick="togglePricing()">Show / Hide Pricing</div>
+
+      <div id="pricing-content" class="pricing-content">
+        <table>
+          <tr>
+            <th>Service</th>
+            <th>Price (Rands)</th>
+            <th>Price (USD)</th>
+          </tr>
+
+          <tr>
+            <td>Daily Transportation (private)</td>
+            <td>R4000</td>
+            <td>$220</td>
+          </tr>
+
+          <tr>
+            <td>Meals & Refreshments (group 5–7 ppl)</td>
+            <td>R4500</td>
+            <td>$250</td>
+          </tr>
+
+          <tr>
+            <td>Destinations (per person)</td>
+            <td>R280 (approx.)</td>
+            <td>$15 pp</td>
+          </tr>
+
+          <tr>
+            <td>Accommodation (per person)</td>
+            <td>Varies</td>
+            <td>Up to $180 pp</td>
+          </tr>
+        </table>
+
+        <p style="margin-top:15px; color:#ffda7b; font-style:italic;">
+          All travelers must use South African Rand (ZAR).  
+          Prices vary depending on weather, peak seasons, and fuel conditions.  
+          Serorome Valley Ventures guides ensure group safety — please remain together during all excursions.
+        </p>
+      </div>
     </div>
 
     <div class="button-box">
@@ -127,6 +253,7 @@
     <div class="back">
       <a href="destinations.html">&#8592; Back to Destinations</a>
     </div>
+
   </div>
 </body>
 </html>
