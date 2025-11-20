@@ -75,6 +75,16 @@
     #paypal-button-container {
       margin-top: 25px;
     }
+
+    .visa-note {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      color: #ffdd99;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
   </style>
 </head>
 
@@ -86,6 +96,13 @@
       <div id="summary"></div>
 
       <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
+
+      <!-- VISA NOTICE (NO VISA IS CHARGED ONLINE) -->
+      <div class="visa-note">
+        <strong>Visa Notice:</strong>  
+        Visa fees are <strong>not included</strong> and <strong>must be paid in cash at the border</strong> by all travelers.  
+        SVV does not collect visa payments online.
+      </div>
 
       <!-- PAYPAL BUTTON -->
       <div id="paypal-button-container"></div>
@@ -110,7 +127,7 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
-    // CART FORMAT:
+    // CART FORMAT (USD ONLY)
     // [
     //   { id:"...", title:"...", qty:1, unit_usd:430, subtotal_usd:430, meta:{...} }
     // ]
