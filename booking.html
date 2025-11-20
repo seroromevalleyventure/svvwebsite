@@ -107,28 +107,19 @@
       border-top: 2px solid goldenrod;
     }
 
-    @media (max-width: 768px) {
-      .content {
-        padding: 25px;
-      }
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-    }
-
     .add-on-btn {
-      display:inline-block; 
-      background: goldenrod; 
-      color:black; 
-      padding:12px 20px; 
-      border-radius:8px; 
-      font-weight:bold; 
-      text-decoration:none; 
+      display:inline-block;
+      background: goldenrod;
+      color:black;
+      padding:12px 20px;
+      border-radius:8px;
+      font-weight:bold;
+      text-decoration:none;
       margin-bottom:20px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
+
     .add-on-btn:hover {
       background: #ffda77;
     }
@@ -157,7 +148,7 @@
 
     <!-- Johannesburg Add-On Button -->
     <div style="text-align:center;">
-      <a class="add-on-btn" href="#booking-form" onclick="document.getElementById('destination').value='Johannesburg';">
+      <a class="add-on-btn" href="#booking-form" onclick="selectJohannesburg()">
         Book Johannesburg Add-On
       </a>
     </div>
@@ -202,39 +193,30 @@
     © 2025 Serorome Valley Ventures • All Rights Reserved
   </footer>
 
-  <!-- LocalStorage script for checkout integration -->
+  <!-- Clean LocalStorage script -->
   <script>
+    function selectJohannesburg() {
+      document.getElementById('destination').value = 'Johannesburg';
+    }
+
     const form = document.getElementById('booking-form');
 
-    form.addEventListener('submit', function(e){
-      // Save data before Formspree sends it
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const destination = document.getElementById('destination').value;
-      const dates = document.getElementById('dates').value;
-      const guests = parseInt(document.getElementById('guests').value) || 1;
-      const message = document.getElementById('message').value;
-
-      // Placeholder fees (will update per destination later)
+    form.addEventListener('submit', function(){
       const svvOrder = {
-        name, email, phone, destination, dates, guests, message,
-        vanFee: 0, meals: 0, siteFees: 0, season: 'low'
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        destination: document.getElementById('destination').value,
+        dates: document.getElementById('dates').value,
+        guests: document.getElementById('guests').value,
+        message: document.getElementById('message').value
       };
 
+      // Save inquiry info only (pricing handled per destination pages)
       localStorage.setItem('svvOrder', JSON.stringify(svvOrder));
-      console.log('Booking saved for checkout:', svvOrder);
-
-      // Form submission continues normally (Formspree)
-    });
-
-    // Add-On Button stores Johannesburg in localStorage if clicked
-    const addOnBtn = document.querySelector('.add-on-btn');
-    addOnBtn.addEventListener('click', () => {
-      let currentOrder = JSON.parse(localStorage.getItem('svvOrder')) || {};
-      currentOrder.destination = 'Johannesburg';
-      localStorage.setItem('svvOrder', JSON.stringify(currentOrder));
+      console.log("Inquiry saved:", svvOrder);
     });
   </script>
+
 </body>
 </html>
