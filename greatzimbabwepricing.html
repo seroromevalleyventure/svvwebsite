@@ -56,8 +56,8 @@
   </style>
   <script>
     function addToCart(item, price) {
-      alert(item + " added to cart: " + price);
-      // Here you can integrate real cart functionality
+      alert(item + " added to cart: $" + price);
+      // Integrate real cart functionality here
     }
   </script>
 </head>
@@ -86,7 +86,7 @@
       <li>UNESCO World Heritage Site featuring ancient stone ruins.</li>
       <li>Divided into Hill Complex, Valley Complex, and Great Enclosure.</li>
       <li>Museum on-site displays famous Zimbabwe Bird carvings.</li>
-      <li>Guided tours available: <span class="price">US$3–$5</span>
+      <li>Guided tours: <span class="price">US$3–$5</span>
         <button class="add-to-cart" onclick="addToCart('Guided Tour', 5)">Add to Cart</button>
       </li>
       <li>Entry Price: <span class="price">US$15 per adult / US$8 per child</span>
@@ -94,7 +94,9 @@
       </li>
       <li>Craft souvenirs: <span class="price">US$2–$50</span></li>
       <li>Located approximately 30 km southeast of Masvingo town.</li>
-      <li>Tour Duration: 3–6 hours <button class="add-to-cart" onclick="addToCart('Great Zimbabwe Tour', 15)">Trip Fee US$15</button></li>
+      <li>Tour Duration: 3–6 hours 
+        <button class="add-to-cart" onclick="addToCart('Great Zimbabwe Tour', 15)">Trip Fee US$15</button>
+      </li>
     </ul>
   </div>
 
@@ -114,7 +116,9 @@
         <button class="add-to-cart" onclick="addToCart('Game Drive', 15)">Add to Cart</button>
       </li>
       <li>Activities include guided walks, birdwatching, boat cruises, and picnics.</li>
-      <li>Tour Duration: 3–6 hours <button class="add-to-cart" onclick="addToCart('Lake Mutirikwi Tour', 15)">Trip Fee US$15</button></li>
+      <li>Tour Duration: 3–6 hours 
+        <button class="add-to-cart" onclick="addToCart('Lake Mutirikwi Tour', 15)">Trip Fee US$15</button>
+      </li>
     </ul>
   </div>
 
@@ -123,7 +127,9 @@
     <ul>
       <li>Game drives and wildlife spotting.</li>
       <li>Guided walks and birdwatching.</li>
-      <li>Tour Duration: 3–6 hours <button class="add-to-cart" onclick="addToCart('Gonarezhou Tour', 15)">Trip Fee US$15</button></li>
+      <li>Tour Duration: 3–6 hours 
+        <button class="add-to-cart" onclick="addToCart('Gonarezhou Tour', 15)">Trip Fee US$15</button>
+      </li>
     </ul>
   </div>
 
@@ -161,6 +167,12 @@
   <div class="section">
     <h3>Accommodation Options (per couple per night)</h3>
     <ul>
+      <li>Great Zimbabwe Hotel — <span class="price">US$194.00</span>
+        <button class="add-to-cart" onclick="addToCart('Great Zimbabwe Hotel', 194)">Add to Cart</button>
+      </li>
+      <li>Churchill Arms — <span class="price">US$107.00</span>
+        <button class="add-to-cart" onclick="addToCart('Churchill Arms', 107)">Add to Cart</button>
+      </li>
       <li>Lodge At The Ancient City — <span class="price">R 1 899</span>
         <button class="add-to-cart" onclick="addToCart('Lodge At The Ancient City', 1899)">Add to Cart</button>
       </li>
