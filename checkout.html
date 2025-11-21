@@ -97,10 +97,10 @@
 
       <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
 
-      <!-- VISA NOTICE (NO VISA IS CHARGED ONLINE) -->
+      <!-- VISA NOTICE -->
       <div class="visa-note">
-        <strong>Visa Notice:</strong>  
-        Visa fees are <strong>not included</strong> and <strong>must be paid in cash at the border</strong> by all travelers.  
+        <strong>Visa Notice:</strong>
+        Visa fees are <strong>not included</strong> and <strong>must be paid in cash at the border</strong> by all travelers.
         SVV does not collect visa payments online.
       </div>
 
@@ -111,7 +111,7 @@
         <h3>Bank EFT Details</h3>
         <p><strong>Account Name:</strong> SOBA Entertainment (PTY) LTD</p>
         <p><strong>Bank:</strong> FNB – First National Bank</p>
-        <p><strong>Account Number:</strong> 63183109967</p>
+        <p><strong>Account Number:</strong> 63183484799</p> <!-- UPDATED -->
         <p><strong>Branch Code:</strong> 250655 (Universal)</p>
         <p><strong>SWIFT Code:</strong> FIRNZAJJ</p>
         <p><strong>Reference:</strong> Your Name + Travel</p>
@@ -127,11 +127,7 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
-    // CART FORMAT (USD ONLY)
-    // [
-    //   { id:"...", title:"...", qty:1, unit_usd:430, subtotal_usd:430, meta:{...} }
-    // ]
-
+    // CART FORMAT
     const cart = JSON.parse(localStorage.getItem("svvCart")) || [];
     let totalUSD = 0;
 
@@ -158,7 +154,6 @@
       document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
     }
 
-    // PAYPAL BUTTON
     paypal.Buttons({
       createOrder: function(data, actions) {
         return actions.order.create({
