@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livingstone 2026 Pricing - Serorome Valley Ventures</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f1f5f9;
+      background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%),
+        url('livingstonebackgroundpic.png') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: multiply;
+    }
+
+    .content {
+      background: rgba(0,0,0,0.65);
+      margin: 40px auto;
+      padding: 35px;
+      border-radius: 15px;
+      max-width: 900px;
+    }
+
+    h1, h2 { color: goldenrod; text-align: center; margin-bottom: 20px; }
+    h3 { color: #ffda77; margin-top: 25px; }
+    p, li { font-size: 1.05em; line-height: 1.6; margin-bottom: 12px; }
+    ul { padding-left: 20px; }
+    .button-back { text-align: center; margin-top: 25px; }
+    .button-back a { background: gold; color: black; font-weight: bold; padding: 12px 25px; border-radius: 8px; text-decoration: none; display: inline-block; }
+    .small-print { font-size: 0.85em; color: #dcdcdc; margin-top: 25px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; color: white; }
+    table th, table td { border: 1px solid goldenrod; padding: 10px; text-align: left; }
+    .note { font-style: italic; margin-top: 5px; color: #ffeb9c; }
+    .add-btn {
+      background: gold;
+      color: black;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s;
+    }
+    .add-btn:hover {
+      background: #ffe66e;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Livingstone 2026 Pricing & Experiences</h1>
+
+    <p><strong>Disclaimer:</strong> U.S. passport holders and North America passport holders do not need a visa for tourism in Zambia and can stay for up to 90 days without a visa. While the official currency is the Zambian kwacha, US dollars are widely accepted, especially for tourism expenses. Bring small, crisp bills ($1, $5, $10, $20) as change can be difficult for larger denominations.</p>
+
+    <h2>At-a-Glance Summary</h2>
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Details / Options</th>
+        <th>Price (USD)</th>
+        <th>Add to Cart</th>
+      </tr>
+      <tr>
+        <td>Accommodation</td>
+        <td>New Fairmont Hotel and Casino (Livingstone)</td>
+        <td>93.00</td>
+        <td><button class="add-btn" onclick="addToCart('New Fairmont Hotel', 93)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Accommodation</td>
+        <td>Victoria Falls Hotel</td>
+        <td>178.00</td>
+        <td><button class="add-btn" onclick="addToCart('Victoria Falls Hotel', 178)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Accommodation</td>
+        <td>Holiday Inn</td>
+        <td>86.00</td>
+        <td><button class="add-btn" onclick="addToCart('Holiday Inn', 86)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Packages</td>
+        <td>Standard Twin / Family Room – Dinner, B&B</td>
+        <td>185.00</td>
+        <td><button class="add-btn" onclick="addToCart('Standard Twin / Family Room – Dinner, B&B', 185)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Packages</td>
+        <td>Full Board (3 meals/day)</td>
+        <td>210.00</td>
+        <td><button class="add-btn" onclick="addToCart('Full Board (3 meals/day)', 210)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Packages</td>
+        <td>All Inclusive (meals, drinks, activities)</td>
+        <td>320.00</td>
+        <td><button class="add-btn" onclick="addToCart('All Inclusive', 320)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Cultural</td>
+        <td>Local village & Victoria Falls view (30–45 min)</td>
+        <td>30.00</td>
+        <td><button class="add-btn" onclick="addToCart('Local village & Victoria Falls view', 30)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Cultural</td>
+        <td>Boma Dinner & Drum Show (~3 hours)</td>
+        <td>55.00</td>
+        <td><button class="add-btn" onclick="addToCart('Boma Dinner & Drum Show', 55)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Scenic / Adventure</td>
+        <td>Sunset Cruise Zambezi River</td>
+        <td>49.00</td>
+        <td><button class="add-btn" onclick="addToCart('Sunset Cruise Zambezi River', 49)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Scenic / Adventure</td>
+        <td>Guided Tour of Victoria Falls (+ park fees)</td>
+        <td>26.00</td>
+        <td><button class="add-btn" onclick="addToCart('Guided Tour of Victoria Falls', 26)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Scenic / Adventure</td>
+        <td>Helicopter Flight “Flight of the Angels” (12–13 min)</td>
+        <td>150.00</td>
+        <td><button class="add-btn" onclick="addToCart('Helicopter Flight', 150)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Scenic / Adventure</td>
+        <td>Microlight Flight (30 min)</td>
+        <td>386.00</td>
+        <td><button class="add-btn" onclick="addToCart('Microlight Flight', 386)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Adventure</td>
+        <td>Cultural Village Tour</td>
+        <td>60.00</td>
+        <td><button class="add-btn" onclick="addToCart('Cultural Village Tour', 60)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Adventure</td>
+        <td>White Water Rafting (full day)</td>
+        <td>150.00</td>
+        <td><button class="add-btn" onclick="addToCart('White Water Rafting', 150)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Adventure</td>
+        <td>Bungee Jumping (Victoria Falls Bridge)</td>
+        <td>168.00</td>
+        <td><button class="add-btn" onclick="addToCart('Bungee Jumping', 168)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Adventure</td>
+        <td>Tandem Bridge Swing</td>
+        <td>263.00</td>
+        <td><button class="add-btn" onclick="addToCart('Tandem Bridge Swing', 263)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Adventure</td>
+        <td>High Wire Activities (zip line / gorge swing)</td>
+        <td>77.00</td>
+        <td><button class="add-btn" onclick="addToCart('High Wire Activities', 77)">Add</button></td>
+      </tr>
+    </table>
+
+    <p class="note">Note: These prices are approximate. Fuzzy logic applies—actual expenses vary depending on preferences, activity choices, group size, season, and availability.</p>
+
+    <p class="small-print">
+      Prices are subject to change and may exclude additional fees. National park fees are separate for some activities; e.g., Zimbabwean park fee for Victoria Falls tour is $50 for international visitors, $30 for regional visitors. Some activities require minimum participants or are seasonal—booking in advance is recommended.
+    </p>
+
+    <div class="button-back">
+      <a href="checkout.html">&#8594; Go to Checkout</a>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(title, unit_usd) {
+      let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+      const existingItemIndex = cart.findIndex(item => item.title === title);
+      if (existingItemIndex > -1) {
+        cart[existingItemIndex].qty += 1;
+        cart[existingItemIndex].subtotal_usd = cart[existingItemIndex].qty * cart[existingItemIndex].unit_usd;
+      } else {
+        cart.push({
+          title: title,
+          unit_usd: unit_usd,
+          qty: 1,
+          subtotal_usd: unit_usd
+        });
+      }
+      localStorage.setItem("svvCart", JSON.stringify(cart));
+      alert(title + " added to cart.");
+    }
+  </script>
+</body>
+</html>
 
