@@ -1,358 +1,287 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Johannesburg Pricing 2026 — Serorome Valley Ventures</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    :root{
-      --bg:#041018;
-      --card: rgba(0,0,0,0.7);
-      --accent: #ffd366;
-      --muted: #f6e8b0;
-    }
-    body{
-      margin:0;
-      font-family:"Segoe UI",system-ui,Arial;
-      background: linear-gradient(180deg,#041018cc,#041018cc), url('johannesburgPNG.png') center/cover fixed;
-      color:#fff;
-      padding:28px;
-    }
-    .wrap{max-width:980px;margin:0 auto;}
-    header{text-align:center;margin-bottom:18px}
-    h1{color:var(--accent);margin:0;font-size:1.6rem}
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,215,0,0.07)}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    label{display:block;margin-top:10px;color:var(--muted);font-weight:600}
-    input[type="number"], select {width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#071219;color:#fff}
-    .qty{display:flex;gap:8px;align-items:center}
-    .qty button{padding:8px 10px;border-radius:8px;border:none;background:var(--accent);color:#000;font-weight:700;cursor:pointer}
-    .small{font-size:.92rem;color:#ffeeb0}
-    .muted{color:#ffd}
-    .total-box{background:rgba(255,215,0,0.08);padding:12px;border-radius:8px;margin-top:12px;color:#000}
-    .btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#000;border-radius:10px;font-weight:800;cursor:pointer;border:none}
-    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,215,0,0.08)}
-    ul{padding-left:18px}
-    table{width:100%;border-collapse:collapse;margin-top:10px}
-    th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
-    footer{margin-top:20px;text-align:center;color:#ffd}
-    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
-  </style>
+<meta charset="utf-8" />
+<title>Johannesburg Pricing 2026 — Serorome Valley Ventures</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+:root{
+  --bg:#041018;
+  --card: rgba(0,0,0,0.7);
+  --accent: #ffd366;
+  --muted: #f6e8b0;
+}
+body{
+  margin:0;
+  font-family:"Segoe UI",system-ui,Arial;
+  background: linear-gradient(180deg,#041018cc,#041018cc), url('johannesburgPNG.png') center/cover fixed;
+  color:#fff;
+  padding:28px;
+}
+.wrap{max-width:980px;margin:0 auto;}
+header{text-align:center;margin-bottom:18px}
+h1{color:var(--accent);margin:0;font-size:1.6rem}
+.card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,215,0,0.07)}
+.grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+label{display:block;margin-top:10px;color:var(--muted);font-weight:600}
+input[type="number"], select {width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#071219;color:#fff}
+.qty{display:flex;gap:8px;align-items:center}
+.qty button{padding:8px 10px;border-radius:8px;border:none;background:var(--accent);color:#000;font-weight:700;cursor:pointer}
+.small{font-size:.92rem;color:#ffeeb0}
+.muted{color:#ffd}
+.total-box{background:rgba(255,215,0,0.08);padding:12px;border-radius:8px;margin-top:12px;color:#000}
+.btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#000;border-radius:10px;font-weight:800;cursor:pointer;border:none}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,215,0,0.08)}
+ul{padding-left:18px}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
+footer{margin-top:20px;text-align:center;color:#ffd}
+@media(max-width:900px){ .grid{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Johannesburg Stopover — 2026 Pricing & Cart</h1>
-      <div class="small">Prices displayed in <strong>US$</strong> (primary) and ZAR for reference. Visa fees are NOT charged online — pay cash at border.</div>
-    </header>
+<div class="wrap">
+<header>
+  <h1>Johannesburg Stopover — 2026 Pricing & Cart</h1>
+  <div class="small">Prices displayed in <strong>US$</strong> (primary) and ZAR for reference. Visa fees are <strong>not</strong> charged online — pay cash at border.</div>
+</header>
 
-    <div class="grid">
-      <!-- left: selector -->
-      <div class="card" aria-live="polite">
-        <h2 style="color:var(--accent);margin:0 0 8px">Build your Johannesburg Stopover</h2>
+<div class="grid">
+  <!-- left: selector -->
+  <div class="card" aria-live="polite">
+    <h2 style="color:var(--accent);margin:0 0 8px">Build your Johannesburg Stopover</h2>
 
-        <label>Number of travellers (total)</label>
-        <div class="qty">
-          <button id="decPax">−</button>
-          <input id="pax" type="number" min="1" value="2" />
-          <button id="incPax">+</button>
-        </div>
-        <div class="small">Use the traveller count to compute per-person fees.</div>
+    <label>Number of travellers (total)</label>
+    <div class="qty">
+      <button id="decPax">−</button>
+      <input id="pax" type="number" min="1" value="2" />
+      <button id="incPax">+</button>
+    </div>
+    <div class="small">Use the traveller count to compute per-person fees.</div>
 
-        <label style="margin-top:12px">Choose destination stops (US$15 per person each)</label>
-        <select id="destSelect" multiple size="4" style="height:120px;padding:10px;border-radius:8px;background:#071219;color:#fff">
-          <option value="hector">Hector Pieterson Memorial — 45 min</option>
-          <option value="vilakazi">Vilakazi Street / Mandela House — 45 min</option>
-          <option value="cradle">Cradle of Humankind — historic site</option>
-          <option value="sandton">Sandton & Mandela Square — 45 min</option>
-        </select>
+    <label style="margin-top:12px">Choose destination stops (US$15 per person each)</label>
+    <select id="destSelect" multiple size="4">
+      <option value="hector">Hector Pieterson Memorial — 45 min</option>
+      <option value="vilakazi">Vilakazi Street / Mandela House — 45 min</option>
+      <option value="cradle">Cradle of Humankind — historic site</option>
+      <option value="sandton">Sandton & Mandela Square — 45 min</option>
+    </select>
 
-        <label>Transport — private van</label>
-        <div style="display:flex;gap:8px;align-items:center">
-          <select id="transportMode">
-            <option value="none">No transport (arrive independently)</option>
-            <option value="van">Private Van — US$220 / day (R4000)</option>
-          </select>
-          <input id="transportDays" type="number" min="1" value="1" style="width:96px" />
-        </div>
-        <div class="small">Set days for transport if selecting private van.</div>
+    <label>Transport — private van</label>
+    <div style="display:flex;gap:8px;align-items:center">
+      <select id="transportMode">
+        <option value="none">No transport (arrive independently)</option>
+        <option value="van">Private Van — US$220 / day (R4000)</option>
+      </select>
+      <input id="transportDays" type="number" min="1" value="1" style="width:96px" />
+    </div>
+    <div class="small">Set days for transport if selecting private van.</div>
 
-        <label style="margin-top:10px">Meals & refreshments (group)</label>
-        <div style="display:flex;gap:8px;align-items:center">
-          <select id="mealsOpt">
-            <option value="none">None</option>
-            <option value="group">Group meal package — US$250 (R4500) per group (5–7 pax)</option>
-            <option value="perperson">Per person meal allowance — US$50 pp</option>
-          </select>
-          <input id="mealsGroupsize" type="number" min="1" value="2" style="width:96px" />
-        </div>
-        <div class="small">If selecting group package, set group size (5–7 recommended).</div>
+    <label style="margin-top:10px">Meals & refreshments (group)</label>
+    <div style="display:flex;gap:8px;align-items:center">
+      <select id="mealsOpt">
+        <option value="none">None</option>
+        <option value="group">Group meal package — US$250 (R4500) per group (5–7 pax)</option>
+        <option value="perperson">Per person meal allowance — US$50 pp</option>
+      </select>
+      <input id="mealsGroupsize" type="number" min="1" value="2" style="width:96px" />
+    </div>
+    <div class="small">If selecting group package, set group size (5–7 recommended).</div>
 
-        <label style="margin-top:12px">Accommodation / Refresh (optional)</label>
-        <div style="display:flex;gap:8px;align-items:center">
-          <select id="accomOpt">
-            <option value="none">No accommodation</option>
-            <option value="basic">Refresh only / basic (estimate) — up to US$60 pp</option>
-            <option value="premium">Premium rest (estimate) — up to US$180 pp</option>
-          </select>
-          <input id="nights" type="number" min="1" value="1" style="width:96px" />
-        </div>
-
-        <label style="margin-top:12px">Season / Notes (affects pricing)</label>
-        <select id="season">
-          <option value="low">Low season (standard)</option>
-          <option value="high">High season (+15% surcharge)</option>
-        </select>
-
-        <div style="margin-top:14px">
-          <button class="btn" id="calcBtn">Recalculate Estimate</button>
-          <button class="btn ghost" id="resetBtn">Reset</button>
-        </div>
-
-        <div class="small" style="margin-top:12px;color:#ffd">Note: Prices shown are estimates. Final invoicing uses live exchange rates and may vary with fuel/seasonal surcharges.</div>
-      </div>
-
-      <!-- right: totals & cart -->
-      <div class="card">
-        <h3 style="color:var(--accent);margin:0 0 8px">Estimate & Add to Cart</h3>
-
-        <div id="estimateBox" class="muted">
-          <div><strong>Exchange rate (snapshot):</strong> <span id="rate">1 USD = 18.00 ZAR</span></div>
-
-          <table>
-            <tr><th>Line item</th><th style="text-align:right">Amount (USD)</th></tr>
-            <tbody id="lines">
-              <!-- populated by JS -->
-            </tbody>
-          </table>
-
-          <div class="total-box">
-            <div style="display:flex;justify-content:space-between">
-              <div><strong>Subtotal (USD)</strong></div>
-              <div id="subtotalUSD">$0.00</div>
-            </div>
-            <div style="display:flex;justify-content:space-between;margin-top:6px">
-              <div><strong>Estimated (ZAR)</strong></div>
-              <div id="subtotalZAR">R0.00</div>
-            </div>
-            <div style="margin-top:8px;color:#7a4a00;font-size:.95rem">
-              <em id="surchargeNote"></em>
-            </div>
-          </div>
-
-          <div style="margin-top:14px">
-            <label for="itemTitle" class="small">Cart item title (editable)</label>
-            <input id="itemTitle" type="text" value="Johannesburg Stopover Package — Custom" />
-          </div>
-
-          <div style="margin-top:12px; display:flex; gap:8px;">
-            <button class="btn" id="addToCart">Add to Cart</button>
-            <button class="btn ghost" id="goCheckout">Go to Checkout</button>
-          </div>
-
-          <div style="margin-top:12px">
-            <h4 style="margin:6px 0;color:var(--accent)">Cart preview</h4>
-            <div id="cartPreview" class="small">No items in cart.</div>
-          </div>
-        </div>
-      </div>
+    <label style="margin-top:12px">Accommodation / Refresh (optional)</label>
+    <div style="display:flex;gap:8px;align-items:center">
+      <select id="accomOpt">
+        <option value="none">No accommodation</option>
+        <option value="basic">Refresh only / basic (estimate) — up to US$60 pp</option>
+        <option value="premium">Premium rest (estimate) — up to US$180 pp</option>
+      </select>
+      <input id="nights" type="number" min="1" value="1" style="width:96px" />
     </div>
 
-    <footer>
-      <div class="card" style="margin-top:18px">
-        <h3 style="margin:0;color:var(--accent)">Travel Advisory & Visa</h3>
-        <p class="small">
-          Visa fees are <strong>not</strong> collected online — travelers must pay applicable visa/border fees <strong>in cash on arrival</strong>.
-          South Africa uses Rands (ZAR). Carry local cash and a Visa/MasterCard where possible. Ask your Serorome Valley Ventures guide to escort you at ATMs.
-        </p>
-        <p class="small">Prices may change due to seasonality, weather, or fuel. This page uses fuzzy inputs so you can quickly adapt quantities — always confirm with an SVV agent.</p>
-      </div>
-    </footer>
+    <label style="margin-top:12px">Season / Notes (affects pricing)</label>
+    <select id="season">
+      <option value="low">Low season (standard)</option>
+      <option value="high">High season (+15% surcharge)</option>
+    </select>
+
+    <div style="margin-top:14px">
+      <button class="btn" id="calcBtn">Recalculate Estimate</button>
+      <button class="btn ghost" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="small" style="margin-top:12px;color:#ffd">Note: Prices shown are estimates. Final invoicing uses live exchange rates and may vary with fuel/seasonal surcharges.</div>
   </div>
 
-  <script>
-    // --- CONFIG / DEFAULTS ---
-    const RATE = 18.00; // ZAR per USD snapshot (example). Update as needed.
-    const DEST_PRICE_USD = 15; // per destination per person
-    const VAN_DAY_USD = 220; // per day
-    const GROUP_MEAL_USD = 250; // per group
-    const PERPERSON_MEAL_USD = 50;
-    const ACCOM_BASIC_USD = 60;
-    const ACCOM_PREMIUM_USD = 180;
+  <!-- right: totals & cart -->
+  <div class="card">
+    <h3 style="color:var(--accent);margin:0 0 8px">Estimate & Add to Cart</h3>
+    <div id="estimateBox" class="muted">
+      <div><strong>Exchange rate (snapshot):</strong> <span id="rate"></span></div>
 
-    // Helpers
-    const $ = id => document.getElementById(id);
-    const fmtUSD = v => '$' + Number(v).toFixed(2);
-    const fmtZAR = v => 'R' + Number(v).toLocaleString(undefined,{maximumFractionDigits:2});
+      <table>
+        <tr><th>Line item</th><th style="text-align:right">Amount (USD)</th></tr>
+        <tbody id="lines">
+          <!-- populated by JS -->
+        </tbody>
+      </table>
 
-    // Load initial cart preview
-    function renderCartPreview(){
-      const cart = JSON.parse(localStorage.getItem('svvCart') || '[]');
-      if(!cart.length){ $('cartPreview').innerHTML = 'No items in cart.'; return; }
-      let html = '<ul>';
-      cart.forEach(it=>{
-        html += `<li><strong>${it.title}</strong> — US$${it.subtotal_usd.toFixed(2)}</li>`;
-      });
-      html += '</ul>';
-      html += `<div style="margin-top:6px">Cart total: <strong>US$${cart.reduce((s,i)=>s+i.subtotal_usd,0).toFixed(2)}</strong></div>`;
-      $('cartPreview').innerHTML = html;
-    }
-    renderCartPreview();
+      <div class="total-box">
+        <div style="display:flex;justify-content:space-between">
+          <div><strong>Subtotal (USD)</strong></div>
+          <div id="subtotalUSD">$0.00</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px">
+          <div><strong>Estimated (ZAR)</strong></div>
+          <div id="subtotalZAR">R0.00</div>
+        </div>
+        <div style="margin-top:8px;color:#7a4a00;font-size:.95rem">
+          <em id="surchargeNote"></em>
+        </div>
+      </div>
 
-    // Calculation logic (fuzzy-ready)
-    function calculateEstimate(){
-      const pax = Math.max(1, Number($('pax').value) || 1);
-      const selectedDest = Array.from($('destSelect').selectedOptions).map(o=>o.value);
-      const destCount = selectedDest.length;
-      const transportMode = $('transportMode').value;
-      const transportDays = Math.max(1, Number($('transportDays').value) || 1);
-      const mealsOpt = $('mealsOpt').value;
-      const mealsGroupSize = Math.max(1, Number($('mealsGroupsize').value) || 1);
-      const accomOpt = $('accomOpt').value;
-      const nights = Math.max(1, Number($('nights').value) || 1);
-      const season = $('season').value;
+      <div style="margin-top:14px">
+        <label for="itemTitle" class="small">Cart item title (editable)</label>
+        <input id="itemTitle" type="text" value="Johannesburg Stopover Package — Custom" />
+      </div>
 
-      // Base lines
-      const lines = [];
+      <div style="margin-top:12px; display:flex; gap:8px;">
+        <button class="btn" id="addToCart">Add to Cart</button>
+        <button class="btn ghost" id="goCheckout">Go to Checkout</button>
+      </div>
 
-      // Destinations per person
-      if(destCount > 0){
-        const destUSD = DEST_PRICE_USD * destCount * pax;
-        lines.push({title:`Sightseeing (${destCount} stop(s)) — ${pax} pax`, amount: destUSD});
-      }
+      <div style="margin-top:12px">
+        <h4 style="margin:6px 0;color:var(--accent)">Cart preview</h4>
+        <div id="cartPreview" class="small">No items in cart.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      // Transport
-      let transportUSD = 0;
-      if(transportMode === 'van'){
-        transportUSD = VAN_DAY_USD * transportDays;
-        lines.push({title:`Private van — ${transportDays} day(s)`, amount: transportUSD});
-      }
+<footer>
+  <div class="card" style="margin-top:18px">
+    <h3 style="margin:0;color:var(--accent)">Travel Advisory & Visa</h3>
+    <p class="small">
+      Visa fees are <strong>not</strong> collected online — travelers must pay applicable visa/border fees <strong>in cash on arrival</strong>.
+      South Africa uses Rands (ZAR). Carry local cash and a Visa/MasterCard where possible. Ask your SVV guide to escort you at ATMs.
+    </p>
+    <p class="small">Prices may change due to seasonality, weather, or fuel. This page uses fuzzy inputs so you can quickly adapt quantities — always confirm with an SVV agent.</p>
+  </div>
+</footer>
+</div>
 
-      // Meals
-      let mealsUSD = 0;
-      if(mealsOpt === 'group'){
-        mealsUSD = GROUP_MEAL_USD; // group flat
-        lines.push({title:`Group meal package (group of ${mealsGroupSize})`, amount: mealsUSD});
-      } else if(mealsOpt === 'perperson'){
-        mealsUSD = PERPERSON_MEAL_USD * pax;
-        lines.push({title:`Meals ($${PERPERSON_MEAL_USD}/pp) — ${pax} pax`, amount: mealsUSD});
-      }
+<script>
+// --- CONFIG / DEFAULTS ---
+const RATE = 18.00; // ZAR per USD
+const DEST_PRICE_USD = 15; 
+const VAN_DAY_USD = 220; 
+const GROUP_MEAL_USD = 250; 
+const PERPERSON_MEAL_USD = 50;
+const ACCOM_BASIC_USD = 60;
+const ACCOM_PREMIUM_USD = 180;
 
-      // Accommodation
-      let accomUSD = 0;
-      if(accomOpt === 'basic'){
-        accomUSD = ACCOM_BASIC_USD * pax * nights;
-        lines.push({title:`Basic refresh/accom — ${nights} night(s)`, amount: accomUSD});
-      } else if(accomOpt === 'premium'){
-        accomUSD = ACCOM_PREMIUM_USD * pax * nights;
-        lines.push({title:`Premium accom — ${nights} night(s)`, amount: accomUSD});
-      }
+// Helpers
+const $ = id => document.getElementById(id);
+const fmtUSD = v => '$' + Number(v).toFixed(2);
+const fmtZAR = v => 'R' + Number(v).toLocaleString(undefined,{maximumFractionDigits:2});
 
-      // Subtotal
-      let subtotal = lines.reduce((s,l)=>s + l.amount, 0);
+// Cart rendering
+function renderCartPreview(){
+  const cart = JSON.parse(localStorage.getItem('svvCart')||'[]');
+  if(!cart.length){ $('cartPreview').innerHTML='No items in cart.'; return;}
+  let html='<ul>';
+  cart.forEach(it=>{html+=`<li><strong>${it.title}</strong> — US$${it.subtotal_usd.toFixed(2)}</li>`;});
+  html+='</ul>';
+  html+=`<div style="margin-top:6px">Cart total: <strong>US$${cart.reduce((s,i)=>s+i.subtotal_usd,0).toFixed(2)}</strong></div>`;
+  $('cartPreview').innerHTML = html;
+}
+renderCartPreview();
 
-      // Season surcharge
-      let surcharge = 0;
-      if(season === 'high'){
-        surcharge = subtotal * 0.15;
-        lines.push({title:'High-season surcharge (15%)', amount: surcharge});
-      }
+// Calculation logic
+function calculateEstimate(){
+  const pax = Math.max(1,Number($('pax').value||1));
+  const selectedDest = Array.from($('destSelect').selectedOptions).map(o=>o.value);
+  const destCount = selectedDest.length;
+  const transportMode = $('transportMode').value;
+  const transportDays = Math.max(1,Number($('transportDays').value||1));
+  const mealsOpt = $('mealsOpt').value;
+  const mealsGroupSize = Math.max(1,Number($('mealsGroupsize').value||1));
+  const accomOpt = $('accomOpt').value;
+  const nights = Math.max(1,Number($('nights').value||1));
+  const season = $('season').value;
 
-      const total = subtotal + surcharge;
+  const lines=[];
+  if(destCount>0) lines.push({title:`Sightseeing (${destCount} stop(s)) — ${pax} pax`, amount: DEST_PRICE_USD*destCount*pax});
+  if(transportMode==='van') lines.push({title:`Private van — ${transportDays} day(s)`, amount: VAN_DAY_USD*transportDays});
+  if(mealsOpt==='group') lines.push({title:`Group meal package (group of ${mealsGroupSize})`, amount: GROUP_MEAL_USD});
+  else if(mealsOpt==='perperson') lines.push({title:`Meals ($${PERPERSON_MEAL_USD}/pp) — ${pax} pax`, amount: PERPERSON_MEAL_USD*pax});
+  if(accomOpt==='basic') lines.push({title:`Basic refresh/accom — ${nights} night(s)`, amount: ACCOM_BASIC_USD*pax*nights});
+  else if(accomOpt==='premium') lines.push({title:`Premium accom — ${nights} night(s)`, amount: ACCOM_PREMIUM_USD*pax*nights});
 
-      // Render lines
-      const tbody = $('lines');
-      tbody.innerHTML = '';
-      if(lines.length === 0){
-        tbody.innerHTML = '<tr><td colspan="2">No services selected</td></tr>';
-      } else {
-        lines.forEach(l=>{
-          const tr = document.createElement('tr');
-          tr.innerHTML = `<td>${l.title}</td><td style="text-align:right">${fmtUSD(l.amount)}</td>`;
-          tbody.appendChild(tr);
-        });
-      }
+  let subtotal = lines.reduce((s,l)=>s+l.amount,0);
+  let surcharge=0;
+  if(season==='high'){ surcharge=subtotal*0.15; lines.push({title:'High-season surcharge (15%)', amount:surcharge}); }
 
-      $('subtotalUSD').textContent = fmtUSD(total);
-      $('subtotalZAR').textContent = fmtZAR(total * RATE);
-      $('surchargeNote').textContent = surcharge ? `Seasonal surcharge applied.` : '';
+  const total = subtotal+surcharge;
 
-      // Return data for adding to cart
-      return {
-        pax, dests: selectedDest, destCount, transportMode, transportDays, mealsOpt, mealsGroupSize, accomOpt, nights,
-        lines, subtotal, total
-      };
-    }
+  const tbody=$('lines');
+  tbody.innerHTML='';
+  if(lines.length===0) tbody.innerHTML='<tr><td colspan="2">No services selected</td></tr>';
+  else lines.forEach(l=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${l.title}</td><td style="text-align:right">${fmtUSD(l.amount)}</td>`;
+    tbody.appendChild(tr);
+  });
 
-    // Event handlers
-    $('incPax').addEventListener('click', ()=>{ $('pax').value = Number($('pax').value || 1) + 1; });
-    $('decPax').addEventListener('click', ()=>{ $('pax').value = Math.max(1, Number($('pax').value || 1) - 1); });
-    $('calcBtn').addEventListener('click', ()=>{ calculateEstimate(); });
-    $('resetBtn').addEventListener('click', ()=>{
-      $('pax').value = 2;
-      $('destSelect').selectedIndex = -1;
-      $('transportMode').value = 'none';
-      $('transportDays').value = 1;
-      $('mealsOpt').value = 'none';
-      $('mealsGroupsize').value = 2;
-      $('accomOpt').value = 'none';
-      $('nights').value = 1;
-      $('season').value = 'low';
-      $('itemTitle').value = 'Johannesburg Stopover Package — Custom';
-      calculateEstimate();
-    });
+  $('subtotalUSD').textContent = fmtUSD(total);
+  $('subtotalZAR').textContent = fmtZAR(total*RATE);
+  $('surchargeNote').textContent = surcharge?'Seasonal surcharge applied.':'';
 
-    // Add to cart behavior
-    $('addToCart').addEventListener('click', ()=>{
-      const data = calculateEstimate();
-      if(data.lines.length === 0){
-        alert('Please select at least one service before adding to cart.');
-        return;
-      }
+  return {pax, lines, total};
+}
 
-      // Build item
-      const title = $('itemTitle').value.trim() || ('Johannesburg Stopover — ' + new Date().toLocaleDateString());
-      const unit_usd = data.total; // store total as unit for simplicity
-      const item = {
-        id: 'joburg_pkg_' + Date.now(),
-        title,
-        qty: 1,
-        unit_usd: Number(unit_usd.toFixed(2)),
-        subtotal_usd: Number(unit_usd.toFixed(2)),
-        meta: {
-          pax: data.pax,
-          destinations: data.dests,
-          transport: data.transportMode,
-          transportDays: data.transportDays,
-          mealsOpt: data.mealsOpt,
-          accomOpt: data.accomOpt,
-          nights: data.nights,
-          season: $('season').value
-        }
-      };
+// Event handlers
+$('incPax').addEventListener('click',()=>{$('pax').value=Number($('pax').value||1)+1; calculateEstimate();});
+$('decPax').addEventListener('click',()=>{$('pax').value=Math.max(1,Number($('pax').value||1)-1); calculateEstimate();});
+$('calcBtn').addEventListener('click',()=>calculateEstimate());
+$('resetBtn').addEventListener('click',()=>{
+  $('pax').value=2;
+  $('destSelect').selectedIndex=-1;
+  $('transportMode').value='none';
+  $('transportDays').value=1;
+  $('mealsOpt').value='none';
+  $('mealsGroupsize').value=2;
+  $('accomOpt').value='none';
+  $('nights').value=1;
+  $('season').value='low';
+  $('itemTitle').value='Johannesburg Stopover Package — Custom';
+  calculateEstimate();
+});
 
-      // Save to svvCart
-      const cart = JSON.parse(localStorage.getItem('svvCart') || '[]');
-      cart.push(item);
-      localStorage.setItem('svvCart', JSON.stringify(cart));
-      renderCartPreview();
-      alert('Added to cart: ' + title + '\\nGo to Checkout to complete payment.');
-    });
+// Cart
+$('addToCart').addEventListener('click',()=>{
+  const data=calculateEstimate();
+  if(data.lines.length===0){ alert('Please select at least one service.'); return; }
+  const item={
+    id:'joburg_pkg_'+Date.now(),
+    title:$('itemTitle').value.trim()||('Johannesburg Stopover — '+new Date().toLocaleDateString()),
+    qty:1, unit_usd:data.total, subtotal_usd:data.total
+  };
+  const cart=JSON.parse(localStorage.getItem('svvCart')||'[]');
+  cart.push(item);
+  localStorage.setItem('svvCart',JSON.stringify(cart));
+  renderCartPreview();
+  alert('Added to cart: '+item.title);
+});
 
-    // Go to checkout
-    $('goCheckout').addEventListener('click', ()=>{
-      const cart = JSON.parse(localStorage.getItem('svvCart') || '[]');
-      if(cart.length === 0){
-        if(!confirm('Cart is empty. Add current selection to cart and go to checkout?')) return;
-        $('addToCart').click();
-      }
-      window.location.href = 'checkout.html';
-    });
+$('goCheckout').addEventListener('click',()=>{
+  const cart=JSON.parse(localStorage.getItem('svvCart')||'[]');
+  if(cart.length===0){ if(!confirm('Cart empty. Add current selection?')) return; $('addToCart').click();}
+  window.location.href='checkout.html';
+});
 
-    // Initial render
-    // Set exchange rate text
-    document.querySelectorAll('#rate').forEach(e=>e.textContent = '1 USD = ' + RATE.toFixed(2) + ' ZAR');
-    calculateEstimate();
-  </script>
+// Initial render
+document.getElementById('rate').textContent='1 USD = '+RATE.toFixed(2)+' ZAR';
+calculateEstimate();
+</script>
 </body>
 </html>
