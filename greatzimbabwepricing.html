@@ -56,8 +56,10 @@
   </style>
   <script>
     function addToCart(item, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ item, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
       alert(item + " added to cart: $" + price);
-      // Integrate real cart functionality here
     }
   </script>
 </head>
@@ -115,7 +117,6 @@
       <li>Game drive: <span class="price">US$15</span>
         <button class="add-to-cart" onclick="addToCart('Game Drive', 15)">Add to Cart</button>
       </li>
-      <li>Activities include guided walks, birdwatching, boat cruises, and picnics.</li>
       <li>Tour Duration: 3–6 hours 
         <button class="add-to-cart" onclick="addToCart('Lake Mutirikwi Tour', 15)">Trip Fee US$15</button>
       </li>
@@ -137,7 +138,7 @@
     <h3>City Tour & Local Shona Village</h3>
     <ul>
       <li>City drive around: 1 hour</li>
-      <li>Visit local Shona village: 2 hours</li>
+      <li>Shona village visit: 2 hours</li>
       <li>Trip Fee per person: <span class="price">US$15</span>
         <button class="add-to-cart" onclick="addToCart('City + Village Tour', 15)">Add to Cart</button>
       </li>
@@ -147,11 +148,11 @@
   <div class="section">
     <h3>Other Attractions</h3>
     <ul>
-      <li>Shagashe Game Park: 5 km from Masvingo</li>
-      <li>Mucheke Township Market: 2 km outside Masvingo</li>
-      <li>Masvingo Craft Village: handmade crafts & artworks</li>
-      <li>Roselli Gallery: paintings, carvings, handmade fabrics</li>
-      <li>Masvingo Golf Course: 18-hole course</li>
+      <li>Shagashe Game Park</li>
+      <li>Mucheke Township Market</li>
+      <li>Masvingo Craft Village</li>
+      <li>Roselli Gallery</li>
+      <li>Masvingo Golf Course</li>
     </ul>
   </div>
 
@@ -173,15 +174,21 @@
       <li>Churchill Arms — <span class="price">US$107.00</span>
         <button class="add-to-cart" onclick="addToCart('Churchill Arms', 107)">Add to Cart</button>
       </li>
-      <li>Lodge At The Ancient City — <span class="price">R 1 899</span>
-        <button class="add-to-cart" onclick="addToCart('Lodge At The Ancient City', 1899)">Add to Cart</button>
+
+      <!-- UPDATED PRICING BELOW -->
+
+      <li>Lodge At The Ancient City — <span class="price">US$150.00</span>
+        <button class="add-to-cart" onclick="addToCart('Lodge At The Ancient City', 150)">Add to Cart</button>
       </li>
-      <li>Mineheart - Wimpy Apartments Lodge — <span class="price">R 1 140</span>
-        <button class="add-to-cart" onclick="addToCart('Mineheart Lodge', 1140)">Add to Cart</button>
+
+      <li>Mineheart - Wimpy Apartments Lodge — <span class="price">US$100.00</span>
+        <button class="add-to-cart" onclick="addToCart('Mineheart - Wimpy Apartments Lodge', 100)">Add to Cart</button>
       </li>
-      <li>Angton's Lodge — <span class="price">R 1 200</span>
-        <button class="add-to-cart" onclick="addToCart('Angtons Lodge', 1200)">Add to Cart</button>
+
+      <li>Angton's Lodge — <span class="price">US$100.00</span>
+        <button class="add-to-cart" onclick="addToCart('Angton\'s Lodge', 100)">Add to Cart</button>
       </li>
+
     </ul>
   </div>
 </div>
