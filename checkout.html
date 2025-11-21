@@ -12,13 +12,11 @@
       background-size: cover;
       color: #fff;
     }
-
     .overlay {
       background: rgba(0, 0, 0, 0.68);
       min-height: 100vh;
       padding: 40px;
     }
-
     .checkout-box {
       max-width: 700px;
       margin: auto;
@@ -29,7 +27,6 @@
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
       text-align: center;
     }
-
     h2 { color: gold; margin-top: 0; }
     .summary-item {
       margin-bottom: 12px;
@@ -37,7 +34,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
       text-align: left;
     }
-
     .summary-item input {
       width: 50px;
       padding: 3px;
@@ -46,7 +42,6 @@
       border: 1px solid #ddd;
       font-size: 1rem;
     }
-
     .remove-btn, .clear-btn {
       background: crimson;
       color: white;
@@ -57,9 +52,7 @@
       margin-left: 10px;
       font-weight: bold;
     }
-
     .remove-btn:hover, .clear-btn:hover { background: darkred; }
-
     .bank-box, .visa-note, .payment-methods { margin-top: 25px; }
     .bank-box {
       padding: 20px;
@@ -69,7 +62,6 @@
       text-align: left;
     }
     .bank-box h3 { color: gold; margin-top: 0; text-align: center; }
-
     .btn {
       display: inline-block;
       margin-top: 20px;
@@ -84,7 +76,6 @@
       box-shadow: 0 0 8px gold;
     }
     .btn:hover { background: #ffe66e; }
-
     .visa-note {
       background: rgba(255, 255, 255, 0.12);
       padding: 12px;
@@ -93,15 +84,9 @@
       color: #ffdd99;
       border: 1px solid rgba(255, 215, 0, 0.3);
     }
-
     .payment-methods { text-align: center; }
     .payment-methods img { height: 40px; margin: 0 10px; }
-
-    .top-controls {
-      margin-bottom: 20px;
-      text-align: right;
-    }
-
+    .top-controls { margin-bottom: 20px; text-align: right; }
   </style>
 </head>
 <body>
@@ -113,7 +98,7 @@
 
       <h2>Booking Summary</h2>
       <div id="summary"></div>
-      <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
+      <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay">$0.00</span></h3>
 
       <div class="visa-note">
         <strong>Visa Notice:</strong> Visa fees are <strong>not included</strong> and must be paid in cash at the border by all travelers. SVV does not collect visa payments online.
@@ -144,10 +129,31 @@
     </div>
   </div>
 
-  <!-- PAYPAL SCRIPT -->
   <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
+    // --------- Add item from query string ---------
+    function getQueryItem() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const itemTitle = urlParams.get("item");
+      const itemPrice = parseFloat(urlParams.get("price"));
+
+      if(itemTitle && itemPrice){
+        let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+        // Check if item already exists, increase qty
+        const index = cart.findIndex(i => i.title === itemTitle && i.unit_usd === itemPrice);
+        if(index > -1){
+          cart[index].qty += 1;
+        } else {
+          cart.push({title: itemTitle, unit_usd: itemPrice, qty: 1});
+        }
+        localStorage.setItem("svvCart", JSON.stringify(cart));
+      }
+    }
+
+    getQueryItem();
+
+    // --------- Render cart ---------
     let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
 
     function renderCart() {
@@ -166,7 +172,7 @@
           <div class="summary-item">
             <strong>${item.title}</strong><br>
             Quantity: <input type="number" min="1" value="${item.qty}" onchange="updateQty(${index}, this.value)"> 
-            Unit Price: $${item.unit_usd}<br>
+            Unit Price: $${item.unit_usd.toFixed(2)}<br>
             Subtotal: <strong>$${(item.unit_usd*item.qty).toFixed(2)}</strong>
             <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
           </div>
@@ -178,23 +184,22 @@
       document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
     }
 
-    function updateQty(index, qty) {
+    function updateQty(index, qty){
       qty = parseInt(qty);
       if(qty < 1) qty = 1;
       cart[index].qty = qty;
-      cart[index].subtotal_usd = cart[index].unit_usd * qty;
       localStorage.setItem("svvCart", JSON.stringify(cart));
       renderCart();
     }
 
-    function removeItem(index) {
-      cart.splice(index, 1);
+    function removeItem(index){
+      cart.splice(index,1);
       localStorage.setItem("svvCart", JSON.stringify(cart));
       renderCart();
     }
 
-    function clearCart() {
-      if(confirm("Are you sure you want to clear the cart?")) {
+    function clearCart(){
+      if(confirm("Are you sure you want to clear the cart?")){
         cart = [];
         localStorage.removeItem("svvCart");
         renderCart();
@@ -203,6 +208,7 @@
 
     renderCart();
 
+    // --------- PayPal Integration ---------
     paypal.Buttons({
       createOrder: function(data, actions) {
         const totalUSD = cart.reduce((sum, item) => sum + item.unit_usd * item.qty, 0);
