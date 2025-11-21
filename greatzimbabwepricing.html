@@ -35,30 +35,31 @@
       max-width: 900px;
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
-    h1, h2, h3 {
-      color: gold;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    p, li {
-      line-height: 1.8;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+    h1, h2, h3 { color: gold; text-align: center; margin-bottom: 20px; }
+    p, li { line-height: 1.8; }
+    ul { list-style-type: none; padding: 0; }
     li::before { content: "★ "; color: gold; }
     .section { margin-top: 40px; border-left: 4px solid gold; padding-left: 15px; }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
-      color: #ffda77;
-      margin-top: 40px;
-      font-size: 0.9em;
-    }
+    footer { text-align: center; padding: 20px; background: rgba(0,0,0,0.7); color: #ffda77; margin-top: 40px; font-size: 0.9em; }
     .price { font-weight: bold; color: #ffda77; }
+    button.add-to-cart {
+      margin-left: 10px;
+      background: gold;
+      color: black;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    button.add-to-cart:hover { background: #ffda77; }
   </style>
+  <script>
+    function addToCart(item, price) {
+      alert(item + " added to cart: " + price);
+      // Here you can integrate real cart functionality
+    }
+  </script>
 </head>
 <body>
 <header>
@@ -85,21 +86,55 @@
       <li>UNESCO World Heritage Site featuring ancient stone ruins.</li>
       <li>Divided into Hill Complex, Valley Complex, and Great Enclosure.</li>
       <li>Museum on-site displays famous Zimbabwe Bird carvings.</li>
-      <li>Guided tours available for an extra <span class="price">US$3–$5</span>.</li>
-      <li>Entry Price: <span class="price">US$15 per adult / US$8 per child</span>.</li>
-      <li>Craft souvenirs: from <span class="price">US$2</span> up to <span class="price">US$50</span>.</li>
+      <li>Guided tours available: <span class="price">US$3–$5</span>
+        <button class="add-to-cart" onclick="addToCart('Guided Tour', 5)">Add to Cart</button>
+      </li>
+      <li>Entry Price: <span class="price">US$15 per adult / US$8 per child</span>
+        <button class="add-to-cart" onclick="addToCart('Great Zimbabwe Entry', 15)">Add to Cart</button>
+      </li>
+      <li>Craft souvenirs: <span class="price">US$2–$50</span></li>
       <li>Located approximately 30 km southeast of Masvingo town.</li>
+      <li>Tour Duration: 3–6 hours <button class="add-to-cart" onclick="addToCart('Great Zimbabwe Tour', 15)">Trip Fee US$15</button></li>
     </ul>
   </div>
 
   <div class="section">
     <h3>Lake Mutirikwi Recreational Park</h3>
     <ul>
-      <li>Conservation fees: <span class="price">US$3 per adult</span> for locals, foreigners via ZimParks.</li>
-      <li>Fishing: <span class="price">US$3 per person</span></li>
-      <li>Walking trails: <span class="price">US$5</span></li>
-      <li>Game drive: <span class="price">US$15</span></li>
-      <li>Activities include game drives, guided walks, birdwatching, boat cruises, and picnics.</li>
+      <li>Conservation fees: <span class="price">US$3 per adult</span>
+        <button class="add-to-cart" onclick="addToCart('Conservation Fee', 3)">Add to Cart</button>
+      </li>
+      <li>Fishing: <span class="price">US$3 per person</span>
+        <button class="add-to-cart" onclick="addToCart('Fishing', 3)">Add to Cart</button>
+      </li>
+      <li>Walking trails: <span class="price">US$5</span>
+        <button class="add-to-cart" onclick="addToCart('Walking Trails', 5)">Add to Cart</button>
+      </li>
+      <li>Game drive: <span class="price">US$15</span>
+        <button class="add-to-cart" onclick="addToCart('Game Drive', 15)">Add to Cart</button>
+      </li>
+      <li>Activities include guided walks, birdwatching, boat cruises, and picnics.</li>
+      <li>Tour Duration: 3–6 hours <button class="add-to-cart" onclick="addToCart('Lake Mutirikwi Tour', 15)">Trip Fee US$15</button></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Gonarezhou National Park</h3>
+    <ul>
+      <li>Game drives and wildlife spotting.</li>
+      <li>Guided walks and birdwatching.</li>
+      <li>Tour Duration: 3–6 hours <button class="add-to-cart" onclick="addToCart('Gonarezhou Tour', 15)">Trip Fee US$15</button></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>City Tour & Local Shona Village</h3>
+    <ul>
+      <li>City drive around: 1 hour</li>
+      <li>Visit local Shona village: 2 hours</li>
+      <li>Trip Fee per person: <span class="price">US$15</span>
+        <button class="add-to-cart" onclick="addToCart('City + Village Tour', 15)">Add to Cart</button>
+      </li>
     </ul>
   </div>
 
@@ -117,16 +152,24 @@
   <div class="section">
     <h3>Transport</h3>
     <ul>
-      <li>Van rental: <span class="price">US$280 per day</span></li>
+      <li>Van rental: <span class="price">US$280 per day</span>
+        <button class="add-to-cart" onclick="addToCart('Van Rental', 280)">Add to Cart</button>
+      </li>
     </ul>
   </div>
 
   <div class="section">
     <h3>Accommodation Options (per couple per night)</h3>
     <ul>
-      <li>Lodge At The Ancient City — <span class="price">R 1 899</span></li>
-      <li>Mineheart - Wimpy Apartments Lodge — <span class="price">R 1 140</span></li>
-      <li>Angton's Lodge — <span class="price">R 1 200</span></li>
+      <li>Lodge At The Ancient City — <span class="price">R 1 899</span>
+        <button class="add-to-cart" onclick="addToCart('Lodge At The Ancient City', 1899)">Add to Cart</button>
+      </li>
+      <li>Mineheart - Wimpy Apartments Lodge — <span class="price">R 1 140</span>
+        <button class="add-to-cart" onclick="addToCart('Mineheart Lodge', 1140)">Add to Cart</button>
+      </li>
+      <li>Angton's Lodge — <span class="price">R 1 200</span>
+        <button class="add-to-cart" onclick="addToCart('Angtons Lodge', 1200)">Add to Cart</button>
+      </li>
     </ul>
   </div>
 </div>
@@ -136,4 +179,3 @@
 </footer>
 </body>
 </html>
-
