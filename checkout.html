@@ -47,18 +47,18 @@
       font-size: 1rem;
     }
 
-    .remove-btn {
+    .remove-btn, .clear-btn {
       background: crimson;
       color: white;
       border: none;
-      padding: 3px 8px;
+      padding: 5px 12px;
       border-radius: 5px;
       cursor: pointer;
       margin-left: 10px;
       font-weight: bold;
     }
 
-    .remove-btn:hover { background: darkred; }
+    .remove-btn:hover, .clear-btn:hover { background: darkred; }
 
     .bank-box, .visa-note, .payment-methods { margin-top: 25px; }
     .bank-box {
@@ -96,11 +96,21 @@
 
     .payment-methods { text-align: center; }
     .payment-methods img { height: 40px; margin: 0 10px; }
+
+    .top-controls {
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
   </style>
 </head>
 <body>
   <div class="overlay">
     <div class="checkout-box">
+      <div class="top-controls">
+        <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+      </div>
+
       <h2>Booking Summary</h2>
       <div id="summary"></div>
       <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
@@ -183,6 +193,14 @@
       renderCart();
     }
 
+    function clearCart() {
+      if(confirm("Are you sure you want to clear the cart?")) {
+        cart = [];
+        localStorage.removeItem("svvCart");
+        renderCart();
+      }
+    }
+
     renderCart();
 
     paypal.Buttons({
@@ -195,6 +213,7 @@
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
           alert('Payment successful! Thank you, ' + details.payer.name.given_name + '.');
+          cart = [];
           localStorage.removeItem("svvCart");
           renderCart();
         });
