@@ -52,8 +52,10 @@
       margin-left: 10px;
       font-weight: bold;
     }
-    .remove-btn:hover, .clear-btn:hover { background: darkred; }
-    .bank-box, .visa-note, .payment-methods { margin-top: 25px; }
+    .remove-btn:hover, .clear-btn:hover {
+      background: darkred;
+    }
+    .bank-box, .visa-note, .payment-methods, .payment-type-box { margin-top: 25px; }
     .bank-box {
       padding: 20px;
       background: rgba(0, 0, 0, 0.55);
@@ -76,144 +78,221 @@
       box-shadow: 0 0 8px gold;
     }
     .btn:hover { background: #ffe66e; }
-    .visa-note {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.9em;
-      color: #ffdd99;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-    }
-    .payment-methods { text-align: center; }
     .payment-methods img { height: 40px; margin: 0 10px; }
-    .top-controls { margin-bottom: 20px; text-align: right; }
+
+    /* Popup disclaimer modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(2px);
+    }
+    .modal-box {
+      background: #111;
+      width: 90%;
+      max-width: 600px;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid gold;
+      box-shadow: 0 0 18px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    .modal-box h2 { color: gold; }
+    .modal-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: gold;
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
   </style>
 </head>
+
 <body>
-  <div class="overlay">
-    <div class="checkout-box">
-      <div class="top-controls">
-        <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
-      </div>
+<div class="overlay">
+  <div class="checkout-box">
 
-      <h2>Booking Summary</h2>
-      <div id="summary"></div>
-      <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay">$0.00</span></h3>
-
-      <div class="visa-note">
-        <strong>Visa Notice:</strong> Visa fees are <strong>not included</strong> and must be paid in cash at the border by all travelers. SVV does not collect visa payments online.
-      </div>
-
-      <!-- PAYPAL BUTTON -->
-      <div id="paypal-button-container"></div>
-
-      <!-- Accepted Payment Methods -->
-      <div class="payment-methods">
-        <p style="color:#ffdd99; font-weight:bold;">We Accept:</p>
-        <img src="visa.png" alt="Visa">
-        <img src="mastercard.png" alt="MasterCard">
-      </div>
-
-      <!-- Bank EFT -->
-      <div class="bank-box">
-        <h3>Bank EFT Details</h3>
-        <p><strong>Account Name:</strong> SOBA Entertainment (PTY) LTD</p>
-        <p><strong>Bank:</strong> FNB – First National Bank</p>
-        <p><strong>Account Number:</strong> 63183484799</p>
-        <p><strong>Branch Code:</strong> 250655 (Universal)</p>
-        <p><strong>SWIFT Code:</strong> FIRNZAJJ</p>
-        <p><strong>Reference:</strong> Your Name + Travel</p>
-      </div>
-
-      <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">Send Proof of Payment</a>
+    <div class="top-controls">
+      <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
     </div>
+
+    <h2>Booking Summary</h2>
+    <div id="summary"></div>
+
+    <div class="payment-type-box">
+      <h3 style="color:gold;">Choose Payment Type</h3>
+      <label>
+        <input type="radio" name="paymentType" value="full" checked onchange="updateTotals()"> Full Payment
+      </label><br>
+      <label>
+        <input type="radio" name="paymentType" value="deposit" onchange="updateTotals()"> 50% Deposit Only
+      </label>
+    </div>
+
+    <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay">$0.00</span></h3>
+
+    <div class="visa-note">
+      <strong>Visa Notice:</strong> Visa fees are <strong>not included</strong> and must be paid in cash at the border.
+    </div>
+
+    <!-- PAYPAL BUTTON -->
+    <div id="paypal-button-container"></div>
+
+    <div class="payment-methods">
+      <p style="color:#ffdd99; font-weight:bold;">We Accept:</p>
+
+      <!-- UPDATED LOGOS -->
+      <img src="visaPNG.png" alt="Visa">
+      <img src="mastercardPNG.png" alt="MasterCard">
+    </div>
+
+    <!-- BANK EFT -->
+    <div class="bank-box">
+      <h3>Bank EFT Details</h3>
+      <p><strong>Account Name:</strong> SOBA Entertainment (PTY) LTD</p>
+      <p><strong>Bank:</strong> FNB – First National Bank</p>
+      <p><strong>Account Number:</strong> 63183484799</p>
+      <p><strong>Branch Code:</strong> 250655 (Universal)</p>
+      <p><strong>SWIFT Code:</strong> FIRNZAJJ</p>
+      <p><strong>Reference:</strong> Your Name + Travel</p>
+    </div>
+
+    <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">Send Proof of Payment</a>
+
   </div>
+</div>
 
-  <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
+<!-- FLIGHT DISCLAIMER POPUP -->
+<div id="flightDisclaimer" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Important Flight Disclaimer</h2>
+    <p style="line-height:1.7;">
+      <strong>Serorome Valley Ventures does not include flights in any package.</strong><br><br>
+      All travelers are fully responsible for booking both <strong>international flights</strong> and <strong>regional flights</strong> to and from the destination.  
+      <br><br>
+      By continuing with this payment, you acknowledge and accept that <strong>flight bookings are NOT included</strong> and must be arranged privately by the traveler.
+    </p>
+    <button class="modal-btn" onclick="acceptDisclaimer()">I Understand & Agree</button>
+  </div>
+</div>
 
-  <script>
-    // --------- Add item from query string ---------
-    function getQueryItem() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const itemTitle = urlParams.get("item");
-      const itemPrice = parseFloat(urlParams.get("price"));
+<script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
-      if(itemTitle && itemPrice){
-        let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
-        const index = cart.findIndex(i => i.title === itemTitle && i.unit_usd === itemPrice);
-        if(index > -1){
-          cart[index].qty += 1;
-        } else {
-          cart.push({title: itemTitle, unit_usd: itemPrice, qty: 1});
-        }
-        localStorage.setItem("svvCart", JSON.stringify(cart));
+<script>
+  // Load item from URL
+  function getQueryItem() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemTitle = urlParams.get("item");
+    const itemPrice = parseFloat(urlParams.get("price"));
+
+    if(itemTitle && itemPrice){
+      let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+      const index = cart.findIndex(i => i.title === itemTitle && i.unit_usd === itemPrice);
+      if(index > -1){
+        cart[index].qty += 1;
+      } else {
+        cart.push({title: itemTitle, unit_usd: itemPrice, qty: 1});
       }
-    }
-
-    getQueryItem();
-
-    // --------- Render cart ---------
-    let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
-
-    function renderCart() {
-      const summary = document.getElementById("summary");
-      let totalUSD = 0;
-
-      if(cart.length === 0){
-        summary.innerHTML = "<p>No items in cart.</p>";
-        document.getElementById("totalDisplay").innerText = "$0.00";
-        return;
-      }
-
-      let html = "";
-      cart.forEach((item, index) => {
-        html += `
-          <div class="summary-item">
-            <strong>${item.title}</strong><br>
-            Quantity: <input type="number" min="1" value="${item.qty}" onchange="updateQty(${index}, this.value)"> 
-            Unit Price: $${item.unit_usd.toFixed(2)}<br>
-            Subtotal: <strong>$${(item.unit_usd*item.qty).toFixed(2)}</strong>
-            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-          </div>
-        `;
-        totalUSD += item.unit_usd * item.qty;
-      });
-
-      summary.innerHTML = html;
-      document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
-    }
-
-    function updateQty(index, qty){
-      qty = parseInt(qty);
-      if(qty < 1) qty = 1;
-      cart[index].qty = qty;
       localStorage.setItem("svvCart", JSON.stringify(cart));
-      renderCart();
     }
+  }
+  getQueryItem();
 
-    function removeItem(index){
-      cart.splice(index,1);
-      localStorage.setItem("svvCart", JSON.stringify(cart));
-      renderCart();
-    }
+  let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
 
-    function clearCart(){
-      if(confirm("Are you sure you want to clear the cart?")){
-        cart = [];
-        localStorage.removeItem("svvCart");
-        renderCart();
-      }
-    }
-
+  function updateTotals(){
     renderCart();
+  }
 
-    // --------- PayPal Integration ---------
+  function renderCart() {
+    const summary = document.getElementById("summary");
+    let totalUSD = 0;
+
+    if(cart.length === 0){
+      summary.innerHTML = "<p>No items in cart.</p>";
+      document.getElementById("totalDisplay").innerText = "$0.00";
+      return;
+    }
+
+    let html = "";
+    cart.forEach((item, index) => {
+      html += `
+        <div class="summary-item">
+          <strong>${item.title}</strong><br>
+          Quantity: <input type="number" min="1" value="${item.qty}" onchange="updateQty(${index}, this.value)">
+          Unit Price: $${item.unit_usd.toFixed(2)}<br>
+          Subtotal: <strong>$${(item.unit_usd*item.qty).toFixed(2)}</strong>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+      totalUSD += item.unit_usd * item.qty;
+    });
+
+    const paymentType = document.querySelector("input[name='paymentType']:checked").value;
+    if(paymentType === "deposit") totalUSD *= 0.5;
+
+    summary.innerHTML = html;
+    document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
+  }
+
+  function updateQty(index, qty){
+    qty = parseInt(qty);
+    if(qty < 1) qty = 1;
+    cart[index].qty = qty;
+    localStorage.setItem("svvCart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function removeItem(index){
+    cart.splice(index,1);
+    localStorage.setItem("svvCart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function clearCart(){
+    if(confirm("Are you sure you want to clear the cart?")){
+      cart = [];
+      localStorage.removeItem("svvCart");
+      renderCart();
+    }
+  }
+
+  renderCart();
+
+  // DISCLAIMER HANDLING
+  let disclaimerAccepted = false;
+
+  function acceptDisclaimer() {
+    disclaimerAccepted = true;
+    document.getElementById("flightDisclaimer").style.display = "none";
+    renderPayPalButtons(); // Now load PayPal after acceptance
+  }
+
+  function renderPayPalButtons(){
+    document.getElementById("paypal-button-container").innerHTML = "";
+
     paypal.Buttons({
       createOrder: function(data, actions) {
-        const totalUSD = cart.reduce((sum, item) => sum + item.unit_usd * item.qty, 0);
+        let totalUSD = cart.reduce((sum, item) => sum + item.unit_usd * item.qty, 0);
+        const paymentType = document.querySelector("input[name='paymentType']:checked").value;
+        if(paymentType === "deposit") totalUSD *= 0.5;
+
         return actions.order.create({
           purchase_units: [{ amount: { value: totalUSD.toFixed(2) } }]
         });
+      },
+      onClick: function(){
+        if(!disclaimerAccepted){
+          document.getElementById("flightDisclaimer").style.display = "flex";
+          return false;
+        }
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
@@ -228,6 +307,13 @@
         console.error(err);
       }
     }).render('#paypal-button-container');
-  </script>
+  }
+
+  // Initial load: Only show PayPal AFTER disclaimer accepted
+  document.getElementById("paypal-button-container").innerHTML =
+    "<p style='color:#ffd;'>Please scroll down & attempt PayPal — disclaimer will appear automatically.</p>";
+
+</script>
+
 </body>
 </html>
