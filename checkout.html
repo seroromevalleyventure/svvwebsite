@@ -20,7 +20,7 @@
     }
 
     .checkout-box {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
       background: rgba(0, 0, 0, 0.75);
       padding: 30px;
@@ -30,31 +30,45 @@
       text-align: center;
     }
 
-    h2 {
-      color: gold;
-      margin-top: 0;
-    }
-
+    h2 { color: gold; margin-top: 0; }
     .summary-item {
       margin-bottom: 12px;
       padding-bottom: 12px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      text-align: left;
     }
 
+    .summary-item input {
+      width: 50px;
+      padding: 3px;
+      margin-left: 5px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .remove-btn {
+      background: crimson;
+      color: white;
+      border: none;
+      padding: 3px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    .remove-btn:hover { background: darkred; }
+
+    .bank-box, .visa-note, .payment-methods { margin-top: 25px; }
     .bank-box {
-      margin-top: 25px;
       padding: 20px;
       background: rgba(0, 0, 0, 0.55);
       border-radius: 10px;
       border: 1px solid rgba(255, 215, 0, 0.5);
       text-align: left;
     }
-
-    .bank-box h3 {
-      color: gold;
-      margin-top: 0;
-      text-align: center;
-    }
+    .bank-box h3 { color: gold; margin-top: 0; text-align: center; }
 
     .btn {
       display: inline-block;
@@ -69,17 +83,9 @@
       transition: 0.3s;
       box-shadow: 0 0 8px gold;
     }
-
-    .btn:hover {
-      background: #ffe66e;
-    }
-
-    #paypal-button-container {
-      margin-top: 25px;
-    }
+    .btn:hover { background: #ffe66e; }
 
     .visa-note {
-      margin-top: 20px;
       background: rgba(255, 255, 255, 0.12);
       padding: 12px;
       border-radius: 8px;
@@ -88,32 +94,19 @@
       border: 1px solid rgba(255, 215, 0, 0.3);
     }
 
-    .payment-methods {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .payment-methods img {
-      height: 40px;
-      margin: 0 10px;
-    }
-
+    .payment-methods { text-align: center; }
+    .payment-methods img { height: 40px; margin: 0 10px; }
   </style>
 </head>
-
 <body>
   <div class="overlay">
     <div class="checkout-box">
       <h2>Booking Summary</h2>
-
       <div id="summary"></div>
-
       <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
 
       <div class="visa-note">
-        <strong>Visa Notice:</strong>
-        Visa fees are <strong>not included</strong> and <strong>must be paid in cash at the border</strong> by all travelers.
-        SVV does not collect visa payments online.
+        <strong>Visa Notice:</strong> Visa fees are <strong>not included</strong> and must be paid in cash at the border by all travelers. SVV does not collect visa payments online.
       </div>
 
       <!-- PAYPAL BUTTON -->
@@ -137,9 +130,7 @@
         <p><strong>Reference:</strong> Your Name + Travel</p>
       </div>
 
-      <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">
-        Send Proof of Payment
-      </a>
+      <a class="btn" href="mailto:seroromevalleyventures@gmail.com?subject=Proof of Payment - SVV Booking">Send Proof of Payment</a>
     </div>
   </div>
 
@@ -147,33 +138,56 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
-    const cart = JSON.parse(localStorage.getItem("svvCart")) || [];
-    let totalUSD = 0;
+    let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
 
-    const summary = document.getElementById("summary");
+    function renderCart() {
+      const summary = document.getElementById("summary");
+      let totalUSD = 0;
 
-    if (cart.length === 0) {
-      summary.innerHTML = "<p>No items in cart.</p>";
-      document.getElementById("totalDisplay").innerText = "$0.00";
-    } else {
+      if(cart.length === 0){
+        summary.innerHTML = "<p>No items in cart.</p>";
+        document.getElementById("totalDisplay").innerText = "$0.00";
+        return;
+      }
+
       let html = "";
-      cart.forEach(item => {
+      cart.forEach((item, index) => {
         html += `
           <div class="summary-item">
             <strong>${item.title}</strong><br>
-            Quantity: ${item.qty}<br>
+            Quantity: <input type="number" min="1" value="${item.qty}" onchange="updateQty(${index}, this.value)"> 
             Unit Price: $${item.unit_usd}<br>
-            Subtotal: <strong>$${item.subtotal_usd}</strong>
+            Subtotal: <strong>$${(item.unit_usd*item.qty).toFixed(2)}</strong>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
           </div>
         `;
-        totalUSD += item.subtotal_usd;
+        totalUSD += item.unit_usd * item.qty;
       });
+
       summary.innerHTML = html;
       document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
     }
 
+    function updateQty(index, qty) {
+      qty = parseInt(qty);
+      if(qty < 1) qty = 1;
+      cart[index].qty = qty;
+      cart[index].subtotal_usd = cart[index].unit_usd * qty;
+      localStorage.setItem("svvCart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("svvCart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+
     paypal.Buttons({
       createOrder: function(data, actions) {
+        const totalUSD = cart.reduce((sum, item) => sum + item.unit_usd * item.qty, 0);
         return actions.order.create({
           purchase_units: [{ amount: { value: totalUSD.toFixed(2) } }]
         });
@@ -182,6 +196,7 @@
         return actions.order.capture().then(function(details) {
           alert('Payment successful! Thank you, ' + details.payer.name.given_name + '.');
           localStorage.removeItem("svvCart");
+          renderCart();
         });
       },
       onError: function(err) {
