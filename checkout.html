@@ -140,7 +140,6 @@
 
       if(itemTitle && itemPrice){
         let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
-        // Check if item already exists, increase qty
         const index = cart.findIndex(i => i.title === itemTitle && i.unit_usd === itemPrice);
         if(index > -1){
           cart[index].qty += 1;
