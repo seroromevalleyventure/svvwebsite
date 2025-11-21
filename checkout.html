@@ -23,14 +23,14 @@
       max-width: 650px;
       margin: auto;
       background: rgba(0, 0, 0, 0.75);
-      padding: 25px;
+      padding: 30px;
       border-radius: 12px;
       border: 1px solid rgba(255, 215, 0, 0.5);
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+      text-align: center;
     }
 
     h2 {
-      text-align: center;
       color: gold;
       margin-top: 0;
     }
@@ -47,24 +47,26 @@
       background: rgba(0, 0, 0, 0.55);
       border-radius: 10px;
       border: 1px solid rgba(255, 215, 0, 0.5);
+      text-align: left;
     }
 
     .bank-box h3 {
       color: gold;
       margin-top: 0;
+      text-align: center;
     }
 
     .btn {
-      display: block;
-      width: 100%;
-      padding: 14px;
+      display: inline-block;
+      margin-top: 20px;
       background: gold;
       color: black;
-      text-align: center;
-      margin-top: 20px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 1rem;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 8px;
+      transition: 0.3s;
       box-shadow: 0 0 8px gold;
     }
 
@@ -85,6 +87,17 @@
       color: #ffdd99;
       border: 1px solid rgba(255, 215, 0, 0.3);
     }
+
+    .payment-methods {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .payment-methods img {
+      height: 40px;
+      margin: 0 10px;
+    }
+
   </style>
 </head>
 
@@ -97,7 +110,6 @@
 
       <h3 style="color: gold;">Total Due (USD): <span id="totalDisplay"></span></h3>
 
-      <!-- VISA NOTICE -->
       <div class="visa-note">
         <strong>Visa Notice:</strong>
         Visa fees are <strong>not included</strong> and <strong>must be paid in cash at the border</strong> by all travelers.
@@ -107,11 +119,19 @@
       <!-- PAYPAL BUTTON -->
       <div id="paypal-button-container"></div>
 
+      <!-- Accepted Payment Methods -->
+      <div class="payment-methods">
+        <p style="color:#ffdd99; font-weight:bold;">We Accept:</p>
+        <img src="visa.png" alt="Visa">
+        <img src="mastercard.png" alt="MasterCard">
+      </div>
+
+      <!-- Bank EFT -->
       <div class="bank-box">
         <h3>Bank EFT Details</h3>
         <p><strong>Account Name:</strong> SOBA Entertainment (PTY) LTD</p>
         <p><strong>Bank:</strong> FNB – First National Bank</p>
-        <p><strong>Account Number:</strong> 63183484799</p> <!-- UPDATED -->
+        <p><strong>Account Number:</strong> 63183484799</p>
         <p><strong>Branch Code:</strong> 250655 (Universal)</p>
         <p><strong>SWIFT Code:</strong> FIRNZAJJ</p>
         <p><strong>Reference:</strong> Your Name + Travel</p>
@@ -127,7 +147,6 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AYFWvrRmgBKsLyvZjQZUkYpfon2bwszfVpIYtY3DEWy4LVTHH831Lmg5uYhhyhGFmySxnLOHpBylJByu&currency=USD"></script>
 
   <script>
-    // CART FORMAT
     const cart = JSON.parse(localStorage.getItem("svvCart")) || [];
     let totalUSD = 0;
 
@@ -149,7 +168,6 @@
         `;
         totalUSD += item.subtotal_usd;
       });
-
       summary.innerHTML = html;
       document.getElementById("totalDisplay").innerText = "$" + totalUSD.toFixed(2);
     }
@@ -157,9 +175,7 @@
     paypal.Buttons({
       createOrder: function(data, actions) {
         return actions.order.create({
-          purchase_units: [{
-            amount: { value: totalUSD.toFixed(2) }
-          }]
+          purchase_units: [{ amount: { value: totalUSD.toFixed(2) } }]
         });
       },
       onApprove: function(data, actions) {
@@ -174,6 +190,5 @@
       }
     }).render('#paypal-button-container');
   </script>
-
 </body>
 </html>
