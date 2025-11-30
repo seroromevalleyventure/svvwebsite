@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khami Ruins - Serorome Valley Ventures</title>
   <style>
-    /* ================= BODY STYLES ================= */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -18,7 +17,6 @@
     }
 
 ```
-/* ================= HEADER STYLES ================= */
 header {
   background: rgba(0, 0, 0, 0.7);
   padding: 25px;
@@ -35,7 +33,6 @@ nav a {
 
 nav a:hover { color: #ffda77; }
 
-/* ================= CONTENT STYLES ================= */
 .content {
   margin: 40px auto;
   background: rgba(0, 0, 0, 0.65);
@@ -54,7 +51,6 @@ ul {
   margin-top: 10px;
 }
 
-/* ================= GALLERY STYLES ================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -75,7 +71,6 @@ ul {
   box-shadow: 0 0 10px gold;
 }
 
-/* ================= PRICING BUTTON STYLES ================= */
 .pricing-btn {
   display: inline-block;
   margin: 25px auto;
@@ -92,7 +87,6 @@ ul {
 
 .pricing-btn:hover { background: #ffe66e; }
 
-/* ================= FOOTER STYLES ================= */
 footer {
   margin-top: 40px;
   padding: 15px;
@@ -100,11 +94,22 @@ footer {
   color: #ffda77;
 }
 
-/* ================= DISCLAIMER NOTE ================= */
 .disclaimer-note {
   margin-top: 12px;
   font-size: 0.95em;
   color: #ffeaa7;
+}
+
+/* Optional: captions under images */
+.gallery figure {
+  margin: 0;
+}
+
+.gallery figcaption {
+  margin-top: 5px;
+  color: #ffeaa7;
+  font-size: 0.95em;
+  text-align: center;
 }
 ```
 
@@ -125,15 +130,33 @@ footer {
     </nav>
   </header>
 
-  <!-- ================= MAIN GALLERY ================= -->
+  <!-- ================= GALLERY ================= -->
 
   <div class="gallery">
-    <img src="Khami-Ruins-7-770x550.jpg" alt="Khami Ruins — panoramic view of ancient stone walls at sunrise">
-    <img src="khami 7.jpg" alt="Khami Ruins landscape — terraced stone structures surrounded by natural beauty">
-    <img src="khami air view.jpg" alt="Aerial view of Khami Ruins — breathtaking bird’s-eye look at one of Zimbabwe’s ancient cities">
-    <img src="khami ruin2.jpg" alt="Khami Ruins architecture — close-up detail of dry-stone engineering from the Torwa dynasty">
-    <img src="khami runis unesco 1.jpg" alt="Khami Ruins UNESCO World Heritage Site plaque — symbol of global cultural importance">
-    <img src="Khami-Ruins-6-770x550.jpg" alt="Khami Ruins site — scenic walkways and archaeological structures perfect for photography lovers">
+    <figure>
+      <img src="khami 7.jpg" alt="Step back in time at Khami Ruins — one of Zimbabwe's oldest and most mystical ancient sites.">
+      <figcaption>Step back in time at Khami — mystical ancient stones that tell stories of a lost empire.</figcaption>
+    </figure>
+    <figure>
+      <img src="khami air view.jpg" alt="Awe-inspiring aerial view of Khami Ruins — terraced stone walls snaking through lush landscapes.">
+      <figcaption>Bird’s-eye wonder — witness the grandeur of Khami from above.</figcaption>
+    </figure>
+    <figure>
+      <img src="khami ruin2.jpg" alt="Intricate dry-stone craftsmanship blending perfectly with nature.">
+      <figcaption>Marvel at the precision of centuries-old dry-stone engineering.</figcaption>
+    </figure>
+    <figure>
+      <img src="khami runis unesco 1.jpg" alt="UNESCO-listed legendary Khami Ruins — a cultural treasure of Zimbabwe.">
+      <figcaption>Legendary UNESCO heritage — a must-see for history lovers.</figcaption>
+    </figure>
+    <figure>
+      <img src="Khami-Ruins-6-770x550.jpg" alt="Scenic walkways and terraces for exploration and photography.">
+      <figcaption>Explore scenic walkways and photograph breathtaking ancient terraces.</figcaption>
+    </figure>
+    <figure>
+      <img src="Khami-Ruins-7-770x550.jpg" alt="Golden sunrise illuminating the majestic Khami Ruins.">
+      <figcaption>Sunrise magic — watch golden light breathe life into ancient stones.</figcaption>
+    </figure>
   </div>
 
   <!-- ================= CONTENT ================= -->
@@ -156,7 +179,6 @@ footer {
   <li>Rich archaeological and cultural heritage</li>
 </ul>
 
-<!-- ================= PRICING BUTTON ================= -->
 <a class="pricing-btn" href="khamipricing.html" target="_blank">Pricing 2026</a>
 <p class="disclaimer-note">
   Note: Pricing and packages are similar to Matopos National Park. Selecting one hotel provides access to both Khami and Matopo excursions.
@@ -171,15 +193,13 @@ footer {
     © 2025 Serorome Valley Ventures — All Rights Reserved.
   </footer>
 
-  <!-- ================= CART SYNC SCRIPT ================= -->
+  <!-- ================= CART SCRIPT ================= -->
 
   <script>
-    // Initialize shared cart for both Khami and Matopo
     if (!localStorage.getItem('svvCart')) {
       localStorage.setItem('svvCart', JSON.stringify([]));
     }
 
-    // Function to add an item to the cart
     function addToCart(title, price) {
       let cart = JSON.parse(localStorage.getItem('svvCart'));
       const index = cart.findIndex(item => item.title === title && item.unit_usd === price);
