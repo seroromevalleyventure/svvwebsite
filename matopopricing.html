@@ -4,21 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Matopos National Park 2026 Pricing - Serorome Valley Ventures</title>
+
 <style>
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%), url('matopo_khami_background.png') no-repeat center center fixed;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%), 
+              url('matopo_khami_background.png') no-repeat center center fixed;
   background-size: cover;
   background-blend-mode: multiply;
   color: white;
 }
+
 header {
   background: rgba(0,0,0,0.7);
   padding: 25px;
   text-align: center;
   border-bottom: 3px solid goldenrod;
 }
+
 nav a {
   color: gold;
   text-decoration: none;
@@ -26,6 +30,7 @@ nav a {
   font-weight: bold;
 }
 nav a:hover { color: #ffe66e; }
+
 .content {
   background: rgba(0,0,0,0.65);
   margin: 40px auto;
@@ -34,7 +39,55 @@ nav a:hover { color: #ffe66e; }
   max-width: 1200px;
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
-h1, h2 { color: gold; text-align: center; margin-bottom: 15px; }
+
+h1, h2 {
+  color: gold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  background: rgba(255,215,0,0.2);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: gold;
+  font-size: 22px;
+}
+
+/* MAKE PRICES MORE VISIBLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.5);
+}
+
+th {
+  background: gold;
+  color: black;
+  padding: 12px;
+  font-size: 18px;
+}
+
+td {
+  border: 1px solid goldenrod;
+  padding: 10px;
+  font-size: 17px;
+  color: #ffeaa7;
+}
+
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5),
+td:nth-child(2) {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffdd55;
+}
+
 .btn {
   display: inline-block;
   background: gold;
@@ -49,39 +102,22 @@ h1, h2 { color: gold; text-align: center; margin-bottom: 15px; }
   cursor: pointer;
 }
 .btn:hover { background: #ffe66e; }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  text-align: center;
-  color: black;
-  background: rgba(255,215,0,0.1);
-}
-th, td { border: 1px solid gold; padding: 8px; }
-th { background: gold; color: black; }
-.section-title {
-  background: rgba(255,215,0,0.15);
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin-top: 25px;
-  text-align: center;
-  font-weight: bold;
-  color: black;
-}
+
 .disclaimer {
-  background: rgba(255,215,0,0.1);
+  background: rgba(255,215,0,0.15);
   padding: 20px;
   border-radius: 12px;
   border: 2px solid gold;
-  color: black;
+  color: #ffdd88;
   margin-top: 20px;
 }
+
 footer {
   text-align: center;
   padding: 20px;
   color: #ffda77;
   font-size: 0.9em;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   border-top: 2px solid goldenrod;
   margin-top: 40px;
 }
@@ -101,72 +137,75 @@ footer {
 
 <div class="content">
 
-  <!-- Accommodation -->
+  <!-- Accommodation Section -->
   <div class="section-title">Accommodation Rates (Per Person, Per Night)</div>
   <table>
     <tr><th>Type</th><th>Meal Plan</th><th>Adult</th><th>Child (<12)</th><th>Single Supplement</th><th>Action</th></tr>
-    <tr><td>Standard Twin / Family Room</td><td>Dinner, B&B</td><td>$185</td><td>$92.4</td><td>$75</td><td><button class="btn" onclick="addToCart('Standard Twin / Family Room - Dinner,B&B',185)">Add to Cart</button></td></tr>
-    <tr><td>Standard Twin / Family Room</td><td>Full Board</td><td>$210</td><td>$104.5</td><td>$75</td><td><button class="btn" onclick="addToCart('Standard Twin / Family Room - Full Board',210)">Add to Cart</button></td></tr>
-    <tr><td>Standard Twin / Family Room</td><td>All Inclusive</td><td>$320</td><td>$159.3</td><td>$75</td><td><button class="btn" onclick="addToCart('Standard Twin / Family Room - All Inclusive',320)">Add to Cart</button></td></tr>
-    <tr><td>Honeymoon / Family Suites</td><td>Dinner, B&B</td><td>$195</td><td>$98</td><td>$75</td><td><button class="btn" onclick="addToCart('Honeymoon / Family Suites - Dinner,B&B',195)">Add to Cart</button></td></tr>
-    <tr><td>Honeymoon / Family Suites</td><td>Full Board</td><td>$225</td><td>$112.75</td><td>$75</td><td><button class="btn" onclick="addToCart('Honeymoon / Family Suites - Full Board',225)">Add to Cart</button></td></tr>
-    <tr><td>Honeymoon / Family Suites</td><td>All Inclusive</td><td>$335</td><td>$167.4</td><td>$75</td><td><button class="btn" onclick="addToCart('Honeymoon / Family Suites - All Inclusive',335)">Add to Cart</button></td></tr>
+    <tr><td>Standard Twin / Family Room</td><td>Dinner, B&B</td><td>$185</td><td>$92.4</td><td>$75</td><td><button class="btn" onclick="addToCart('Standard Twin / Family Room - Dinner,B&B',185)">Add</button></td></tr>
+    <tr><td>Standard Twin / Family Room</td><td>Full Board</td><td>$210</td><td>$104.5</td><td>$75</td><td><button class="btn" onclick="addToCart('Standard Twin / Family Room - Full Board',210)">Add</button></td></tr>
+    <tr><td>Standard Twin / Family Room</td><td>All Inclusive</td><td>$320</td><td>$159.3</td><td>$75</td><td><button class="btn" onclick="addToCart('Standard Twin / Family Room - All Inclusive',320)">Add</button></td></tr>
+    <tr><td>Honeymoon / Family Suites</td><td>Dinner, B&B</td><td>$195</td><td>$98</td><td>$75</td><td><button class="btn" onclick="addToCart('Honeymoon / Family Suites - Dinner,B&B',195)">Add</button></td></tr>
+    <tr><td>Honeymoon / Family Suites</td><td>Full Board</td><td>$225</td><td>$112.75</td><td>$75</td><td><button class="btn" onclick="addToCart('Honeymoon / Family Suites - Full Board',225)">Add</button></td></tr>
+    <tr><td>Honeymoon / Family Suites</td><td>All Inclusive</td><td>$335</td><td>$167.4</td><td>$75</td><td><button class="btn" onclick="addToCart('Honeymoon / Family Suites - All Inclusive',335)">Add</button></td></tr>
   </table>
 
-  <!-- Green Season Special -->
+  <!-- Green Season Section -->
   <div class="section-title">Green Season Special (05 Jan–31 Mar / 01 Nov–20 Dec)</div>
   <table>
     <tr><th>Meal Plan</th><th>Adult</th><th>Child (<12)</th><th>Single Supplement</th><th>Action</th></tr>
-    <tr><td>Dinner, B&B</td><td>$168</td><td>$84</td><td>$0</td><td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',168)">Add to Cart</button></td></tr>
-    <tr><td>Full Board</td><td>$182</td><td>$90.75</td><td>$0</td><td><button class="btn" onclick="addToCart('Green Season Full Board',182)">Add to Cart</button></td></tr>
-    <tr><td>All Inclusive</td><td>$290</td><td>$145.75</td><td>$0</td><td><button class="btn" onclick="addToCart('Green Season All Inclusive',290)">Add to Cart</button></td></tr>
+    <tr><td>Dinner, B&B</td><td>$168</td><td>$84</td><td>$0</td><td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',168)">Add</button></td></tr>
+    <tr><td>Full Board</td><td>$182</td><td>$90.75</td><td>$0</td><td><button class="btn" onclick="addToCart('Green Season Full Board',182)">Add</button></td></tr>
+    <tr><td>All Inclusive</td><td>$290</td><td>$145.75</td><td>$0</td><td><button class="btn" onclick="addToCart('Green Season All Inclusive',290)">Add</button></td></tr>
   </table>
 
-  <!-- Activities -->
+  <!-- Activities Section -->
   <div class="section-title">Activities (Per Person)</div>
   <table>
     <tr><th>Activity</th><th>Price</th><th>Action</th></tr>
-    <tr><td>Rhino Tracking (min 2 pax, 3 hrs)</td><td>$70</td><td><button class="btn" onclick="addToCart('Rhino Tracking',70)">Add to Cart</button></td></tr>
-    <tr><td>Full Day Activity Drive</td><td>$110</td><td><button class="btn" onclick="addToCart('Full Day Activity Drive',110)">Add to Cart</button></td></tr>
+    <tr><td>Rhino Tracking (3hrs, min 2 pax)</td><td>$70</td><td><button class="btn" onclick="addToCart('Rhino Tracking',70)">Add</button></td></tr>
+    <tr><td>Full Day Activity Drive</td><td>$110</td><td><button class="btn" onclick="addToCart('Full Day Activity Drive',110)">Add</button></td></tr>
   </table>
 
-  <!-- Transfers -->
+  <!-- Transfers Section -->
   <div class="section-title">Transfers</div>
   <table>
     <tr><th>Transfer Type</th><th>Price</th><th>Action</th></tr>
-    <tr><td>Airport Shuttle (per person)</td><td>$25</td><td><button class="btn" onclick="addToCart('Airport Shuttle',25)">Add to Cart</button></td></tr>
-    <tr><td>Private Vehicle Transfer</td><td>$90</td><td><button class="btn" onclick="addToCart('Private Vehicle Transfer',90)">Add to Cart</button></td></tr>
+    <tr><td>Airport Shuttle (per person)</td><td>$25</td><td><button class="btn" onclick="addToCart('Airport Shuttle',25)">Add</button></td></tr>
+    <tr><td>Private Vehicle Transfer</td><td>$90</td><td><button class="btn" onclick="addToCart('Private Vehicle Transfer',90)">Add</button></td></tr>
   </table>
 
-  <!-- Add-on Meals -->
+  <!-- Meals Section -->
   <div class="section-title">Add-on Meals</div>
   <table>
     <tr><th>Meal</th><th>Price</th><th>Action</th></tr>
-    <tr><td>Breakfast</td><td>$15</td><td><button class="btn" onclick="addToCart('Breakfast',15)">Add to Cart</button></td></tr>
-    <tr><td>Lunch</td><td>$20</td><td><button class="btn" onclick="addToCart('Lunch',20)">Add to Cart</button></td></tr>
-    <tr><td>Boma Dinner Experience</td><td>$45</td><td><button class="btn" onclick="addToCart('Boma Dinner Experience',45)">Add to Cart</button></td></tr>
+    <tr><td>Breakfast</td><td>$15</td><td><button class="btn" onclick="addToCart('Breakfast',15)">Add</button></td></tr>
+    <tr><td>Lunch</td><td>$20</td><td><button class="btn" onclick="addToCart('Lunch',20)">Add</button></td></tr>
+    <tr><td>Boma Dinner Experience</td><td>$45</td><td><button class="btn" onclick="addToCart('Boma Dinner Experience',45)">Add</button></td></tr>
   </table>
 
-  <!-- Camping -->
+  <!-- Camping Section -->
   <div class="section-title">Camping Options</div>
   <table>
     <tr><th>Option</th><th>Price</th><th>Action</th></tr>
-    <tr><td>Standard Tent</td><td>$60</td><td><button class="btn" onclick="addToCart('Standard Tent',60)">Add to Cart</button></td></tr>
-    <tr><td>Glamping Tent</td><td>$120</td><td><button class="btn" onclick="addToCart('Glamping Tent',120)">Add to Cart</button></td></tr>
-    <tr><td>Safari Camp Stay</td><td>$250</td><td><button class="btn" onclick="addToCart('Safari Camp Stay',250)">Add to Cart</button></td></tr>
+    <tr><td>Standard Tent</td><td>$60</td><td><button class="btn" onclick="addToCart('Standard Tent',60)">Add</button></td></tr>
+    <tr><td>Glamping Tent</td><td>$120</td><td><button class="btn" onclick="addToCart('Glamping Tent',120)">Add</button></td></tr>
+    <tr><td>Safari Camp Stay</td><td>$250</td><td><button class="btn" onclick="addToCart('Safari Camp Stay',250)">Add</button></td></tr>
   </table>
 
   <!-- Cultural Tours -->
   <div class="section-title">Cultural Tours</div>
   <table>
     <tr><th>Tour</th><th>Price</th><th>Action</th></tr>
-    <tr><td>Village Walk</td><td>$35</td><td><button class="btn" onclick="addToCart('Village Walk',35)">Add to Cart</button></td></tr>
-    <tr><td>Heritage Sites Visit</td><td>$50</td><td><button class="btn" onclick="addToCart('Heritage Sites Visit',50)">Add to Cart</button></td></tr>
-    <tr><td>Museum Tour</td><td>$40</td><td><button class="btn" onclick="addToCart('Museum Tour',40)">Add to Cart</button></td></tr>
+    <tr><td>Village Walk</td><td>$35</td><td><button class="btn" onclick="addToCart('Village Walk',35)">Add</button></td></tr>
+    <tr><td>Heritage Sites Visit</td><td>$50</td><td><button class="btn" onclick="addToCart('Heritage Sites Visit',50)">Add</button></td></tr>
+    <tr><td>Museum Tour</td><td>$40</td><td><button class="btn" onclick="addToCart('Museum Tour',40)">Add</button></td></tr>
   </table>
 
   <div class="disclaimer">
-    <strong>Terms & Conditions:</strong> All prices exclude visa & park fees. Payment: 50% deposit to confirm booking, balance 45 days prior to arrival. All bookings held provisional until confirmation received in writing. Visa fees & park fees are paid in cash at border. Prices subject to change without notice.
+    <strong>Terms & Conditions:</strong> All prices exclude visa & park fees.  
+    A 50% deposit confirms booking; balance due 45 days before arrival.  
+    Visa & park fees payable in cash at borders.  
+    Rates subject to change without notice.
   </div>
 
 </div>
@@ -179,11 +218,8 @@ footer {
 function addToCart(title, price){
   let cart = JSON.parse(localStorage.getItem('svvCart')) || [];
   const index = cart.findIndex(item => item.title === title && item.unit_usd === price);
-  if(index > -1){
-    cart[index].qty += 1;
-  } else {
-    cart.push({title: title, unit_usd: price, qty: 1});
-  }
+  if(index > -1){ cart[index].qty += 1; }
+  else { cart.push({title: title, unit_usd: price, qty: 1}); }
   localStorage.setItem('svvCart', JSON.stringify(cart));
   alert(title + " added to cart!");
 }
