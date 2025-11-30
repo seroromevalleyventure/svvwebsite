@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khami Ruins - Serorome Valley Ventures</title>
   <style>
+    /* ================= BODY STYLES ================= */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -15,64 +17,110 @@
       background-blend-mode: multiply;
       text-align: center;
     }
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 25px;
-      border-bottom: 3px solid goldenrod;
-    }
-    nav a {
-      color: gold;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ffda77;
-    }
-    .content {
-      margin: 40px auto;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 40px;
-      border-radius: 15px;
-      max-width: 900px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    }
-    h1, h2, h3 {
-      color: gold;
-    }
-    ul {
-      text-align: left;
-      display: inline-block;
-      line-height: 1.8;
-      margin-top: 10px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin: 40px auto;
-      max-width: 1000px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid goldenrod;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px gold;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #ffda77;
-    }
+
+```
+/* ================= HEADER STYLES ================= */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px;
+  border-bottom: 3px solid goldenrod;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffda77;
+}
+
+/* ================= CONTENT STYLES ================= */
+.content {
+  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 900px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+h1, h2, h3 {
+  color: gold;
+}
+
+ul {
+  text-align: left;
+  display: inline-block;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* ================= GALLERY STYLES ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px gold;
+}
+
+/* ================= PRICING BUTTON STYLES ================= */
+.pricing-btn {
+  display: inline-block;
+  margin: 25px auto;
+  padding: 12px 25px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.pricing-btn:hover {
+  background: #ffe66e;
+}
+
+/* ================= FOOTER STYLES ================= */
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffda77;
+}
+
+/* ================= DISCLAIMER NOTE ================= */
+.disclaimer-note {
+  margin-top: 12px;
+  font-size: 0.95em;
+  color: #ffeaa7;
+}
+```
+
   </style>
 </head>
 <body>
+
+  <!-- ================= HEADER ================= -->
+
   <header>
     <h1>Khami Ruins</h1>
     <p>Zimbabwe • Half Day • Up to 8 Guests</p>
@@ -84,48 +132,73 @@
     </nav>
   </header>
 
-  <!-- MAIN GALLERY (Your enhanced version) -->
+  <!-- ================= MAIN GALLERY ================= -->
+
   <div class="gallery">
-    <img src="Khami-Ruins-7-770x550.jpg" 
-         alt="Khami Ruins — panoramic view of ancient stone walls at sunrise">
-
-    <img src="khami 7.jpg" 
-         alt="Khami Ruins landscape — terraced stone structures surrounded by natural beauty">
-
-    <img src="khami air view.jpg" 
-         alt="Aerial view of Khami Ruins — breathtaking bird’s-eye look at one of Zimbabwe’s ancient cities">
-
-    <img src="khami ruin2.jpg" 
-         alt="Khami Ruins architecture — close-up detail of dry-stone engineering from the Torwa dynasty">
-
-    <img src="khami runis unesco 1.jpg" 
-         alt="Khami Ruins UNESCO World Heritage Site plaque — symbol of global cultural importance">
-
-    <img src="Khami-Ruins-6-770x550.jpg" 
-         alt="Khami Ruins site — scenic walkways and archaeological structures perfect for photography lovers">
+    <img src="Khami-Ruins-7-770x550.jpg" alt="Khami Ruins — panoramic view of ancient stone walls at sunrise">
+    <img src="khami 7.jpg" alt="Khami Ruins landscape — terraced stone structures surrounded by natural beauty">
+    <img src="khami air view.jpg" alt="Aerial view of Khami Ruins — breathtaking bird’s-eye look at one of Zimbabwe’s ancient cities">
+    <img src="khami ruin2.jpg" alt="Khami Ruins architecture — close-up detail of dry-stone engineering from the Torwa dynasty">
+    <img src="khami runis unesco 1.jpg" alt="Khami Ruins UNESCO World Heritage Site plaque — symbol of global cultural importance">
+    <img src="Khami-Ruins-6-770x550.jpg" alt="Khami Ruins site — scenic walkways and archaeological structures perfect for photography lovers">
   </div>
+
+  <!-- ================= CONTENT ================= -->
 
   <div class="content">
     <h2>Khami Ruins — Ancient Trade and Architecture</h2>
     <p>
       After the decline of Great Zimbabwe, <strong>Khami</strong> became the capital of the <strong>Torwa dynasty</strong> in the 15th century.  
-      Now a <strong>UNESCO World Heritage Site</strong>, Khami stands as a testament to advanced <strong>dry-stone architecture</strong> and 
-      centuries of trade with distant civilizations including China and Europe.
+      Now a <strong>UNESCO World Heritage Site</strong>, Khami stands as a testament to advanced <strong>dry-stone architecture</strong> and centuries of trade with distant civilizations including China and Europe.
     </p>
 
-    <h3>Highlights</h3>
-    <ul>
-      <li>UNESCO World Heritage Site</li>
-      <li>Second largest ancient stone monument after Great Zimbabwe</li>
-      <li>Former capital of the Torwa dynasty (16th century)</li>
-      <li>Artifacts showing trade with China and Europe</li>
-      <li>Unique terraced dry-stone architecture</li>
-      <li>Rich archaeological and cultural heritage</li>
-    </ul>
+```
+<h3>Highlights</h3>
+<ul>
+  <li>UNESCO World Heritage Site</li>
+  <li>Second largest ancient stone monument after Great Zimbabwe</li>
+  <li>Former capital of the Torwa dynasty (16th century)</li>
+  <li>Artifacts showing trade with China and Europe</li>
+  <li>Unique terraced dry-stone architecture</li>
+  <li>Rich archaeological and cultural heritage</li>
+</ul>
+
+<!-- ================= PRICING BUTTON ================= -->
+<a class="pricing-btn" href="khamipricing.html" target="_blank">Pricing 2026</a>
+<p class="disclaimer-note">
+  Note: Pricing and packages are similar to Matopos National Park. Selecting one hotel provides access to both Khami and Matopo excursions.
+</p>
+```
+
   </div>
+
+  <!-- ================= FOOTER ================= -->
 
   <footer>
     © 2025 Serorome Valley Ventures — All Rights Reserved.
   </footer>
+
+  <!-- ================= CART SYNC SCRIPT ================= -->
+
+  <script>
+    // Initialize shared cart for both Khami and Matopo
+    if (!localStorage.getItem('svvCart')) {
+      localStorage.setItem('svvCart', JSON.stringify([]));
+    }
+
+    // Function to add an item to the cart
+    function addToCart(title, price) {
+      let cart = JSON.parse(localStorage.getItem('svvCart'));
+      const index = cart.findIndex(item => item.title === title && item.unit_usd === price);
+      if (index > -1) {
+        cart[index].qty += 1;
+      } else {
+        cart.push({ title: title, unit_usd: price, qty: 1 });
+      }
+      localStorage.setItem('svvCart', JSON.stringify(cart));
+      alert(title + " added to cart!");
+    }
+  </script>
+
 </body>
 </html>
