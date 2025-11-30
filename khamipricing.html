@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khami Ruins 2026 Pricing - Serorome Valley Ventures</title>
+  <style>
+    /* GENERAL STYLING */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%), 
+                  url('matopo_khami_background.png') no-repeat center center fixed;
+      background-size: cover;
+      background-blend-mode: multiply;
+      color: white;
+    }
+
+```
+header {
+  background: rgba(0,0,0,0.7);
+  padding: 25px;
+  text-align: center;
+  border-bottom: 3px solid goldenrod;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover { color: #ffe66e; }
+
+.btn {
+  display: inline-block;
+  background: gold;
+  color: black;
+  padding: 6px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btn:hover { background: #ffe66e; }
+
+.content {
+  background: rgba(0,0,0,0.65);
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 1200px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+h1, h2 {
+  color: gold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  background: rgba(255,215,0,0.2);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: gold;
+  font-size: 22px;
+}
+
+/* TABLE STYLING */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.5);
+}
+
+th {
+  background: gold;
+  color: black;
+  padding: 12px;
+  font-size: 18px;
+}
+
+td {
+  border: 1px solid goldenrod;
+  padding: 10px;
+  font-size: 17px;
+  color: #ffeaa7;
+}
+
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffdd55;
+}
+
+.disclaimer {
+  background: rgba(255,215,0,0.15);
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid gold;
+  color: #ffdd88;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ffda77;
+  font-size: 0.9em;
+  background: rgba(0,0,0,0.5);
+  border-top: 2px solid goldenrod;
+  margin-top: 40px;
+}
+```
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <h1>Khami Ruins - 2026 Pricing</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="khami.html">Back to Khami</a>
+      <a class="btn" href="checkout.html" style="float:right;">View Cart</a>
+    </nav>
+  </header>
+
+  <div class="content">
+
+```
+<!-- ACCOMMODATION SECTION -->
+<div class="section-title">Accommodation Rates (Per Person, Per Night)</div>
+<table>
+  <tr>
+    <th>Hotel</th><th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
+  </tr>
+  <tr>
+    <td>Holiday Inn</td>
+    <td>Dinner, B&B</td>
+    <td>$86</td>
+    <td>$43</td>
+    <td>$0</td>
+    <td><button class="btn" onclick="addToCart('Holiday Inn - Dinner,B&B',86)">Add</button></td>
+  </tr>
+  <tr>
+    <td>Holiday Inn</td>
+    <td>Full Board</td>
+    <td>$105</td>
+    <td>$52.5</td>
+    <td>$0</td>
+    <td><button class="btn" onclick="addToCart('Holiday Inn - Full Board',105)">Add</button></td>
+  </tr>
+  <tr>
+    <td>Churchill Arms Lodge</td>
+    <td>Dinner, B&B</td>
+    <td>$107</td>
+    <td>$53.5</td>
+    <td>$0</td>
+    <td><button class="btn" onclick="addToCart('Churchill Arms Lodge - Dinner,B&B',107)">Add</button></td>
+  </tr>
+  <tr>
+    <td>Churchill Arms Lodge</td>
+    <td>Full Board</td>
+    <td>$125</td>
+    <td>$62.5</td>
+    <td>$0</td>
+    <td><button class="btn" onclick="addToCart('Churchill Arms Lodge - Full Board',125)">Add</button></td>
+  </tr>
+</table>
+
+<!-- GREEN SEASON SPECIAL -->
+<div class="section-title">Green Season Special (05 Jan–31 Mar / 01 Nov–20 Dec)</div>
+<table>
+  <tr>
+    <th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
+  </tr>
+  <tr>
+    <td>Dinner, B&B</td><td>$78</td><td>$39</td><td>$0</td>
+    <td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',78)">Add</button></td>
+  </tr>
+  <tr>
+    <td>Full Board</td><td>$95</td><td>$47.5</td><td>$0</td>
+    <td><button class="btn" onclick="addToCart('Green Season Full Board',95)">Add</button></td>
+  </tr>
+</table>
+
+<!-- ACTIVITIES -->
+<div class="section-title">Activities (Per Person)</div>
+<table>
+  <tr><th>Activity</th><th>Price</th><th>Action</th></tr>
+  <tr><td>Rhino Tracking (3hrs, min 2 pax)</td><td>$70</td><td><button class="btn" onclick="addToCart('Rhino Tracking',70)">Add</button></td></tr>
+  <tr><td>Full Day Activity Drive</td><td>$110</td><td><button class="btn" onclick="addToCart('Full Day Activity Drive',110)">Add</button></td></tr>
+</table>
+
+<!-- TRANSFERS -->
+<div class="section-title">Transfers</div>
+<table>
+  <tr><th>Transfer Type</th><th>Price</th><th>Action</th></tr>
+  <tr><td>Airport Shuttle (per person)</td><td>$25</td><td><button class="btn" onclick="addToCart('Airport Shuttle',25)">Add</button></td></tr>
+  <tr><td>Private Vehicle Transfer</td><td>$90</td><td><button class="btn" onclick="addToCart('Private Vehicle Transfer',90)">Add</button></td></tr>
+</table>
+
+<!-- MEALS -->
+<div class="section-title">Add-on Meals</div>
+<table>
+  <tr><th>Meal</th><th>Price</th><th>Action</th></tr>
+  <tr><td>Breakfast</td><td>$15</td><td><button class="btn" onclick="addToCart('Breakfast',15)">Add</button></td></tr>
+  <tr><td>Lunch</td><td>$20</td><td><button class="btn" onclick="addToCart('Lunch',20)">Add</button></td></tr>
+  <tr><td>Boma Dinner Experience</td><td>$45</td><td><button class="btn" onclick="addToCart('Boma Dinner Experience',45)">Add</button></td></tr>
+</table>
+
+<!-- CAMPING OPTIONS -->
+<div class="section-title">Camping Options</div>
+<table>
+  <tr><th>Option</th><th>Price</th><th>Action</th></tr>
+  <tr><td>Standard Tent</td><td>$60</td><td><button class="btn" onclick="addToCart('Standard Tent',60)">Add</button></td></tr>
+  <tr><td>Glamping Tent</td><td>$120</td><td><button class="btn" onclick="addToCart('Glamping Tent',120)">Add</button></td></tr>
+  <tr><td>Safari Camp Stay</td><td>$250</td><td><button class="btn" onclick="addToCart('Safari Camp Stay',250)">Add</button></td></tr>
+</table>
+
+<!-- CULTURAL TOURS -->
+<div class="section-title">Cultural Tours</div>
+<table>
+  <tr><th>Tour</th><th>Price</th><th>Action</th></tr>
+  <tr><td>Village Walk</td><td>$35</td><td><button class="btn" onclick="addToCart('Village Walk',35)">Add</button></td></tr>
+  <tr><td>Heritage Sites Visit</td><td>$50</td><td><button class="btn" onclick="addToCart('Heritage Sites Visit',50)">Add</button></td></tr>
+  <tr><td>Museum Tour</td><td>$40</td><td><button class="btn" onclick="addToCart('Museum Tour',40)">Add</button></td></tr>
+</table>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <strong>Terms & Conditions:</strong> All prices exclude visa & park fees.  
+  A 50% deposit confirms booking; balance due 45 days before arrival.  
+  Visa & park fees payable in cash at borders.  
+  Rates subject to change without notice.  
+  <br>
+  <strong>Note:</strong> Booking here automatically syncs with Matopos packages to avoid double booking.
+</div>
+```
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2025 Serorome Valley Ventures • All Rights Reserved
+  </footer>
+
+  <!-- SYNC CART JS (Works with Matopos Pricing Page) -->
+
+  <script>
+    function addToCart(title, price){
+      let cart = JSON.parse(localStorage.getItem('svvCart')) || [];
+      const index = cart.findIndex(item => item.title === title && item.unit_usd === price);
+      if(index > -1){ cart[index].qty += 1; }
+      else { cart.push({title: title, unit_usd: price, qty: 1}); }
+      localStorage.setItem('svvCart', JSON.stringify(cart));
+      alert(title + " added to cart! This will also reflect on Matopos packages.");
+    }
+  </script>
+
+</body>
+</html>
