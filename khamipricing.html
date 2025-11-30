@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khami Ruins 2026 Pricing - Serorome Valley Ventures</title>
+  <title>Khami Ruins - Serorome Valley Ventures</title>
   <style>
-    /* GENERAL STYLING */
+    /* ================= BODY STYLES ================= */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%), 
-                  url('matopo_khami_background.png') no-repeat center center fixed;
+      color: white;
+      background: url('khamirocksPNG.png') no-repeat center center fixed;
       background-size: cover;
       background-blend-mode: multiply;
-      color: white;
+      text-align: center;
     }
 
 ```
+/* ================= HEADER STYLES ================= */
 header {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   padding: 25px;
-  text-align: center;
   border-bottom: 3px solid goldenrod;
 }
 
@@ -33,97 +33,78 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover { color: #ffe66e; }
+nav a:hover { color: #ffda77; }
 
-.btn {
+/* ================= CONTENT STYLES ================= */
+.content {
+  margin: 40px auto;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 900px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+h1, h2, h3 { color: gold; }
+
+ul {
+  text-align: left;
   display: inline-block;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* ================= GALLERY STYLES ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px gold;
+}
+
+/* ================= PRICING BUTTON STYLES ================= */
+.pricing-btn {
+  display: inline-block;
+  margin: 25px auto;
+  padding: 12px 25px;
   background: gold;
   color: black;
-  padding: 6px 16px;
-  font-size: 14px;
-  border-radius: 6px;
-  text-decoration: none;
   font-weight: bold;
-  margin-left: 5px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  text-decoration: none;
   transition: 0.3s;
   cursor: pointer;
 }
-.btn:hover { background: #ffe66e; }
 
-.content {
-  background: rgba(0,0,0,0.65);
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 1200px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
-}
+.pricing-btn:hover { background: #ffe66e; }
 
-h1, h2 {
-  color: gold;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.section-title {
-  background: rgba(255,215,0,0.2);
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin-top: 25px;
-  text-align: center;
-  font-weight: bold;
-  color: gold;
-  font-size: 22px;
-}
-
-/* TABLE STYLING */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  background: rgba(0,0,0,0.5);
-}
-
-th {
-  background: gold;
-  color: black;
-  padding: 12px;
-  font-size: 18px;
-}
-
-td {
-  border: 1px solid goldenrod;
-  padding: 10px;
-  font-size: 17px;
-  color: #ffeaa7;
-}
-
-td:nth-child(2),
-td:nth-child(3),
-td:nth-child(4),
-td:nth-child(5) {
-  font-weight: bold;
-  font-size: 18px;
-  color: #ffdd55;
-}
-
-.disclaimer {
-  background: rgba(255,215,0,0.15);
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid gold;
-  color: #ffdd88;
-  margin-top: 20px;
-}
-
+/* ================= FOOTER STYLES ================= */
 footer {
-  text-align: center;
-  padding: 20px;
-  color: #ffda77;
-  font-size: 0.9em;
-  background: rgba(0,0,0,0.5);
-  border-top: 2px solid goldenrod;
   margin-top: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffda77;
+}
+
+/* ================= DISCLAIMER NOTE ================= */
+.disclaimer-note {
+  margin-top: 12px;
+  font-size: 0.95em;
+  color: #ffeaa7;
 }
 ```
 
@@ -131,149 +112,84 @@ footer {
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
 
   <header>
-    <h1>Khami Ruins - 2026 Pricing</h1>
+    <h1>Khami Ruins</h1>
+    <p>Zimbabwe • Half Day • Up to 8 Guests</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="destinations.html">Destinations</a>
-      <a href="khami.html">Back to Khami</a>
-      <a class="btn" href="checkout.html" style="float:right;">View Cart</a>
+      <a href="itinerary.html">Safari Itinerary</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- ================= MAIN GALLERY ================= -->
+
+  <div class="gallery">
+    <img src="Khami-Ruins-7-770x550.jpg" alt="Khami Ruins — panoramic view of ancient stone walls at sunrise">
+    <img src="khami 7.jpg" alt="Khami Ruins landscape — terraced stone structures surrounded by natural beauty">
+    <img src="khami air view.jpg" alt="Aerial view of Khami Ruins — breathtaking bird’s-eye look at one of Zimbabwe’s ancient cities">
+    <img src="khami ruin2.jpg" alt="Khami Ruins architecture — close-up detail of dry-stone engineering from the Torwa dynasty">
+    <img src="khami runis unesco 1.jpg" alt="Khami Ruins UNESCO World Heritage Site plaque — symbol of global cultural importance">
+    <img src="Khami-Ruins-6-770x550.jpg" alt="Khami Ruins site — scenic walkways and archaeological structures perfect for photography lovers">
+  </div>
+
+  <!-- ================= CONTENT ================= -->
+
   <div class="content">
+    <h2>Khami Ruins — Ancient Trade and Architecture</h2>
+    <p>
+      After the decline of Great Zimbabwe, <strong>Khami</strong> became the capital of the <strong>Torwa dynasty</strong> in the 15th century.  
+      Now a <strong>UNESCO World Heritage Site</strong>, Khami stands as a testament to advanced <strong>dry-stone architecture</strong> and centuries of trade with distant civilizations including China and Europe.
+    </p>
 
 ```
-<!-- ACCOMMODATION SECTION -->
-<div class="section-title">Accommodation Rates (Per Person, Per Night)</div>
-<table>
-  <tr>
-    <th>Hotel</th><th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
-  </tr>
-  <tr>
-    <td>Holiday Inn</td>
-    <td>Dinner, B&B</td>
-    <td>$86</td>
-    <td>$43</td>
-    <td>$0</td>
-    <td><button class="btn" onclick="addToCart('Holiday Inn - Dinner,B&B',86)">Add</button></td>
-  </tr>
-  <tr>
-    <td>Holiday Inn</td>
-    <td>Full Board</td>
-    <td>$105</td>
-    <td>$52.5</td>
-    <td>$0</td>
-    <td><button class="btn" onclick="addToCart('Holiday Inn - Full Board',105)">Add</button></td>
-  </tr>
-  <tr>
-    <td>Churchill Arms Lodge</td>
-    <td>Dinner, B&B</td>
-    <td>$107</td>
-    <td>$53.5</td>
-    <td>$0</td>
-    <td><button class="btn" onclick="addToCart('Churchill Arms Lodge - Dinner,B&B',107)">Add</button></td>
-  </tr>
-  <tr>
-    <td>Churchill Arms Lodge</td>
-    <td>Full Board</td>
-    <td>$125</td>
-    <td>$62.5</td>
-    <td>$0</td>
-    <td><button class="btn" onclick="addToCart('Churchill Arms Lodge - Full Board',125)">Add</button></td>
-  </tr>
-</table>
+<h3>Highlights</h3>
+<ul>
+  <li>UNESCO World Heritage Site</li>
+  <li>Second largest ancient stone monument after Great Zimbabwe</li>
+  <li>Former capital of the Torwa dynasty (16th century)</li>
+  <li>Artifacts showing trade with China and Europe</li>
+  <li>Unique terraced dry-stone architecture</li>
+  <li>Rich archaeological and cultural heritage</li>
+</ul>
 
-<!-- GREEN SEASON SPECIAL -->
-<div class="section-title">Green Season Special (05 Jan–31 Mar / 01 Nov–20 Dec)</div>
-<table>
-  <tr>
-    <th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
-  </tr>
-  <tr>
-    <td>Dinner, B&B</td><td>$78</td><td>$39</td><td>$0</td>
-    <td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',78)">Add</button></td>
-  </tr>
-  <tr>
-    <td>Full Board</td><td>$95</td><td>$47.5</td><td>$0</td>
-    <td><button class="btn" onclick="addToCart('Green Season Full Board',95)">Add</button></td>
-  </tr>
-</table>
-
-<!-- ACTIVITIES -->
-<div class="section-title">Activities (Per Person)</div>
-<table>
-  <tr><th>Activity</th><th>Price</th><th>Action</th></tr>
-  <tr><td>Rhino Tracking (3hrs, min 2 pax)</td><td>$70</td><td><button class="btn" onclick="addToCart('Rhino Tracking',70)">Add</button></td></tr>
-  <tr><td>Full Day Activity Drive</td><td>$110</td><td><button class="btn" onclick="addToCart('Full Day Activity Drive',110)">Add</button></td></tr>
-</table>
-
-<!-- TRANSFERS -->
-<div class="section-title">Transfers</div>
-<table>
-  <tr><th>Transfer Type</th><th>Price</th><th>Action</th></tr>
-  <tr><td>Airport Shuttle (per person)</td><td>$25</td><td><button class="btn" onclick="addToCart('Airport Shuttle',25)">Add</button></td></tr>
-  <tr><td>Private Vehicle Transfer</td><td>$90</td><td><button class="btn" onclick="addToCart('Private Vehicle Transfer',90)">Add</button></td></tr>
-</table>
-
-<!-- MEALS -->
-<div class="section-title">Add-on Meals</div>
-<table>
-  <tr><th>Meal</th><th>Price</th><th>Action</th></tr>
-  <tr><td>Breakfast</td><td>$15</td><td><button class="btn" onclick="addToCart('Breakfast',15)">Add</button></td></tr>
-  <tr><td>Lunch</td><td>$20</td><td><button class="btn" onclick="addToCart('Lunch',20)">Add</button></td></tr>
-  <tr><td>Boma Dinner Experience</td><td>$45</td><td><button class="btn" onclick="addToCart('Boma Dinner Experience',45)">Add</button></td></tr>
-</table>
-
-<!-- CAMPING OPTIONS -->
-<div class="section-title">Camping Options</div>
-<table>
-  <tr><th>Option</th><th>Price</th><th>Action</th></tr>
-  <tr><td>Standard Tent</td><td>$60</td><td><button class="btn" onclick="addToCart('Standard Tent',60)">Add</button></td></tr>
-  <tr><td>Glamping Tent</td><td>$120</td><td><button class="btn" onclick="addToCart('Glamping Tent',120)">Add</button></td></tr>
-  <tr><td>Safari Camp Stay</td><td>$250</td><td><button class="btn" onclick="addToCart('Safari Camp Stay',250)">Add</button></td></tr>
-</table>
-
-<!-- CULTURAL TOURS -->
-<div class="section-title">Cultural Tours</div>
-<table>
-  <tr><th>Tour</th><th>Price</th><th>Action</th></tr>
-  <tr><td>Village Walk</td><td>$35</td><td><button class="btn" onclick="addToCart('Village Walk',35)">Add</button></td></tr>
-  <tr><td>Heritage Sites Visit</td><td>$50</td><td><button class="btn" onclick="addToCart('Heritage Sites Visit',50)">Add</button></td></tr>
-  <tr><td>Museum Tour</td><td>$40</td><td><button class="btn" onclick="addToCart('Museum Tour',40)">Add</button></td></tr>
-</table>
-
-<!-- DISCLAIMER -->
-<div class="disclaimer">
-  <strong>Terms & Conditions:</strong> All prices exclude visa & park fees.  
-  A 50% deposit confirms booking; balance due 45 days before arrival.  
-  Visa & park fees payable in cash at borders.  
-  Rates subject to change without notice.  
-  <br>
-  <strong>Note:</strong> Booking here automatically syncs with Matopos packages to avoid double booking.
-</div>
+<!-- ================= PRICING BUTTON ================= -->
+<a class="pricing-btn" href="khamipricing.html" target="_blank">Pricing 2026</a>
+<p class="disclaimer-note">
+  Note: Pricing and packages are similar to Matopos National Park. Selecting one hotel provides access to both Khami and Matopo excursions.
+</p>
 ```
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
 
   <footer>
-    © 2025 Serorome Valley Ventures • All Rights Reserved
+    © 2025 Serorome Valley Ventures — All Rights Reserved.
   </footer>
 
-  <!-- SYNC CART JS (Works with Matopos Pricing Page) -->
+  <!-- ================= CART SYNC SCRIPT ================= -->
 
   <script>
-    function addToCart(title, price){
-      let cart = JSON.parse(localStorage.getItem('svvCart')) || [];
+    // Initialize shared cart for both Khami and Matopo
+    if (!localStorage.getItem('svvCart')) {
+      localStorage.setItem('svvCart', JSON.stringify([]));
+    }
+
+    // Function to add an item to the cart
+    function addToCart(title, price) {
+      let cart = JSON.parse(localStorage.getItem('svvCart'));
       const index = cart.findIndex(item => item.title === title && item.unit_usd === price);
-      if(index > -1){ cart[index].qty += 1; }
-      else { cart.push({title: title, unit_usd: price, qty: 1}); }
+      if (index > -1) {
+        cart[index].qty += 1;
+      } else {
+        cart.push({ title: title, unit_usd: price, qty: 1 });
+      }
       localStorage.setItem('svvCart', JSON.stringify(cart));
-      alert(title + " added to cart! This will also reflect on Matopos packages.");
+      alert(title + " added to cart!");
     }
   </script>
 
