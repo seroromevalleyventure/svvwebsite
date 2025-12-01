@@ -36,6 +36,7 @@ ul{padding-left:18px}
 table{width:100%;border-collapse:collapse;margin-top:10px}
 th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.04);text-align:left}
 footer{margin-top:20px;text-align:center;color:#ffd}
+.highlight{border:2px solid var(--accent); padding:12px; border-radius:10px; background:rgba(255,215,0,0.08);}
 @media(max-width:900px){ .grid{grid-template-columns:1fr} }
 </style>
 </head>
@@ -47,7 +48,6 @@ footer{margin-top:20px;text-align:center;color:#ffd}
 </header>
 
 <div class="grid">
-  <!-- left: selector -->
   <div class="card" aria-live="polite">
     <h2 style="color:var(--accent);margin:0 0 8px">Build your Johannesburg Stopover</h2>
 
@@ -58,6 +58,15 @@ footer{margin-top:20px;text-align:center;color:#ffd}
       <button id="incPax">+</button>
     </div>
     <div class="small">Use the traveller count to compute per-person fees.</div>
+
+    <div class="highlight" style="margin-top:14px">
+      <label style="color:var(--accent);font-size:1.05rem;font-weight:700;">✈️ Flight: Johannesburg → Francistown (Optional)</label>
+      <div class="small" style="color:#fff;margin-bottom:6px">Direct flight from OR Tambo to Francistown — ~1h15m</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:6px;">
+        <input type="checkbox" id="flightInclude" />
+        <label for="flightInclude" style="margin:0;color:#ffd"><strong>Include one-way airfare — US$150 per person</strong></label>
+      </div>
+    </div>
 
     <label style="margin-top:12px">Choose destination stops (US$15 per person each)</label>
     <select id="destSelect" multiple size="4">
@@ -75,7 +84,6 @@ footer{margin-top:20px;text-align:center;color:#ffd}
       </select>
       <input id="transportDays" type="number" min="1" value="1" style="width:96px" />
     </div>
-    <div class="small">Set days for transport if selecting private van.</div>
 
     <label style="margin-top:10px">Meals & refreshments (group)</label>
     <div style="display:flex;gap:8px;align-items:center">
@@ -86,7 +94,6 @@ footer{margin-top:20px;text-align:center;color:#ffd}
       </select>
       <input id="mealsGroupsize" type="number" min="1" value="2" style="width:96px" />
     </div>
-    <div class="small">If selecting group package, set group size (5–7 recommended).</div>
 
     <label style="margin-top:12px">Accommodation / Refresh (optional)</label>
     <div style="display:flex;gap:8px;align-items:center">
@@ -112,17 +119,13 @@ footer{margin-top:20px;text-align:center;color:#ffd}
     <div class="small" style="margin-top:12px;color:#ffd">Note: Prices shown are estimates. Final invoicing uses live exchange rates and may vary with fuel/seasonal surcharges.</div>
   </div>
 
-  <!-- right: totals & cart -->
   <div class="card">
     <h3 style="color:var(--accent);margin:0 0 8px">Estimate & Add to Cart</h3>
     <div id="estimateBox" class="muted">
       <div><strong>Exchange rate (snapshot):</strong> <span id="rate"></span></div>
-
       <table>
         <tr><th>Line item</th><th style="text-align:right">Amount (USD)</th></tr>
-        <tbody id="lines">
-          <!-- populated by JS -->
-        </tbody>
+        <tbody id="lines"></tbody>
       </table>
 
       <div class="total-box">
@@ -160,128 +163,20 @@ footer{margin-top:20px;text-align:center;color:#ffd}
 <footer>
   <div class="card" style="margin-top:18px">
     <h3 style="margin:0;color:var(--accent)">Travel Advisory & Visa</h3>
-    <p class="small">
-      Visa fees are <strong>not</strong> collected online — travelers must pay applicable visa/border fees <strong>in cash on arrival</strong>.
-      South Africa uses Rands (ZAR). Carry local cash and a Visa/MasterCard where possible. Ask your SVV guide to escort you at ATMs.
-    </p>
+    <p class="small">Visa fees are <strong>not</strong> collected online — travelers must pay applicable visa/border fees <strong>in cash on arrival</strong>. South Africa uses Rands (ZAR). Carry local cash and a Visa/MasterCard where possible. Ask your SVV guide to escort you at ATMs.</p>
     <p class="small">Prices may change due to seasonality, weather, or fuel. This page uses fuzzy inputs so you can quickly adapt quantities — always confirm with an SVV agent.</p>
   </div>
 </footer>
 </div>
 
 <script>
-// --- CONFIG / DEFAULTS ---
-const RATE = 18.00; // ZAR per USD
+const RATE = 18.00; 
 const DEST_PRICE_USD = 15; 
 const VAN_DAY_USD = 220; 
 const GROUP_MEAL_USD = 250; 
 const PERPERSON_MEAL_USD = 50;
 const ACCOM_BASIC_USD = 60;
 const ACCOM_PREMIUM_USD = 180;
+const FLIGHT_USD = 150;
 
-// Helpers
-const $ = id => document.getElementById(id);
-const fmtUSD = v => '$' + Number(v).toFixed(2);
-const fmtZAR = v => 'R' + Number(v).toLocaleString(undefined,{maximumFractionDigits:2});
-
-// Cart rendering
-function renderCartPreview(){
-  const cart = JSON.parse(localStorage.getItem('svvCart')||'[]');
-  if(!cart.length){ $('cartPreview').innerHTML='No items in cart.'; return;}
-  let html='<ul>';
-  cart.forEach(it=>{html+=`<li><strong>${it.title}</strong> — US$${it.subtotal_usd.toFixed(2)}</li>`;});
-  html+='</ul>';
-  html+=`<div style="margin-top:6px">Cart total: <strong>US$${cart.reduce((s,i)=>s+i.subtotal_usd,0).toFixed(2)}</strong></div>`;
-  $('cartPreview').innerHTML = html;
-}
-renderCartPreview();
-
-// Calculation logic
-function calculateEstimate(){
-  const pax = Math.max(1,Number($('pax').value||1));
-  const selectedDest = Array.from($('destSelect').selectedOptions).map(o=>o.value);
-  const destCount = selectedDest.length;
-  const transportMode = $('transportMode').value;
-  const transportDays = Math.max(1,Number($('transportDays').value||1));
-  const mealsOpt = $('mealsOpt').value;
-  const mealsGroupSize = Math.max(1,Number($('mealsGroupsize').value||1));
-  const accomOpt = $('accomOpt').value;
-  const nights = Math.max(1,Number($('nights').value||1));
-  const season = $('season').value;
-
-  const lines=[];
-  if(destCount>0) lines.push({title:`Sightseeing (${destCount} stop(s)) — ${pax} pax`, amount: DEST_PRICE_USD*destCount*pax});
-  if(transportMode==='van') lines.push({title:`Private van — ${transportDays} day(s)`, amount: VAN_DAY_USD*transportDays});
-  if(mealsOpt==='group') lines.push({title:`Group meal package (group of ${mealsGroupSize})`, amount: GROUP_MEAL_USD});
-  else if(mealsOpt==='perperson') lines.push({title:`Meals ($${PERPERSON_MEAL_USD}/pp) — ${pax} pax`, amount: PERPERSON_MEAL_USD*pax});
-  if(accomOpt==='basic') lines.push({title:`Basic refresh/accom — ${nights} night(s)`, amount: ACCOM_BASIC_USD*pax*nights});
-  else if(accomOpt==='premium') lines.push({title:`Premium accom — ${nights} night(s)`, amount: ACCOM_PREMIUM_USD*pax*nights});
-
-  let subtotal = lines.reduce((s,l)=>s+l.amount,0);
-  let surcharge=0;
-  if(season==='high'){ surcharge=subtotal*0.15; lines.push({title:'High-season surcharge (15%)', amount:surcharge}); }
-
-  const total = subtotal+surcharge;
-
-  const tbody=$('lines');
-  tbody.innerHTML='';
-  if(lines.length===0) tbody.innerHTML='<tr><td colspan="2">No services selected</td></tr>';
-  else lines.forEach(l=>{
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${l.title}</td><td style="text-align:right">${fmtUSD(l.amount)}</td>`;
-    tbody.appendChild(tr);
-  });
-
-  $('subtotalUSD').textContent = fmtUSD(total);
-  $('subtotalZAR').textContent = fmtZAR(total*RATE);
-  $('surchargeNote').textContent = surcharge?'Seasonal surcharge applied.':'';
-
-  return {pax, lines, total};
-}
-
-// Event handlers
-$('incPax').addEventListener('click',()=>{$('pax').value=Number($('pax').value||1)+1; calculateEstimate();});
-$('decPax').addEventListener('click',()=>{$('pax').value=Math.max(1,Number($('pax').value||1)-1); calculateEstimate();});
-$('calcBtn').addEventListener('click',()=>calculateEstimate());
-$('resetBtn').addEventListener('click',()=>{
-  $('pax').value=2;
-  $('destSelect').selectedIndex=-1;
-  $('transportMode').value='none';
-  $('transportDays').value=1;
-  $('mealsOpt').value='none';
-  $('mealsGroupsize').value=2;
-  $('accomOpt').value='none';
-  $('nights').value=1;
-  $('season').value='low';
-  $('itemTitle').value='Johannesburg Stopover Package — Custom';
-  calculateEstimate();
-});
-
-// Cart
-$('addToCart').addEventListener('click',()=>{
-  const data=calculateEstimate();
-  if(data.lines.length===0){ alert('Please select at least one service.'); return; }
-  const item={
-    id:'joburg_pkg_'+Date.now(),
-    title:$('itemTitle').value.trim()||('Johannesburg Stopover — '+new Date().toLocaleDateString()),
-    qty:1, unit_usd:data.total, subtotal_usd:data.total
-  };
-  const cart=JSON.parse(localStorage.getItem('svvCart')||'[]');
-  cart.push(item);
-  localStorage.setItem('svvCart',JSON.stringify(cart));
-  renderCartPreview();
-  alert('Added to cart: '+item.title);
-});
-
-$('goCheckout').addEventListener('click',()=>{
-  const cart=JSON.parse(localStorage.getItem('svvCart')||'[]');
-  if(cart.length===0){ if(!confirm('Cart empty. Add current selection?')) return; $('addToCart').click();}
-  window.location.href='checkout.html';
-});
-
-// Initial render
-document.getElementById('rate').textContent='1 USD = '+RATE.toFixed(2)+' ZAR';
-calculateEstimate();
-</script>
-</body>
-</html>
+const $
