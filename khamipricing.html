@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,112 +15,109 @@
       color: white;
     }
 
-```
-header {
-  background: rgba(0,0,0,0.7);
-  padding: 25px;
-  text-align: center;
-  border-bottom: 3px solid goldenrod;
-}
+    header {
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      text-align: center;
+      border-bottom: 3px solid goldenrod;
+    }
 
-nav a {
-  color: gold;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
+    nav a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
 
-nav a:hover { color: #ffe66e; }
+    nav a:hover { color: #ffe66e; }
 
-.btn {
-  display: inline-block;
-  background: gold;
-  color: black;
-  padding: 6px 16px;
-  font-size: 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 5px;
-  transition: 0.3s;
-  cursor: pointer;
-}
+    .btn {
+      display: inline-block;
+      background: gold;
+      color: black;
+      padding: 6px 16px;
+      font-size: 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
 
-.btn:hover { background: #ffe66e; }
+    .btn:hover { background: #ffe66e; }
 
-.content {
-  background: rgba(0,0,0,0.65);
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 1200px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
-}
+    .content {
+      background: rgba(0,0,0,0.65);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 1200px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
 
-h1, h2 { color: gold; text-align: center; margin-bottom: 15px; }
+    h1, h2 { color: gold; text-align: center; margin-bottom: 15px; }
 
-.section-title {
-  background: rgba(255,215,0,0.2);
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin-top: 25px;
-  text-align: center;
-  font-weight: bold;
-  color: gold;
-  font-size: 22px;
-}
+    .section-title {
+      background: rgba(255,215,0,0.2);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 25px;
+      text-align: center;
+      font-weight: bold;
+      color: gold;
+      font-size: 22px;
+    }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  background: rgba(0,0,0,0.5);
-}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background: rgba(0,0,0,0.5);
+    }
 
-th {
-  background: gold;
-  color: black;
-  padding: 12px;
-  font-size: 18px;
-}
+    th {
+      background: gold;
+      color: black;
+      padding: 12px;
+      font-size: 18px;
+    }
 
-td {
-  border: 1px solid goldenrod;
-  padding: 10px;
-  font-size: 17px;
-  color: #ffeaa7;
-}
+    td {
+      border: 1px solid goldenrod;
+      padding: 10px;
+      font-size: 17px;
+      color: #ffeaa7;
+    }
 
-td:nth-child(2),
-td:nth-child(3),
-td:nth-child(4),
-td:nth-child(5) {
-  font-weight: bold;
-  font-size: 18px;
-  color: #ffdd55;
-}
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5) {
+      font-weight: bold;
+      font-size: 18px;
+      color: #ffdd55;
+    }
 
-.disclaimer {
-  background: rgba(255,215,0,0.15);
-  padding: 20px;
-  border-radius: 12px;
-  border: 2px solid gold;
-  color: #ffdd88;
-  margin-top: 20px;
-}
+    .disclaimer {
+      background: rgba(255,215,0,0.15);
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid gold;
+      color: #ffdd88;
+      margin-top: 20px;
+    }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #ffda77;
-  font-size: 0.9em;
-  background: rgba(0,0,0,0.5);
-  border-top: 2px solid goldenrod;
-  margin-top: 40px;
-}
-```
-
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ffda77;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.5);
+      border-top: 2px solid goldenrod;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -176,27 +172,28 @@ footer {
       </tr>
     </table>
 
-```
-<div class="section-title">Green Season Special (05 Jan–31 Mar / 01 Nov–20 Dec)</div>
-<table>
-  <tr>
-    <th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
-  </tr>
-  <tr>
-    <td>Dinner, B&B</td><td>$78</td><td>$39</td><td>$0</td>
-    <td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',78)">Add</button></td>
-  </tr>
-  <tr>
-    <td>Full Board</td><td>$95</td><td>$47.5</td><td>$0</td>
-    <td><button class="btn" onclick="addToCart('Green Season Full Board',95)">Add</button></td>
-  </tr>
-</table>
-```
+    <div class="section-title">Green Season Special (05 Jan–31 Mar / 01 Nov–20 Dec)</div>
+    <table>
+      <tr>
+        <th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
+      </tr>
+      <tr>
+        <td>Dinner, B&B</td><td>$78</td><td>$39</td><td>$0</td>
+        <td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',78)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Full Board</td><td>$95</td><td>$47.5</td><td>$0</td>
+        <td><button class="btn" onclick="addToCart('Green Season Full Board',95)">Add</button></td>
+      </tr>
+    </table>
 
+    <div class="disclaimer">
+      ⚠ Please review our Health, Vaccination & Travel Safety Disclaimer. Travelers must check each destination for current visa price information. All travelers must carry cash for visa payment at border points at all times. Visa prices for each border are listed on the respective destination pricing pages.
+    </div>
   </div>
 
   <footer>
-    © 2025 Serorome Valley Ventures — All Rights Reserved.
+    © 2026 Serorome Valley Ventures — All Rights Reserved.
   </footer>
 
   <script>
