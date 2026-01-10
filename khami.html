@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khami Ruins - Serorome Valley Ventures</title>
-
+  <title>Khami Ruins 2026 Pricing - Serorome Valley Ventures</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      background: url('khamirocksPNG.png') no-repeat center center fixed;
+      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%), 
+                  url('khamirocksPNG.png') no-repeat center center fixed;
       background-size: cover;
       background-blend-mode: multiply;
-      text-align: center;
+      color: white;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0,0,0,0.7);
       padding: 25px;
+      text-align: center;
       border-bottom: 3px solid goldenrod;
     }
 
@@ -30,225 +30,201 @@
       transition: color 0.3s ease;
     }
 
-    nav a:hover { color: #ffda77; }
+    nav a:hover { color: #ffe66e; }
 
-    .content {
-      margin: 40px auto;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 40px;
-      border-radius: 15px;
-      max-width: 900px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-    }
-
-    h1, h2, h3 { color: gold; }
-
-    ul {
-      text-align: left;
+    .btn {
       display: inline-block;
-      line-height: 1.8;
-      margin-top: 10px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin: 40px auto;
-      max-width: 1000px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid goldenrod;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px gold;
-    }
-
-    .pricing-btn {
-      display: inline-block;
-      margin: 25px auto;
-      padding: 12px 25px;
       background: gold;
       color: black;
-      font-weight: bold;
-      font-size: 1.1em;
-      border-radius: 8px;
+      padding: 6px 16px;
+      font-size: 14px;
+      border-radius: 6px;
       text-decoration: none;
+      font-weight: bold;
+      margin-left: 5px;
       transition: 0.3s;
       cursor: pointer;
     }
 
-    .pricing-btn:hover { background: #ffe66e; }
+    .btn:hover { background: #ffe66e; }
+
+    .content {
+      background: rgba(0,0,0,0.65);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 1200px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    }
+
+    h1, h2 { color: gold; text-align: center; margin-bottom: 15px; }
+
+    .section-title {
+      background: rgba(255,215,0,0.2);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 25px;
+      text-align: center;
+      font-weight: bold;
+      color: gold;
+      font-size: 22px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background: rgba(0,0,0,0.5);
+    }
+
+    th {
+      background: gold;
+      color: black;
+      padding: 12px;
+      font-size: 18px;
+    }
+
+    td {
+      border: 1px solid goldenrod;
+      padding: 10px;
+      font-size: 17px;
+      color: #ffeaa7;
+    }
+
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5) {
+      font-weight: bold;
+      font-size: 18px;
+      color: #ffdd55;
+    }
+
+    .disclaimer {
+      background: rgba(255,215,0,0.15);
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid gold;
+      color: #ffdd88;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 90%;
+      max-width: 650px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      border: 2px solid gold;
+      box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    }
+
+    .caption {
+      text-align: center;
+      font-style: italic;
+      margin-top: -8px;
+      margin-bottom: 20px;
+      color: #ffeaa7;
+    }
 
     footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #ffda77;
-    }
-
-    .disclaimer-note {
-      margin-top: 12px;
-      font-size: 0.95em;
-      color: #ffeaa7;
-    }
-
-    .gallery figure {
-      margin: 0;
-    }
-
-    .gallery figcaption {
-      margin-top: 5px;
-      color: #ffeaa7;
-      font-size: 0.95em;
       text-align: center;
-    }
-
-    .visa-box {
-      margin-top: 35px;
       padding: 20px;
-      border: 2px solid gold;
-      border-radius: 12px;
-      background: rgba(255, 215, 0, 0.12);
-      text-align: left;
-      color: #fff3cd;
-    }
-
-    .visa-box h3 {
-      text-align: center;
+      color: #ffda77;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.5);
+      border-top: 2px solid goldenrod;
+      margin-top: 40px;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ================= HEADER ================= -->
-
   <header>
-    <h1>Khami Ruins</h1>
-    <p>Zimbabwe • Half Day • Up to 8 Guests</p>
+    <h1>Khami Ruins - 2026 Pricing</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="destinations.html">Destinations</a>
-      <a href="itinerary.html">Safari Itinerary</a>
-      <a href="contact.html">Contact</a>
+      <a href="khami.html">Back to Khami</a>
+      <a class="btn" href="checkout.html" style="float:right;">View Cart</a>
     </nav>
   </header>
 
-  <!-- ================= GALLERY ================= -->
-
-  <div class="gallery">
-    <figure>
-      <img src="khami 7.jpg" alt="Step back in time at Khami Ruins — one of Zimbabwe's oldest and most mystical ancient sites.">
-      <figcaption>Step back in time at Khami — mystical ancient stones that tell stories of a lost empire.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="khami air view.jpg" alt="Awe-inspiring aerial view of Khami Ruins — terraced stone walls snaking through lush landscapes.">
-      <figcaption>Bird’s-eye wonder — witness the grandeur of Khami from above.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="khami ruin2.jpg" alt="Intricate dry-stone craftsmanship blending perfectly with nature.">
-      <figcaption>Marvel at the precision of centuries-old dry-stone engineering.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="khami runis unesco 1.jpg" alt="UNESCO-listed legendary Khami Ruins — a cultural treasure of Zimbabwe.">
-      <figcaption>Legendary UNESCO heritage — a must-see for history lovers.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Khami-Ruins-6-770x550.jpg" alt="Scenic walkways and terraces for exploration and photography.">
-      <figcaption>Explore scenic walkways and photograph breathtaking ancient terraces.</figcaption>
-    </figure>
-
-    <figure>
-      <img src="Khami-Ruins-7-770x550.jpg" alt="Golden sunrise illuminating the majestic Khami Ruins.">
-      <figcaption>Sunrise magic — watch golden light breathe life into ancient stones.</figcaption>
-    </figure>
-  </div>
-
-  <!-- ================= CONTENT ================= -->
-
   <div class="content">
-    <h2>Khami Ruins — Ancient Trade and Architecture</h2>
 
-    <p>
-      After the decline of Great Zimbabwe, <strong>Khami</strong> became the capital of the <strong>Torwa dynasty</strong> in the 15th century.  
-      Now a <strong>UNESCO World Heritage Site</strong>, Khami stands as a testament to advanced <strong>dry-stone architecture</strong> and centuries of trade with distant civilizations including China and Europe.
-    </p>
+    <!-- Khami Images -->
+    <img src="khami20261.jpg" alt="Khami Ruins panoramic view">
+    <div class="caption">Panoramic view of Khami Ruins</div> <!-- khami20261.jpg -->
 
-    <h3>Highlights</h3>
-    <ul>
-      <li>UNESCO World Heritage Site</li>
-      <li>Second largest ancient stone monument after Great Zimbabwe</li>
-      <li>Former capital of the Torwa dynasty (16th century)</li>
-      <li>Artifacts showing trade with China and Europe</li>
-      <li>Unique terraced dry-stone architecture</li>
-      <li>Rich archaeological and cultural heritage</li>
-    </ul>
+    <img src="khami20262.jpg" alt="Khami Ruins from another angle">
+    <div class="caption">Another perspective of Khami Ruins</div> <!-- khami20262.jpg -->
 
-    <a class="pricing-btn" href="khamipricing.html" target="_blank">Pricing 2026</a>
+    <img src="khamiruins2026steps.jpg" alt="Khami Ruins stone steps">
+    <div class="caption">Historic stone steps at Khami Ruins</div> <!-- khamiruins2026steps.jpg -->
 
-    <p class="disclaimer-note">
-      Note: Pricing and packages are similar to Matopos National Park. Selecting one hotel provides access to both Khami and Matopo excursions.
-    </p>
+    <div class="section-title">Accommodation Rates (Per Person, Per Night)</div>
+    <table>
+      <tr>
+        <th>Hotel</th><th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
+      </tr>
+      <tr>
+        <td>Holiday Inn</td>
+        <td>Dinner, B&B</td>
+        <td>$86</td>
+        <td>$43</td>
+        <td>$0</td>
+        <td><button class="btn" onclick="addToCart('Holiday Inn - Dinner,B&B',86)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Holiday Inn</td>
+        <td>Full Board</td>
+        <td>$105</td>
+        <td>$52.5</td>
+        <td>$0</td>
+        <td><button class="btn" onclick="addToCart('Holiday Inn - Full Board',105)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Churchill Arms Lodge</td>
+        <td>Dinner, B&B</td>
+        <td>$107</td>
+        <td>$53.5</td>
+        <td>$0</td>
+        <td><button class="btn" onclick="addToCart('Churchill Arms Lodge - Dinner,B&B',107)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Churchill Arms Lodge</td>
+        <td>Full Board</td>
+        <td>$125</td>
+        <td>$62.5</td>
+        <td>$0</td>
+        <td><button class="btn" onclick="addToCart('Churchill Arms Lodge - Full Board',125)">Add</button></td>
+      </tr>
+    </table>
 
-    <!-- ================= VISA & CURRENCY INFO ================= -->
+    <div class="section-title">Green Season Special (05 Jan–31 Mar / 01 Nov–20 Dec)</div>
+    <table>
+      <tr>
+        <th>Meal Plan</th><th>Adult</th><th>Child (&lt;12)</th><th>Single Supplement</th><th>Action</th>
+      </tr>
+      <tr>
+        <td>Dinner, B&B</td><td>$78</td><td>$39</td><td>$0</td>
+        <td><button class="btn" onclick="addToCart('Green Season Dinner,B&B',78)">Add</button></td>
+      </tr>
+      <tr>
+        <td>Full Board</td><td>$95</td><td>$47.5</td><td>$0</td>
+        <td><button class="btn" onclick="addToCart('Green Season Full Board',95)">Add</button></td>
+      </tr>
+    </table>
 
-    <div class="visa-box">
-      <h3>Visa & Currency Information for North American Travelers</h3>
-
-      <p>
-        For a <strong>US passport holder</strong> entering Zimbabwe, a visa is required, costing around 
-        <strong>$30 for a single entry</strong> or up to <strong>$160 for other visa types</strong>, available 
-        <strong>online (eVisa)</strong> or <strong>on arrival</strong>.
-      </p>
-
-      <p>
-        The popular <strong>KAZA UniVisa (Zimbabwe & Zambia)</strong> costs <strong>$50</strong>, offering flexibility 
-        for travelers visiting <strong>Victoria Falls on both sides</strong>.
-      </p>
-
-      <p>
-        You can obtain a <strong>single-entry visa at ports of entry for about $30</strong>, but applying for an 
-        <strong>eVisa online is often recommended for ease</strong>.
-      </p>
-
-      <p>
-        <strong>US dollars are widely accepted</strong>, especially for tourism expenses. 
-        Travelers are advised to bring <strong>small, crisp bills ($1, $5, $10, $20)</strong> as change can be 
-        difficult for larger denominations.
-      </p>
+    <div class="disclaimer">
+      ⚠ Please review our Health, Vaccination & Travel Safety Disclaimer. Travelers must check each destination for current visa price information. All travelers must carry cash for visa payment at border points at all times. Visa prices for each border are listed on the respective destination pricing pages.
     </div>
 
-    <!-- ================= OFFICIAL TOURISM LINK ================= -->
-
-    <h3 style="margin-top:40px;">Official Travel & Safety Information Resources</h3>
-    <p style="font-weight:bold; color:gold;">
-      Zimbabwe Tourism Authority:
-      <br>
-      <a href="https://www.tourismzim.gov.zw/" target="_blank" style="color:#ffda77; font-weight:bold;">
-        https://www.tourismzim.gov.zw/
-      </a>
-    </p>
-
   </div>
 
-  <!-- ================= FOOTER ================= -->
-
   <footer>
-    © 2025 Serorome Valley Ventures — All Rights Reserved.
+    © 2026 Serorome Valley Ventures — All Rights Reserved.
   </footer>
-
-  <!-- ================= CART SCRIPT ================= -->
 
   <script>
     if (!localStorage.getItem('svvCart')) {
