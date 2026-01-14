@@ -17,16 +17,13 @@
       background-blend-mode: multiply;
       overflow-x: hidden;
     }
-
     header {
       background: rgba(0, 0, 0, 0.75);
       padding: 25px;
       text-align: center;
       border-bottom: 3px solid goldenrod;
     }
-
     header h1, header p { margin: 5px 0; }
-
     nav a {
       color: gold;
       text-decoration: none;
@@ -34,9 +31,7 @@
       font-weight: bold;
       transition: color 0.3s ease;
     }
-
     nav a:hover { color: #ffda77; }
-
     .content {
       background: rgba(0, 0, 0, 0.65);
       margin: 40px auto;
@@ -45,30 +40,20 @@
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
       max-width: 1100px;
     }
-
     h1, h2, h3 { color: goldenrod; text-align: center; }
-
-    .section-title { 
-      margin-top: 40px; 
-      font-size: 1.8em; 
-      color: #ffda77; 
-    }
-
+    .section-title { margin-top: 40px; font-size: 1.8em; color: #ffda77; }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
       color: #fff;
     }
-
     table th, table td {
       padding: 12px 10px;
       border-bottom: 1px solid rgba(255, 215, 0, 0.3);
       text-align: left;
     }
-
     table th { color: gold; font-size: 1.1em; }
-
     .add-btn {
       display: inline-block;
       background: gold;
@@ -78,17 +63,10 @@
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
+      cursor: pointer;
     }
-
     .add-btn:hover { background: #ffe27a; }
-
-    .disclaimer {
-      margin-top: 25px;
-      font-size: 0.9em;
-      color: #ffd966;
-      line-height: 1.5;
-    }
-
+    .disclaimer { margin-top: 25px; font-size: 0.9em; color: #ffd966; line-height: 1.5; }
     .currency-box {
       margin-top: 35px;
       padding: 20px;
@@ -97,33 +75,15 @@
       border: 1px solid goldenrod;
       text-align: center;
     }
-
-    .currency-box input { 
-      padding: 8px; 
-      width: 160px; 
-      border-radius: 6px; 
-      border: none; 
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #ffda77;
-      background: rgba(0, 0, 0, 0.6);
-      margin-top: 40px;
-      border-top: 2px solid goldenrod;
-    }
+    .currency-box input { padding: 8px; width: 160px; border-radius: 6px; border: none; text-align: center; }
+    footer { text-align: center; padding: 20px; color: #ffda77; background: rgba(0, 0, 0, 0.6); margin-top: 40px; border-top: 2px solid goldenrod; }
 
     .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
     @keyframes fadeIn { to { opacity: 1; } }
-
     .slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
     @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-
     .glow { animation: glowPulse 2.5s infinite alternate; }
     @keyframes glowPulse { from { text-shadow: 0 0 8px gold; } to { text-shadow: 0 0 18px gold; } }
-
     @media(max-width: 768px){
       .content { padding: 20px; }
       table th, table td { font-size: 0.9em; }
@@ -147,11 +107,11 @@
 <div class="content slide-up">
 
   <div class="disclaimer fade-in">
-    <p><strong>Disclaimer:</strong> For US citizens visiting Zimbabwe, a visa is required, costing around $30 for single entry, $45 for double entry, and $55 for multiple entry, payable in cash (USD) on arrival at ports or online via the eVisa system, though processing/service fees add to the total cost for eVisa applications. The KAZA Univisa ($50) is also an option for Zambia/Zimbabwe travel. US dollars are widely accepted for tourism expenses; bring small, crisp bills ($1, $5, $10, $20) as change for larger denominations can be difficult.</p>
+    <p><strong>Disclaimer:</strong> For US citizens visiting Zimbabwe, a visa is required, costing around $30 for single entry, $45 for double entry, and $55 for multiple entry, payable in cash (USD) on arrival or via the eVisa system. KAZA Univisa ($50) is also an option. US dollars are widely accepted; bring small, crisp bills ($1, $5, $10, $20).</p>
   </div>
 
   <h2 class="section-title">At-a-Glance Summary</h2>
-  <table class="fade-in">
+  <table class="fade-in" id="pricingTable">
     <thead>
       <tr>
         <th>Category</th>
@@ -161,114 +121,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Accommodation</td>
-        <td>New Fairmont Hotel and Casino (Livingstone)</td>
-        <td>$93.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Fairmont Hotel&price=93">Add</a></td>
-      </tr>
-      <tr>
-        <td>Accommodation</td>
-        <td>Victoria Falls Hotel</td>
-        <td>$178.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Victoria Falls Hotel&price=178">Add</a></td>
-      </tr>
-      <tr>
-        <td>Accommodation</td>
-        <td>Holiday Inn</td>
-        <td>$86.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Holiday Inn&price=86">Add</a></td>
-      </tr>
-      <tr>
-        <td>Packages</td>
-        <td>Standard Twin / Family Room – Dinner, B&B</td>
-        <td>$185.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Standard Twin/B&B&price=185">Add</a></td>
-      </tr>
-      <tr>
-        <td>Packages</td>
-        <td>Full Board (3 meals/day)</td>
-        <td>$210.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Full Board&price=210">Add</a></td>
-      </tr>
-      <tr>
-        <td>Packages</td>
-        <td>All Inclusive (meals, drinks, activities)</td>
-        <td>$320.00</td>
-        <td><a class="add-btn" href="checkout.html?item=All Inclusive&price=320">Add</a></td>
-      </tr>
-      <tr>
-        <td>Cultural</td>
-        <td>Local village & Victoria Falls view (30–45 min)</td>
-        <td>$30.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Local Village Tour&price=30">Add</a></td>
-      </tr>
-      <tr>
-        <td>Cultural</td>
-        <td>Boma Dinner & Drum Show (~3 hours)</td>
-        <td>$55.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Boma Dinner&price=55">Add</a></td>
-      </tr>
-      <tr>
-        <td>Scenic / Adventure</td>
-        <td>Sunset Cruise Zambezi River</td>
-        <td>$49.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Sunset Cruise&price=49">Add</a></td>
-      </tr>
-      <tr>
-        <td>Scenic / Adventure</td>
-        <td>Guided Tour of Victoria Falls (+ park fees)</td>
-        <td>$26.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Guided Victoria Falls Tour&price=26">Add</a></td>
-      </tr>
-      <tr>
-        <td>Scenic / Adventure</td>
-        <td>Helicopter Flight “Flight of the Angels” (12–13 min)</td>
-        <td>$150.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Helicopter Flight&price=150">Add</a></td>
-      </tr>
-      <tr>
-        <td>Scenic / Adventure</td>
-        <td>Microlight Flight (30 min)</td>
-        <td>$386.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Microlight Flight&price=386">Add</a></td>
-      </tr>
-      <tr>
-        <td>Adventure</td>
-        <td>Cultural Village Tour</td>
-        <td>$60.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Cultural Village Tour&price=60">Add</a></td>
-      </tr>
-      <tr>
-        <td>Adventure</td>
-        <td>White Water Rafting (full day)</td>
-        <td>$150.00</td>
-        <td><a class="add-btn" href="checkout.html?item=White Water Rafting&price=150">Add</a></td>
-      </tr>
-      <tr>
-        <td>Adventure</td>
-        <td>Bungee Jumping (Victoria Falls Bridge)</td>
-        <td>$168.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Bungee Jumping&price=168">Add</a></td>
-      </tr>
-      <tr>
-        <td>Adventure</td>
-        <td>Tandem Bridge Swing</td>
-        <td>$263.00</td>
-        <td><a class="add-btn" href="checkout.html?item=Tandem Bridge Swing&price=263">Add</a></td>
-      </tr>
-      <tr>
-        <td>Adventure</td>
-        <td>High Wire Activities (zip line / gorge swing)</td>
-        <td>$77.00</td>
-        <td><a class="add-btn" href="checkout.html?item=High Wire Activities&price=77">Add</a></td>
-      </tr>
+      <!-- Table rows will be injected via JS -->
     </tbody>
   </table>
-
-  <div class="disclaimer fade-in">
-    <p><em>Note:</em> These prices are approximate. Actual expenses vary depending on preferences, activity choices, group size, season, and availability. Prices are subject to change and may exclude additional fees. National park fees are separate for some activities (e.g., Zimbabwean park fee for Victoria Falls tour is $50 for international visitors, $30 for regional visitors). Some activities require minimum participants or are seasonal—booking in advance is recommended.</p>
-  </div>
 
   <h2 class="section-title">USD → ZAR / BWP Converter</h2>
   <div class="currency-box slide-up">
@@ -278,27 +133,73 @@
     <p id="bwpOutput">BWP: -</p>
   </div>
 
-  <script>
-    function convertCurrency(){
-      let usd = parseFloat(document.getElementById('usdInput').value);
-      if(isNaN(usd)){ 
-        document.getElementById('zarOutput').innerText = 'ZAR: -';
-        document.getElementById('bwpOutput').innerText = 'BWP: -';
-        return; 
-      }
-      let zar = usd * 18.5;
-      let bwp = usd * 13.2;
-      document.getElementById('zarOutput').innerText = 'ZAR: ' + zar.toFixed(2);
-      document.getElementById('bwpOutput').innerText = 'BWP: ' + bwp.toFixed(2);
-    }
-  </script>
-
 </div>
 
 <footer>
   © 2026 Serorome Valley Ventures • All Rights Reserved
 </footer>
 
+<script>
+  // Victoria Falls Pricing Items
+  const items = [
+    {category:"Accommodation", title:"New Fairmont Hotel and Casino (Livingstone)", unit_usd:93},
+    {category:"Accommodation", title:"Victoria Falls Hotel", unit_usd:178},
+    {category:"Accommodation", title:"Holiday Inn", unit_usd:86},
+    {category:"Packages", title:"Standard Twin / Family Room – Dinner, B&B", unit_usd:185},
+    {category:"Packages", title:"Full Board (3 meals/day)", unit_usd:210},
+    {category:"Packages", title:"All Inclusive (meals, drinks, activities)", unit_usd:320},
+    {category:"Cultural", title:"Local village & Victoria Falls view (30–45 min)", unit_usd:30},
+    {category:"Cultural", title:"Boma Dinner & Drum Show (~3 hours)", unit_usd:55},
+    {category:"Scenic / Adventure", title:"Sunset Cruise Zambezi River", unit_usd:49},
+    {category:"Scenic / Adventure", title:"Guided Tour of Victoria Falls (+ park fees)", unit_usd:26},
+    {category:"Scenic / Adventure", title:"Helicopter Flight “Flight of the Angels” (12–13 min)", unit_usd:150},
+    {category:"Scenic / Adventure", title:"Microlight Flight (30 min)", unit_usd:386},
+    {category:"Adventure", title:"Cultural Village Tour", unit_usd:60},
+    {category:"Adventure", title:"White Water Rafting (full day)", unit_usd:150},
+    {category:"Adventure", title:"Bungee Jumping (Victoria Falls Bridge)", unit_usd:168},
+    {category:"Adventure", title:"Tandem Bridge Swing", unit_usd:263},
+    {category:"Adventure", title:"High Wire Activities (zip line / gorge swing)", unit_usd:77},
+  ];
+
+  const tbody = document.querySelector("#pricingTable tbody");
+  items.forEach((item, i)=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.category}</td>
+      <td>${item.title}</td>
+      <td>$${item.unit_usd.toFixed(2)}</td>
+      <td><button class="add-btn" onclick="addToCart(${i})">Add</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // CART SYSTEM
+  let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+
+  function addToCart(index){
+    const item = {...items[index], qty:1};
+    const exists = cart.find(c=>c.title===item.title);
+    if(exists){ exists.qty += 1; }
+    else { cart.push(item); }
+    localStorage.setItem("svvCart", JSON.stringify(cart));
+    alert(`${item.title} added to cart!`);
+    // redirect to checkout
+    window.location.href="checkout.html";
+  }
+
+  function convertCurrency(){
+    let usd = parseFloat(document.getElementById('usdInput').value);
+    if(isNaN(usd)){ 
+      document.getElementById('zarOutput').innerText = 'ZAR: -';
+      document.getElementById('bwpOutput').innerText = 'BWP: -';
+      return; 
+    }
+    let zar = usd * 18.5;
+    let bwp = usd * 13.2;
+    document.getElementById('zarOutput').innerText = 'ZAR: ' + zar.toFixed(2);
+    document.getElementById('bwpOutput').innerText = 'BWP: ' + bwp.toFixed(2);
+  }
+</script>
+
 </body>
 </html>
-
