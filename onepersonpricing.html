@@ -18,21 +18,14 @@
       overflow-x: hidden;
     }
 
-    .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
-
-    .slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
-    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-
-    .glow { animation: glowPulse 2.5s infinite alternate; }
-    @keyframes glowPulse { from { text-shadow: 0 0 8px gold; } to { text-shadow: 0 0 18px gold; } }
-
     header {
       background: rgba(0, 0, 0, 0.75);
       padding: 25px;
       text-align: center;
       border-bottom: 3px solid goldenrod;
     }
+
+    header h1, header p { margin: 5px 0; }
 
     nav a {
       color: gold;
@@ -41,6 +34,7 @@
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     nav a:hover { color: #ffda77; }
 
     .content {
@@ -54,7 +48,11 @@
 
     h1, h2, h3 { color: goldenrod; text-align: center; }
 
-    .section-title { margin-top: 40px; font-size: 1.8em; color: #ffda77; }
+    .section-title { 
+      margin-top: 40px; 
+      font-size: 1.8em; 
+      color: #ffda77; 
+    }
 
     .pricing {
       margin-top: 25px;
@@ -97,10 +95,12 @@
       box-shadow: 0 0 12px gold;
       transition: 0.3s;
     }
+
     .book-btn:hover { background: #ffe27a; }
 
-    .flag-row { text-align: center; margin-top: 30px; }
-    .flag-row img { height: 40px; margin: 0 10px; }
+    .flag-row, .payment-row { text-align: center; margin-top: 30px; }
+
+    .flag-row img, .payment-row img { height: 40px; margin: 0 10px; }
 
     .currency-box {
       margin-top: 35px;
@@ -110,7 +110,14 @@
       border: 1px solid goldenrod;
       text-align: center;
     }
-    .currency-box input { padding: 8px; width: 160px; border-radius: 6px; border: none; }
+
+    .currency-box input { 
+      padding: 8px; 
+      width: 160px; 
+      border-radius: 6px; 
+      border: none; 
+      text-align: center;
+    }
 
     footer {
       text-align: center;
@@ -121,10 +128,20 @@
       border-top: 2px solid goldenrod;
     }
 
+    .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
+    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+    .glow { animation: glowPulse 2.5s infinite alternate; }
+    @keyframes glowPulse { from { text-shadow: 0 0 8px gold; } to { text-shadow: 0 0 18px gold; } }
+
     @media(max-width: 768px){
       .pricing-item { font-size: 1em; }
       .content { padding: 20px; }
       .book-btn { width: 90%; }
+      .flag-row img, .payment-row img { height: 30px; }
     }
   </style>
 </head>
@@ -152,17 +169,22 @@
     <div class="pricing-item"><span>Meals</span><span>$500</span></div>
     <div class="pricing-item"><span>Game Park Fees</span><span>$150</span></div>
     <div class="pricing-item"><span>Visa (cash required)</span><span>$150</span></div>
-
     <div class="total glow">TOTAL: $9500 USD</div>
   </div>
 
   <a class="book-btn" href="checkout.html?item=Solo Traveler Package&price=9500">Add to Cart — $9500</a>
 
   <div class="flag-row fade-in">
-    <img src="saFlag.png">
-    <img src="botswanaFlag.png">
-    <img src="zambiaFlag.png">
-    <img src="zimFlag.png">
+    <img src="saFlag.png" alt="South Africa Flag">
+    <img src="botswanaFlag.png" alt="Botswana Flag">
+    <img src="zambiaFlag.png" alt="Zambia Flag">
+    <img src="zimFlag.png" alt="Zimbabwe Flag">
+  </div>
+
+  <div class="payment-row fade-in">
+    <img src="mastercardPNG.png" alt="Mastercard">
+    <img src="visaPNG.png" alt="Visa">
+    <img src="paypal2025.png" alt="PayPal">
   </div>
 
   <h2 class="section-title">USD → ZAR / BWP Converter</h2>
@@ -176,7 +198,11 @@
   <script>
     function convertCurrency(){
       let usd = parseFloat(document.getElementById('usdInput').value);
-      if(isNaN(usd)){ return; }
+      if(isNaN(usd)){ 
+        document.getElementById('zarOutput').innerText = 'ZAR: -';
+        document.getElementById('bwpOutput').innerText = 'BWP: -';
+        return; 
+      }
       let zar = usd * 18.5;
       let bwp = usd * 13.2;
       document.getElementById('zarOutput').innerText = 'ZAR: ' + zar.toFixed(2);
