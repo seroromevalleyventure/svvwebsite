@@ -1,204 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Victoria Falls Pricing & Experiences - Serorome Valley Ventures</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #f1f5f9;
-      background: 
-        linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-        url('livingstonebackgroundpic.png') no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
-      background-blend-mode: multiply;
-      overflow-x: hidden;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.75);
-      padding: 25px;
-      text-align: center;
-      border-bottom: 3px solid goldenrod;
-    }
-    header h1, header p { margin: 5px 0; }
-    nav a {
-      color: gold;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: #ffda77; }
-    .content {
-      background: rgba(0, 0, 0, 0.65);
-      margin: 40px auto;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-      max-width: 1100px;
-    }
-    h1, h2, h3 { color: goldenrod; text-align: center; }
-    .section-title { margin-top: 40px; font-size: 1.8em; color: #ffda77; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      color: #fff;
-    }
-    table th, table td {
-      padding: 12px 10px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-      text-align: left;
-    }
-    table th { color: gold; font-size: 1.1em; }
-    .add-btn {
-      display: inline-block;
-      background: gold;
-      color: black;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-    .add-btn:hover { background: #ffe27a; }
-    .disclaimer { margin-top: 25px; font-size: 0.9em; color: #ffd966; line-height: 1.5; }
-    .currency-box {
-      margin-top: 35px;
-      padding: 20px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 10px;
-      border: 1px solid goldenrod;
-      text-align: center;
-    }
-    .currency-box input { padding: 8px; width: 160px; border-radius: 6px; border: none; text-align: center; }
-    footer { text-align: center; padding: 20px; color: #ffda77; background: rgba(0, 0, 0, 0.6); margin-top: 40px; border-top: 2px solid goldenrod; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
-    .slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(30px); }
-    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-    .glow { animation: glowPulse 2.5s infinite alternate; }
-    @keyframes glowPulse { from { text-shadow: 0 0 8px gold; } to { text-shadow: 0 0 18px gold; } }
-    @media(max-width: 768px){
-      .content { padding: 20px; }
-      table th, table td { font-size: 0.9em; }
-      .add-btn { padding: 6px 12px; font-size: 0.9em; }
-    }
-  </style>
+<title>Victoria Falls Pricing & Experiences - Serorome Valley Ventures</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f1f5f9;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('livingstonebackgroundpic.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+header {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 25px;
+  text-align: center;
+  border-bottom: 3px solid goldenrod;
+}
+
+header h1, header p { margin: 5px 0; }
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover { color: #ffda77; }
+
+/* CONTENT */
+
+.content {
+  background: rgba(0, 0, 0, 0.65);
+  margin: 40px auto;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  max-width: 1100px;
+}
+
+h1, h2, h3 {
+  color: goldenrod;
+  text-align: center;
+}
+
+.section-title {
+  margin-top: 40px;
+  font-size: 1.8em;
+  color: #ffda77;
+}
+
+/* TABLES */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #fff;
+}
+
+table th, table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  text-align: left;
+}
+
+table th {
+  color: gold;
+  font-size: 1.1em;
+}
+
+/* BUTTON */
+
+.add-btn {
+  display: inline-block;
+  background: gold;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.add-btn:hover { background: #ffe27a; }
+
+/* DISCLAIMER */
+
+.disclaimer {
+  margin-top: 25px;
+  font-size: 0.9em;
+  color: #ffd966;
+  line-height: 1.5;
+}
+
+/* CURRENCY */
+
+.currency-box {
+  margin-top: 35px;
+  padding: 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  border: 1px solid goldenrod;
+  text-align: center;
+}
+
+.currency-box input {
+  padding: 8px;
+  width: 160px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ffda77;
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: 40px;
+  border-top: 2px solid goldenrod;
+}
+
+/* ANIMATIONS */
+
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glow {
+  animation: glowPulse 2.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 8px gold; }
+  to { text-shadow: 0 0 18px gold; }
+}
+
+/* MOBILE */
+
+@media(max-width: 768px){
+  .content { padding: 20px; }
+  table th, table td { font-size: 0.9em; }
+  .add-btn { padding: 6px 12px; font-size: 0.9em; }
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- HEADER -->
+
 <header class="fade-in">
-  <h1 class="glow">Victoria Falls Pricing & Experiences</h1>
-  <p>Livingstone 2026 Pricing Overview & Travel Disclaimer</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="itinerary.html">Safari Itinerary</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+
+<h1 class="glow">Victoria Falls Pricing & Experiences</h1>
+
+<p>2026 Pricing Overview & Visitor Information</p>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="itinerary.html">Safari Itinerary</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
 </header>
+
+<!-- CONTENT -->
 
 <div class="content slide-up">
 
-  <div class="disclaimer fade-in">
-    <p><strong>Disclaimer:</strong> For US citizens visiting Zimbabwe, a visa is required, costing around $30 for single entry, $45 for double entry, and $55 for multiple entry, payable in cash (USD) on arrival or via the eVisa system. KAZA Univisa ($50) is also an option. US dollars are widely accepted; bring small, crisp bills ($1, $5, $10, $20).</p>
-  </div>
+<!-- DISCLAIMER -->
 
-  <h2 class="section-title">At-a-Glance Summary</h2>
-  <table class="fade-in" id="pricingTable">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Details / Options</th>
-        <th>Price (USD)</th>
-        <th>Add to Cart</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Table rows will be injected via JS -->
-    </tbody>
-  </table>
+<div class="disclaimer fade-in">
 
-  <h2 class="section-title">USD → ZAR / BWP Converter</h2>
-  <div class="currency-box slide-up">
-    <p><strong>Enter amount in USD:</strong></p>
-    <input type="number" id="usdInput" placeholder="USD" oninput="convertCurrency()">
-    <p id="zarOutput">ZAR: -</p>
-    <p id="bwpOutput">BWP: -</p>
-  </div>
+<p>
+<strong>Disclaimer:</strong>  
+For US citizens visiting Zimbabwe, a visa is required, costing around
+$30 (single entry), $45 (double entry), and $55 (multiple entry), payable
+in cash (USD) on arrival or via the eVisa system.  
+KAZA Univisa ($50) is also accepted.
+
+<br><br>
+
+US dollars are widely accepted. Please carry small, clean bills.
+</p>
 
 </div>
 
+<!-- ENTRY PRICES -->
+
+<h2 class="section-title">ENTRY PRICE for 2026 — Victoria Falls</h2>
+
+<table class="fade-in">
+
+<thead>
+<tr>
+  <th>Visitor Category</th>
+  <th>Entry / Access Fee (USD)</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>International Visitors</td>
+  <td><strong>$60</strong></td>
+</tr>
+
+<tr>
+  <td>VIP Tickets</td>
+  <td><strong>$180</strong></td>
+</tr>
+
+<tr>
+  <td>Moonlight Visit (All Visitors)</td>
+  <td><strong>$125</strong></td>
+</tr>
+
+<tr>
+  <td>SADC African Visitors</td>
+  <td><strong>$35</strong></td>
+</tr>
+
+<tr>
+  <td>Zimbabwean Citizens</td>
+  <td><strong>$7</strong></td>
+</tr>
+
+<tr>
+  <td>Children (6–12 years)</td>
+  <td><strong>50% of Adult Fee</strong></td>
+</tr>
+
+<tr>
+  <td>Children (Under 6 years)</td>
+  <td><strong>Free</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p class="disclaimer">
+These prices apply strictly to Victoria Falls park entry and official visitation.
+They are set by park authorities and subject to government review.
+</p>
+
+<!-- EXPERIENCES -->
+
+<h2 class="section-title">At-a-Glance Experiences & Packages</h2>
+
+<table class="fade-in" id="pricingTable">
+
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Details / Options</th>
+  <th>Price (USD)</th>
+  <th>Add to Cart</th>
+</tr>
+</thead>
+
+<tbody>
+<!-- Injected by JS -->
+</tbody>
+
+</table>
+
+<!-- CURRENCY -->
+
+<h2 class="section-title">USD → ZAR / BWP Converter</h2>
+
+<div class="currency-box slide-up">
+
+<p><strong>Enter amount in USD:</strong></p>
+
+<input type="number" id="usdInput" placeholder="USD" oninput="convertCurrency()">
+
+<p id="zarOutput">ZAR: -</p>
+<p id="bwpOutput">BWP: -</p>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
 <footer>
-  © 2026 Serorome Valley Ventures • All Rights Reserved
+
+© 2026 Serorome Valley Ventures • All Rights Reserved
+
 </footer>
 
+<!-- SCRIPT -->
+
 <script>
-  // Victoria Falls Pricing Items
-  const items = [
-    {category:"Accommodation", title:"New Fairmont Hotel and Casino (Livingstone)", unit_usd:93},
-    {category:"Accommodation", title:"Victoria Falls Hotel", unit_usd:178},
-    {category:"Accommodation", title:"Holiday Inn", unit_usd:86},
-    {category:"Packages", title:"Standard Twin / Family Room – Dinner, B&B", unit_usd:185},
-    {category:"Packages", title:"Full Board (3 meals/day)", unit_usd:210},
-    {category:"Packages", title:"All Inclusive (meals, drinks, activities)", unit_usd:320},
-    {category:"Cultural", title:"Local village & Victoria Falls view (30–45 min)", unit_usd:30},
-    {category:"Cultural", title:"Boma Dinner & Drum Show (~3 hours)", unit_usd:55},
-    {category:"Scenic / Adventure", title:"Sunset Cruise Zambezi River", unit_usd:49},
-    {category:"Scenic / Adventure", title:"Guided Tour of Victoria Falls (+ park fees)", unit_usd:26},
-    {category:"Scenic / Adventure", title:"Helicopter Flight “Flight of the Angels” (12–13 min)", unit_usd:150},
-    {category:"Scenic / Adventure", title:"Microlight Flight (30 min)", unit_usd:386},
-    {category:"Adventure", title:"Cultural Village Tour", unit_usd:60},
-    {category:"Adventure", title:"White Water Rafting (full day)", unit_usd:150},
-    {category:"Adventure", title:"Bungee Jumping (Victoria Falls Bridge)", unit_usd:168},
-    {category:"Adventure", title:"Tandem Bridge Swing", unit_usd:263},
-    {category:"Adventure", title:"High Wire Activities (zip line / gorge swing)", unit_usd:77},
-  ];
 
-  const tbody = document.querySelector("#pricingTable tbody");
-  items.forEach((item, i)=>{
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${item.category}</td>
-      <td>${item.title}</td>
-      <td>$${item.unit_usd.toFixed(2)}</td>
-      <td><button class="add-btn" onclick="addToCart(${i})">Add</button></td>
-    `;
-    tbody.appendChild(tr);
-  });
+/* EXPERIENCES & ACCOMMODATION */
 
-  // CART SYSTEM
-  let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+const items = [
 
-  function addToCart(index){
-    const item = {...items[index], qty:1};
-    const exists = cart.find(c=>c.title===item.title);
-    if(exists){ exists.qty += 1; }
-    else { cart.push(item); }
-    localStorage.setItem("svvCart", JSON.stringify(cart));
-    alert(`${item.title} added to cart!`);
-    // redirect to checkout
-    window.location.href="checkout.html";
+  {category:"Accommodation", title:"New Fairmont Hotel and Casino (Livingstone)", unit_usd:93},
+  {category:"Accommodation", title:"Victoria Falls Hotel", unit_usd:178},
+  {category:"Accommodation", title:"Holiday Inn", unit_usd:86},
+
+  {category:"Packages", title:"Standard Twin / Family Room – Dinner, B&B", unit_usd:185},
+  {category:"Packages", title:"Full Board (3 meals/day)", unit_usd:210},
+  {category:"Packages", title:"All Inclusive (meals, drinks, activities)", unit_usd:320},
+
+  {category:"Cultural", title:"Local village & Victoria Falls view (30–45 min)", unit_usd:30},
+  {category:"Cultural", title:"Boma Dinner & Drum Show (~3 hours)", unit_usd:55},
+
+  {category:"Scenic / Adventure", title:"Sunset Cruise Zambezi River", unit_usd:49},
+  {category:"Scenic / Adventure", title:"Guided Tour of Victoria Falls (+ park fees)", unit_usd:26},
+  {category:"Scenic / Adventure", title:"Helicopter Flight “Flight of the Angels”", unit_usd:150},
+  {category:"Scenic / Adventure", title:"Microlight Flight (30 min)", unit_usd:386},
+
+  {category:"Adventure", title:"White Water Rafting (full day)", unit_usd:150},
+  {category:"Adventure", title:"Bungee Jumping (Victoria Falls Bridge)", unit_usd:168},
+  {category:"Adventure", title:"Tandem Bridge Swing", unit_usd:263},
+  {category:"Adventure", title:"High Wire Activities (zip line / gorge swing)", unit_usd:77}
+
+];
+
+/* BUILD TABLE */
+
+const tbody = document.querySelector("#pricingTable tbody");
+
+items.forEach((item, i)=>{
+
+  const tr = document.createElement("tr");
+
+  tr.innerHTML = `
+    <td>${item.category}</td>
+    <td>${item.title}</td>
+    <td>$${item.unit_usd.toFixed(2)}</td>
+    <td><button class="add-btn" onclick="addToCart(${i})">Add</button></td>
+  `;
+
+  tbody.appendChild(tr);
+
+});
+
+/* CART */
+
+let cart = JSON.parse(localStorage.getItem("svvCart")) || [];
+
+function addToCart(index){
+
+  const item = {...items[index], qty:1};
+
+  const exists = cart.find(c=>c.title===item.title);
+
+  if(exists){
+    exists.qty += 1;
+  } else {
+    cart.push(item);
   }
 
-  function convertCurrency(){
-    let usd = parseFloat(document.getElementById('usdInput').value);
-    if(isNaN(usd)){ 
-      document.getElementById('zarOutput').innerText = 'ZAR: -';
-      document.getElementById('bwpOutput').innerText = 'BWP: -';
-      return; 
-    }
-    let zar = usd * 18.5;
-    let bwp = usd * 13.2;
-    document.getElementById('zarOutput').innerText = 'ZAR: ' + zar.toFixed(2);
-    document.getElementById('bwpOutput').innerText = 'BWP: ' + bwp.toFixed(2);
+  localStorage.setItem("svvCart", JSON.stringify(cart));
+
+  alert(item.title + " added to cart!");
+
+  window.location.href="checkout.html";
+}
+
+/* CURRENCY CONVERTER */
+
+function convertCurrency(){
+
+  let usd = parseFloat(document.getElementById('usdInput').value);
+
+  if(isNaN(usd)){
+    document.getElementById('zarOutput').innerText = 'ZAR: -';
+    document.getElementById('bwpOutput').innerText = 'BWP: -';
+    return;
   }
+
+  let zar = usd * 18.5;
+  let bwp = usd * 13.2;
+
+  document.getElementById('zarOutput').innerText = 'ZAR: ' + zar.toFixed(2);
+  document.getElementById('bwpOutput').innerText = 'BWP: ' + bwp.toFixed(2);
+
+}
+
 </script>
 
 </body>
