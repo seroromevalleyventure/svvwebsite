@@ -9,8 +9,6 @@
 <style>
 
 :root{
-  --bg:#071014;
-  --card:#0f1620;
   --accent:goldenrod;
   --muted:#f5e6b3;
   color-scheme: dark;
@@ -25,34 +23,35 @@ body{
   padding:30px;
 }
 
-.wrap{max-width:980px;margin:0 auto;}
+.wrap{max-width:1050px;margin:0 auto;}
 
-header{text-align:center;margin-bottom:18px;}
+header{text-align:center;margin-bottom:20px;}
 header h1{color:var(--accent);margin:.2rem 0}
+
+.small{font-size:.9rem;color:#ffd}
 
 .disclaimer{
   background:rgba(0,0,0,.55);
-  padding:14px;
-  border-radius:10px;
-  border:1px solid rgba(255,215,0,.12);
+  padding:18px;
+  border-radius:12px;
+  border:1px solid rgba(255,215,0,.15);
   color:var(--muted);
   font-size:.95rem;
-  margin-bottom:18px;
+  margin-bottom:20px;
+  line-height:1.5;
 }
-
-.note{font-size:.9rem;color:#ffeab0;margin-top:6px}
 
 .grid{
   display:grid;
-  grid-template-columns:1fr 360px;
-  gap:18px
+  grid-template-columns:1fr 380px;
+  gap:20px
 }
 
 .card{
   background:rgba(0,0,0,.55);
   padding:18px;
-  border-radius:12px;
-  border:1px solid rgba(255,215,0,.07);
+  border-radius:14px;
+  border:1px solid rgba(255,215,0,.08);
 }
 
 label{
@@ -75,15 +74,19 @@ input[type="number"]{
 .row{display:flex;gap:10px}
 .row>*{flex:1}
 
-.extras{margin-top:12px}
-.extras label{font-weight:500;color:#ffd87a}
+.extras label{
+  font-weight:500;
+  color:#ffd87a;
+  margin-bottom:6px;
+}
+
 .extras input{margin-right:8px}
 
 .totals{
-  background:rgba(255,215,0,.06);
-  padding:12px;
-  border-radius:8px;
-  margin-top:12px;
+  background:rgba(255,215,0,.08);
+  padding:14px;
+  border-radius:10px;
+  margin-top:14px;
   color:#000
 }
 
@@ -102,7 +105,7 @@ input[type="number"]{
 .btn.secondary{
   background:transparent;
   color:var(--muted);
-  border:1px solid rgba(255,215,0,.12)
+  border:1px solid rgba(255,215,0,.15)
 }
 
 table{
@@ -114,13 +117,11 @@ table{
 th,td{
   padding:8px;
   text-align:left;
-  border-bottom:1px dashed rgba(255,255,255,.05)
+  border-bottom:1px dashed rgba(255,255,255,.07)
 }
 
-.small{font-size:.9rem;color:#ffd}
-
 footer{
-  margin-top:26px;
+  margin-top:28px;
   text-align:center;
   color:#ffd;
   opacity:.9
@@ -128,7 +129,6 @@ footer{
 
 @media(max-width:900px){
   .grid{grid-template-columns:1fr}
-  .card{padding:14px}
 }
 
 </style>
@@ -138,54 +138,69 @@ footer{
 
 <div class="wrap">
 
+<!-- HEADER -->
+
 <header>
   <h1>Chobe National Park — 2026 Pricing & Options</h1>
+
   <div class="small">
-    Prices shown in <strong>US$</strong> (primary) and <strong>BWP</strong> for reference.
+    Prices shown in <strong>US$</strong> (primary) and local currency <strong>BWP</strong> for reference.
   </div>
 </header>
 
+<!-- DISCLAIMER -->
+
 <div class="disclaimer">
 
-<strong>Disclaimer:</strong>
-U.S. passport holders do not need a visa for tourist or business stays up to 90 days in Botswana.
+<strong>Disclaimer:</strong><br>
 
-<div class="note">
-All travellers are expected to use local currency. Prices may change with exchange rates.
+U.S. passport holders do not need a visa for tourist or business stays up to 90 days in Botswana and can receive a 30-day entrance stamp upon arrival. For longer stays, or other purposes, visa fees are applicable, with a single-entry tourist visa costing <strong>US$30</strong> and a multiple-entry visa up to three months costing <strong>US$50</strong>.
+
+<br><br>
+
+All travellers are expected to use local currency for local payments — amounts here are displayed USD-friendly for clarity. Prices may change with seasonality and current exchange rates. The USD↔BWP conversion shown below is a snapshot; final invoicing will use the live rate at time of payment.
+
+<br><br>
+
+<strong>Exchange rate used on this page:</strong>
+<span id="rateText">1 USD = 14.22 BWP</span><br>
+
+Sources: Wise, XE, Government. (Rates change frequently.)
+
+<br><br>
+
+Visa & entry guidance source: Botswana Government / US State Dept.
+
 </div>
 
-<div class="small" style="margin-top:8px">
-<strong>Exchange rate:</strong> <span id="rateText">1 USD = 14.22 BWP</span>
-</div>
-
-</div>
+<!-- MAIN GRID -->
 
 <div class="grid">
 
-<!-- LEFT -->
+<!-- LEFT COLUMN -->
 
 <div class="card">
 
-<h3 style="color:var(--accent)">Select package</h3>
+<h3 style="color:var(--accent)">Select Package</h3>
 
-<label>Tier</label>
+<label>Tier (per couple / pair)</label>
 <select id="tier">
-<option value="guesthouse">Guest House</option>
-<option value="gold">Gold</option>
-<option value="platinum">Platinum</option>
+<option value="guesthouse">Guest House — activities included</option>
+<option value="gold">Gold — lodge stay</option>
+<option value="platinum">Platinum — luxury stay</option>
 </select>
 
 <label>Nights</label>
 <select id="nights">
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
+<option value="2">2 nights</option>
+<option value="3">3 nights</option>
+<option value="4">4 nights</option>
 </select>
 
-<label>Couples / Pairs</label>
+<label>Number of couples / pairs</label>
 <input id="pairs" type="number" min="1" value="1">
 
-<label>Extra Guests</label>
+<label>Extra guests</label>
 <input id="extraGuests" type="number" min="0" value="0">
 
 <hr>
@@ -195,76 +210,148 @@ All travellers are expected to use local currency. Prices may change with exchan
 <div class="row">
 
 <select id="transportOption">
-<option value="none">No transport</option>
-<option value="kasane_day">Kasane — $240/day</option>
-<option value="private_sa_kasane">SA → Kasane — $650</option>
+<option value="none">No transport (arrive independently)</option>
+<option value="kasane_day">Kasane local — US$240 / day</option>
+<option value="private_sa_kasane">SA → Kasane — US$650</option>
 </select>
 
 <input id="transportDays" type="number" min="1" value="2">
 
 </div>
 
+<!-- EXTRAS -->
+
 <div class="extras">
 
-<h4 style="color:var(--accent)">Extras</h4>
+<h4 style="color:var(--accent)">Optional Extras</h4>
 
-<label><input type="checkbox" class="extra" data-key="game" data-price="75"> Game Drive</label>
-<label><input type="checkbox" class="extra" data-key="boat" data-price="85"> Boat Cruise</label>
-<label><input type="checkbox" class="extra" data-key="park" data-price="30"> Park Fee</label>
+<label><input type="checkbox" class="extra" data-price="75">
+ Extra 3-hour game drive — US$75 / person</label>
+
+<label><input type="checkbox" class="extra" data-price="85">
+ Additional 3-hour boat cruise — US$85 / person</label>
+
+<label><input type="checkbox" class="extra" data-price="30">
+ Park entry fee — US$30 / person / day</label>
+
+<label><input type="checkbox" class="extra" data-price="120">
+ Security escort — US$120 / day</label>
+
+<label><input type="checkbox" class="extra" data-price="30">
+ Botswana Visa (single entry) — US$30</label>
+
+<label><input type="checkbox" class="extra" data-price="50">
+ Botswana Visa (multiple entry) — US$50</label>
 
 </div>
+
+<!-- TOTALS -->
 
 <div class="totals">
 
 <div style="display:flex;justify-content:space-between">
-<span>Subtotal USD</span>
+<span>Subtotal (USD)</span>
 <span id="subtotalUSD">$0.00</span>
 </div>
 
 <div style="display:flex;justify-content:space-between">
-<span>Total BWP</span>
-<span id="subtotalBWP">P0.00</span>
+<span>Estimated Total (BWP)</span>
+<span id="subtotalBWP">P 0.00</span>
 </div>
 
 <button id="addToCart" class="btn">Add to Cart</button>
-<button id="goCheckout" class="btn secondary">Checkout</button>
+<button id="goCheckout" class="btn secondary">Go to Checkout</button>
 
 </div>
 
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT COLUMN -->
 
 <div class="card">
 
-<h3 style="color:var(--accent)">Reference Prices</h3>
+<!-- TIER DETAILS -->
+
+<h4 style="color:var(--accent)">Tier Details (What Each Includes)</h4>
+
+<div class="small">
+
+<strong>Guest House:</strong> 3-hour game drive OR 3-hour boat cruise + Victoria Falls (Botswana side). Meals excluded.<br><br>
+
+<strong>Gold:</strong> 2–3★ lodges; breakfast included; standard activities; other meals excluded.<br><br>
+
+<strong>Platinum:</strong> Luxury lodges; standard activities; meals may vary by property.
+
+</div>
+
+<!-- PRICE REFERENCE -->
+
+<h4 style="margin-top:14px;color:var(--accent)">Price Reference (Per Couple / Pair)</h4>
 
 <table>
 <tbody>
-<tr><td>Guest 2 Nights</td><td>$280</td></tr>
-<tr><td>Gold 3 Nights</td><td>$590</td></tr>
-<tr><td>Platinum 4 Nights</td><td>$1750</td></tr>
+<tr><td>Guest House — 2 nights</td><td>US$280</td></tr>
+<tr><td>Guest House — 3 nights</td><td>US$300</td></tr>
+<tr><td>Guest House — 4 nights</td><td>US$390</td></tr>
+
+<tr><td>Gold — 2 nights</td><td>US$430</td></tr>
+<tr><td>Gold — 3 nights</td><td>US$590</td></tr>
+<tr><td>Gold — 4 nights</td><td>US$750 (est)</td></tr>
+
+<tr><td>Platinum — 2 nights</td><td>US$1000</td></tr>
+<tr><td>Platinum — 3 nights</td><td>US$1400</td></tr>
+<tr><td>Platinum — 4 nights</td><td>US$1750</td></tr>
 </tbody>
 </table>
 
-<h4 style="margin-top:12px;color:var(--accent)">
-Chobe Park Tours (2026)
+<!-- EXTRAS TABLE -->
+
+<h4 style="margin-top:12px;color:var(--accent)">Extras & Common Fees</h4>
+
+<table>
+<tbody>
+<tr><td>Kasane local transport</td><td>US$240 / day</td></tr>
+<tr><td>Extra game drive</td><td>US$75 / person</td></tr>
+<tr><td>Boat cruise</td><td>US$85 / person</td></tr>
+<tr><td>Park entry fee</td><td>US$30 / person / day</td></tr>
+<tr><td>Security escort</td><td>US$120 / day</td></tr>
+<tr><td>Visa (single entry)</td><td>US$30</td></tr>
+<tr><td>Visa (multiple entry)</td><td>US$50</td></tr>
+<tr><td>SA → Kasane private transfer</td><td>US$650</td></tr>
+</tbody>
+</table>
+
+<!-- VISITATION RATES -->
+
+<div style="margin-top:14px">
+
+<h4 style="color:var(--accent)">
+Chobe National Park — Visitation & Tour Rates (2026)
 </h4>
 
 <table>
 <tbody>
 <tr>
-<td>Half Day Tour</td>
-<td>US$75</td>
+<td>Half-day visitation & tour</td>
+<td class="small">US$75 / person</td>
 </tr>
 <tr>
-<td>Full Day Tour</td>
-<td>US$105</td>
+<td>Full-day visitation & tour</td>
+<td class="small">US$105 / person</td>
 </tr>
 </tbody>
 </table>
 
-<h4 style="margin-top:12px;color:var(--accent)">Cart</h4>
+<div class="small" style="margin-top:6px;color:#ffd">
+Includes guided park access and standard tour activities.
+Subject to park regulations and seasonal availability.
+</div>
+
+</div>
+
+<!-- CART -->
+
+<h4 style="margin-top:14px;color:var(--accent)">Cart Preview</h4>
 
 <div id="cartPreview" class="small">
 No items in cart.
@@ -274,10 +361,12 @@ No items in cart.
 
 </div>
 
+<!-- FOOTER -->
+
 <footer>
 
 <div>
-Sources: Wise / XE / Botswana Government
+Sources: Wise / XE / Botswana Government / US State Dept
 </div>
 
 <div style="margin-top:6px">
@@ -291,6 +380,8 @@ Proceed to <a href="checkout.html" style="color:gold">Checkout</a>
 </footer>
 
 </div>
+
+<!-- SCRIPT -->
 
 <script>
 
