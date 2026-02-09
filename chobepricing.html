@@ -1,435 +1,372 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chobe 2026 Pricing — Serorome Valley Ventures</title>
-  <style>
-    :root{
-      --bg:#071014;
-      --card:#0f1620;
-      --accent:goldenrod;
-      --muted:#f5e6b3;
-      color-scheme: dark;
-    }
-    body{
-      margin:0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg,#04101888, #041018cc), url('chobepicbackground.png') center/cover fixed;
-      color: #fff;
-      padding:30px;
-    }
-    .wrap{max-width:980px;margin:0 auto;}
-    header{ text-align:center; margin-bottom:18px;}
-    header h1{color:var(--accent);margin:.2rem 0}
-    .disclaimer{
-      background: rgba(0,0,0,0.55);
-      padding:14px;
-      border-radius:10px;
-      border:1px solid rgba(255,215,0,0.12);
-      color:var(--muted);
-      font-size:0.95rem;
-      margin-bottom:18px;
-    }
-    .note{font-size:0.9rem; color:#ffeab0; margin-top:6px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    .card{
-      background: rgba(0,0,0,0.55);
-      padding:18px;border-radius:12px;border:1px solid rgba(255,215,0,0.07);
-    }
-    label{display:block;margin:10px 0 6px;font-weight:600;color:#ffd87a}
-    select,input[type="number"]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:#081116;color:#fff}
-    .row{display:flex;gap:10px}
-    .row > *{flex:1}
-    .extras{margin-top:12px}
-    .extras label{font-weight:500;color:#ffd87a}
-    .extras input{margin-right:8px}
-    .totals{
-      background: rgba(255,215,0,0.06);
-      padding:12px;border-radius:8px;margin-top:12px;color:#080808;
-    }
-    .btn{
-      display:inline-block;padding:10px 16px;background:var(--accent);color:#000;font-weight:700;border-radius:10px;text-decoration:none;border:none;cursor:pointer;margin-top:10px;
-    }
-    .btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,215,0,0.12)}
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{padding:8px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03)}
-    .small{font-size:0.9rem;color:#ffd}
-    footer{margin-top:26px;text-align:center;color:#ffd;opacity:0.9}
-    @media(max-width:900px){ .grid{grid-template-columns:1fr} .card{padding:14px} }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Chobe 2026 Pricing — Serorome Valley Ventures</title>
+
+<style>
+
+:root{
+  --bg:#071014;
+  --card:#0f1620;
+  --accent:goldenrod;
+  --muted:#f5e6b3;
+  color-scheme: dark;
+}
+
+body{
+  margin:0;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,#04101888,#041018cc),
+             url('chobepicbackground.png') center/cover fixed;
+  color:#fff;
+  padding:30px;
+}
+
+.wrap{max-width:980px;margin:0 auto;}
+
+header{text-align:center;margin-bottom:18px;}
+header h1{color:var(--accent);margin:.2rem 0}
+
+.disclaimer{
+  background:rgba(0,0,0,.55);
+  padding:14px;
+  border-radius:10px;
+  border:1px solid rgba(255,215,0,.12);
+  color:var(--muted);
+  font-size:.95rem;
+  margin-bottom:18px;
+}
+
+.note{font-size:.9rem;color:#ffeab0;margin-top:6px}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:18px
+}
+
+.card{
+  background:rgba(0,0,0,.55);
+  padding:18px;
+  border-radius:12px;
+  border:1px solid rgba(255,215,0,.07);
+}
+
+label{
+  display:block;
+  margin:10px 0 6px;
+  font-weight:600;
+  color:#ffd87a
+}
+
+select,
+input[type="number"]{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.08);
+  background:#081116;
+  color:#fff
+}
+
+.row{display:flex;gap:10px}
+.row>*{flex:1}
+
+.extras{margin-top:12px}
+.extras label{font-weight:500;color:#ffd87a}
+.extras input{margin-right:8px}
+
+.totals{
+  background:rgba(255,215,0,.06);
+  padding:12px;
+  border-radius:8px;
+  margin-top:12px;
+  color:#000
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.btn.secondary{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid rgba(255,215,0,.12)
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:8px
+}
+
+th,td{
+  padding:8px;
+  text-align:left;
+  border-bottom:1px dashed rgba(255,255,255,.05)
+}
+
+.small{font-size:.9rem;color:#ffd}
+
+footer{
+  margin-top:26px;
+  text-align:center;
+  color:#ffd;
+  opacity:.9
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .card{padding:14px}
+}
+
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Chobe National Park — 2026 Pricing & Options</h1>
-      <div class="small">Prices shown in <strong>US$</strong> (primary) and local currency <strong>BWP</strong> for reference.</div>
-    </header>
 
-    <div class="disclaimer" id="disclaimer">
-      <!-- User-provided disclaimer -->
-      <strong>Disclaimer:</strong>
-      U.S. passport holders do not need a visa for tourist or business stays up to 90 days in Botswana and can receive a 30-day entrance stamp upon arrival. For longer stays, or other purposes, visa fees are applicable, with a single-entry tourist visa costing $30 and a multiple-entry visa up to three months costing $50.
-      <div class="note">All travellers are expected to use local currency for local payments — amounts here are displayed USD-friendly for clarity. Prices may change with seasonality and current exchange rates. The USD↔BWP conversion shown below is a snapshot; final invoicing will use the live rate at time of payment.</div>
+<div class="wrap">
 
-      <div style="margin-top:8px;font-size:.9rem;color:#ffeebb">
-        <strong>Exchange rate used on this page:</strong> <span id="rateText">1 USD = 14.22 BWP</span>.
-        Sources: Wise, XE, Government. (Rates change frequently.) 
-      </div>
-      <div style="margin-top:6px;font-size:.86rem;color:#ffd">
-        Visa & entry guidance source: Botswana Government / US State Dept. See note at page bottom for links. 
-      </div>
-    </div>
-
-    <div class="grid">
-      <!-- left: pricing controls -->
-      <div class="card" aria-live="polite">
-        <h3 style="color:var(--accent)">Select package</h3>
-
-        <!-- Tier selection -->
-        <label for="tier">Tier (per couple / pair)</label>
-        <select id="tier">
-          <option value="guesthouse">Guest House Tier — activities included</option>
-          <option value="gold">Gold Tier (2-3★ lodges)</option>
-          <option value="platinum">Platinum Tier (luxury)</option>
-        </select>
-
-        <label for="nights">Nights</label>
-        <select id="nights">
-          <option value="2">2 nights</option>
-          <option value="3">3 nights</option>
-          <option value="4">4 nights</option>
-        </select>
-
-        <label for="pairs">Number of couples / pairs (each package price covers 1 couple/pair)</label>
-        <input id="pairs" type="number" min="1" value="1" />
-
-        <label for="extraGuests">Extra guests (per person charge may apply)</label>
-        <input id="extraGuests" type="number" min="0" value="0" />
-
-        <hr style="opacity:0.06;margin:14px 0">
-
-        <h4 style="color:var(--accent);margin-bottom:6px">Transport</h4>
-        <div class="small">Kasane local transport (per day)</div>
-        <div class="row" style="margin-top:6px">
-          <select id="transportOption">
-            <option value="none">No transport (arrive independently)</option>
-            <option value="kasane_day">Kasane local transport — US$240 / day</option>
-            <option value="private_sa_kasane">Private transfer SA → Kasane (vehicle) — US$650 one-way (suggested)</option>
-            <option value="flight">Light air transfer (quote on request)</option>
-          </select>
-          <input id="transportDays" type="number" min="1" value="2" title="Transport days (for daily options)"/>
-        </div>
-
-        <div class="extras">
-          <h4 style="color:var(--accent);margin-bottom:6px">Optional extras</h4>
-          <label><input type="checkbox" class="extra" data-key="extra_game" data-price="75" /> Extra 3-hour game drive — US$75 per person</label>
-          <label><input type="checkbox" class="extra" data-key="extra_boat" data-price="85" /> Additional 3-hour boat cruise — US$85 per person</label>
-          <label><input type="checkbox" class="extra" data-key="park_fee" data-price="30" /> Park entry fee — US$30 per person / day</label>
-          <label><input type="checkbox" class="extra" data-key="security" data-price="120" /> Security escort (optional) — US$120 per day</label>
-          <label><input type="checkbox" class="extra" data-key="visa_single" data-price="30" /> Botswana Visa (single entry) — US$30 (if required)</label>
-          <label><input type="checkbox" class="extra" data-key="visa_multi" data-price="50" /> Botswana Visa (multiple entry) — US$50 (if required)</label>
-        </div>
-
-        <div class="totals" id="calcBox">
-          <div style="display:flex;justify-content:space-between">
-            <div>Subtotal (USD)</div>
-            <div id="subtotalUSD">$0.00</div>
-          </div>
-          <div style="display:flex;justify-content:space-between">
-            <div>Estimated total (BWP)</div>
-            <div id="subtotalBWP">P0.00</div>
-          </div>
-
-          <div style="margin-top:8px">
-            <button id="addToCart" class="btn">Add to cart</button>
-            <button id="goCheckout" class="btn secondary">Go to checkout</button>
-          </div>
-        </div>
-
-        <div style="margin-top:12px;font-size:.9rem;color:#ffd">
-          <strong>Tier details (what each includes):</strong>
-          <ul style="color:#ffd;">
-            <li><strong>Guest House</strong> — activities included: 3-hour game drive OR 3-hour boat cruise + Victoria Falls (Botswana side). Meals excluded.</li>
-            <li><strong>Gold</strong> — 2–3★ lodges; breakfast included; same standard activities included; other meals excluded.</li>
-            <li><strong>Platinum</strong> — luxury lodges; same activities included; meals policies may vary per property.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- right: pricing reference / cart preview -->
-      <div class="card">
-        <h3 style="color:var(--accent)">Price reference (per couple/pair)</h3>
-
-        <table aria-describedby="tier-note">
-          <thead>
-            <tr><th>Tier & nights</th><th class="small">P (BWP)</th><th class="small">USD</th></tr>
-          </thead>
-          <tbody id="priceTableBody">
-            <!-- rows populated by JS for accuracy -->
-          </tbody>
-        </table>
-
-        <div id="tier-note" class="small" style="margin-top:8px;color:#ffd">Activity included (3hr game drive OR 3hr boat cruise + Victoria Falls (Botswana side)). Meals unless noted are excluded.</div>
-
-        <h4 style="margin-top:12px;color:var(--accent)">Extras & common fees</h4>
-        <table>
-          <tbody>
-            <tr><td>Kasane local transport</td><td class="small">US$240 / day</td></tr>
-            <tr><td>Extra 3hr game drive</td><td class="small">US$75 / person</td></tr>
-            <tr><td>Extra 3hr boat cruise</td><td class="small">US$85 / person</td></tr>
-            <tr><td>Park entry fee</td><td class="small">US$30 / person / day</td></tr>
-            <tr><td>Security escort</td><td class="small">US$120 / day</td></tr>
-            <tr><td>Visa (single entry)</td><td class="small">US$30</td></tr>
-            <tr><td>Visa (multiple entry)</td><td class="small">US$50</td></tr>
-            <tr><td>Suggested SA → Kasane private transfer (one-way vehicle)</td><td class="small">US$650</td></tr>
-          </tbody>
-        </table>
-
-        <div style="margin-top:12px">
-          <h4 style="color:var(--accent)">Cart preview</h4>
-          <div id="cartPreview" class="small" style="min-height:80px;color:#ffd">No items in cart.</div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <div style="font-size:.95rem;color:#ffd">
-        <div>Sources used for exchange rate & visa guidance: Wise / XE (exchange rates snapshot) and Botswana Government / US State Dept (visa guidance).</div>
-        <div style="margin-top:6px">When ready, proceed to <a href="checkout.html" style="color:gold">Checkout</a>. The checkout page should read `localStorage.svv_cart` — items saved in the following format: <code style="background:#000;padding:2px 6px;border-radius:4px">[{id,title,qty,unit_usd,subtotal_usd,meta:{nights,transport,extras}}]</code></div>
-      </div>
-    </footer>
+<header>
+  <h1>Chobe National Park — 2026 Pricing & Options</h1>
+  <div class="small">
+    Prices shown in <strong>US$</strong> (primary) and <strong>BWP</strong> for reference.
   </div>
+</header>
 
-  <script>
-    /***** Static data: pricing as provided *****/
-    const EXCHANGE_RATE = 14.22; // 1 USD = 14.22 BWP (snapshot). Sources: Wise/XE. Update server-side when needed.
-    document.getElementById('rateText').textContent = '1 USD = ' + EXCHANGE_RATE.toFixed(2) + ' BWP';
+<div class="disclaimer">
 
-    const PRICES = {
-      // values are in USD as per user mapping (pair/couple)
-      guesthouse: {
-        '2': {p:3800, usd:280},
-        '3': {p:4200, usd:300},
-        '4': {p:5200, usd:390}
-      },
-      gold: {
-        '2': {p:5800, usd:430},
-        '3': {p:7200, usd:590},
-        '4': {p:0, usd:0} // user specified "4 nights free break fast only other meals excluded" — keep placeholder; we'll compute mapping based on your input; set to 0 so user can see note
-      },
-      platinum: {
-        '2': {p:13500, usd:1000},
-        '3': {p:18200, usd:1400},
-        '4': {p:22600, usd:1750}
-      }
-    };
+<strong>Disclaimer:</strong>
+U.S. passport holders do not need a visa for tourist or business stays up to 90 days in Botswana.
 
-    // Fix Gold 4-night mapping: user said "4 nights free break fast only other meals excluded"
-    // They did not supply a numeric P/USD for Gold 4 nights; to avoid surprises set it to 4-night calc as proportion:
-    // We'll estimate Gold 4 nights = 1.25 * 3-night price (approx). But to be strictly faithful: estimate:
-    PRICES.gold['4'] = { p: 9200, usd: 750 }; // reasonable interpolation (you can adjust)
+<div class="note">
+All travellers are expected to use local currency. Prices may change with exchange rates.
+</div>
 
-    // Extras prices (USD)
-    const EXTRAS = {
-      extra_game: 75,
-      extra_boat: 85,
-      park_fee: 30,
-      security: 120,
-      visa_single: 30,
-      visa_multi: 50
-    };
+<div class="small" style="margin-top:8px">
+<strong>Exchange rate:</strong> <span id="rateText">1 USD = 14.22 BWP</span>
+</div>
 
-    // Transport mapping
-    const TRANSPORT = {
-      none: { label: 'No transport', price: 0, perDay: false },
-      kasane_day: { label: 'Kasane local transport', price: 240, perDay: true },
-      private_sa_kasane: { label: 'Private transfer SA→Kasane (one-way)', price: 650, perDay: false },
-      flight: { label: 'Air transfer (quote)', price: 0, perDay: false }
-    };
+</div>
 
-    // Populate price table
-    function renderPriceTable(){
-      const tbody = document.getElementById('priceTableBody');
-      tbody.innerHTML = '';
-      const rows = [
-        ['Guest House','2 nights','P 3,800','US$ 280'],
-        ['Guest House','3 nights','P 4,200','US$ 300'],
-        ['Guest House','4 nights','P 5,200','US$ 390'],
-        ['Gold','2 nights','P 5,800','US$ 430'],
-        ['Gold','3 nights','P 7,200','US$ 590'],
-        ['Gold','4 nights','P 9,200 (est)','US$ 750 (est)'],
-        ['Platinum','2 nights','P 13,500','US$ 1000'],
-        ['Platinum','3 nights','P 18,200','US$ 1400'],
-        ['Platinum','4 nights','P 22,600','US$ 1750']
-      ];
-      for(const r of rows){
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${r[0]} — ${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td>`;
-        tbody.appendChild(tr);
-      }
-    }
-    renderPriceTable();
+<div class="grid">
 
-    /***** Calculation & cart logic *****/
-    const tierEl = document.getElementById('tier');
-    const nightsEl = document.getElementById('nights');
-    const pairsEl = document.getElementById('pairs');
-    const extraGuestsEl = document.getElementById('extraGuests');
-    const transportOptionEl = document.getElementById('transportOption');
-    const transportDaysEl = document.getElementById('transportDays');
-    const extrasEls = Array.from(document.querySelectorAll('.extra'));
-    const subtotalUSD = document.getElementById('subtotalUSD');
-    const subtotalBWP = document.getElementById('subtotalBWP');
-    const cartPreview = document.getElementById('cartPreview');
+<!-- LEFT -->
 
-    function getSelectedExtras(){
-      const selected = {};
-      extrasEls.forEach(el=>{
-        if(el.checked){
-          selected[el.dataset.key] = Number(el.dataset.price);
-        }
-      });
-      return selected;
-    }
+<div class="card">
 
-    function calculate(){
-      const tier = tierEl.value;
-      const nights = nightsEl.value;
-      const pairs = Math.max(1, Number(pairsEl.value));
-      const extraGuests = Math.max(0, Number(extraGuestsEl.value));
-      // Base package price per couple/pair
-      const tierPrice = PRICES[tier] && PRICES[tier][nights] ? PRICES[tier][nights].usd : 0;
-      const baseUSD = tierPrice * pairs;
+<h3 style="color:var(--accent)">Select package</h3>
 
-      // Activities included in tier — do not re-add as extras by default
-      // Transport
-      const transportKey = transportOptionEl.value;
-      const transportInfo = TRANSPORT[transportKey];
-      let transportUSD = 0;
-      if(transportInfo.perDay){
-        const days = Math.max(1, Number(transportDaysEl.value) || 1);
-        transportUSD = transportInfo.price * days;
-      } else {
-        transportUSD = transportInfo.price;
-      }
+<label>Tier</label>
+<select id="tier">
+<option value="guesthouse">Guest House</option>
+<option value="gold">Gold</option>
+<option value="platinum">Platinum</option>
+</select>
 
-      // Extras per person (apply per extraGuest or per pair? We'll assume extras per additional person; if extraGuests==0 consider extras apply to each person of a pair)
-      const selectedExtras = getSelectedExtras();
-      let extrasUSD = 0;
-      // For extras that are per person -> multiply by (2 * pairs + extraGuests) (assume pair means 2 people)
-      const peopleCount = (pairs * 2) + extraGuests;
-      for(const k in selectedExtras){
-        if(k === 'extra_game' || k === 'extra_boat' || k==='park_fee'){
-          extrasUSD += selectedExtras[k] * peopleCount;
-        } else if(k === 'security'){
-          // security priced per day
-          const days = Number(nights) || 2;
-          extrasUSD += selectedExtras[k] * days;
-        } else if(k === 'visa_single' || k === 'visa_multi'){
-          // assume visa per person
-          extrasUSD += selectedExtras[k] * peopleCount;
-        } else {
-          extrasUSD += selectedExtras[k];
-        }
-      }
+<label>Nights</label>
+<select id="nights">
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select>
 
-      // Park entry note: user may prefer to include only for some days; currently we multiply by peopleCount * nights if park_fee selected
-      // (already handled above because park_fee included in per-person loop as per-person, not per-day; if you want per-day change logic accordingly)
+<label>Couples / Pairs</label>
+<input id="pairs" type="number" min="1" value="1">
 
-      const subtotal = baseUSD + transportUSD + extrasUSD;
-      subtotalUSD.textContent = '$' + subtotal.toFixed(2);
-      subtotalBWP.textContent = 'P ' + (subtotal * EXCHANGE_RATE).toLocaleString(undefined,{maximumFractionDigits:2});
+<label>Extra Guests</label>
+<input id="extraGuests" type="number" min="0" value="0">
 
-      return {
-        tier, nights, pairs, extraGuests, baseUSD, transportUSD, extrasUSD, subtotal
-      };
-    }
+<hr>
 
-    // update live on change
-    ['change','input'].forEach(ev=>{
-      [tierEl,nightsEl,pairsEl,extraGuestsEl,transportOptionEl,transportDaysEl].forEach(el=>{
-        el.addEventListener(ev,()=>{
-          const res = calculate();
-        });
-      });
-      extrasEls.forEach(x=>x.addEventListener(ev,calculate));
-    });
+<h4 style="color:var(--accent)">Transport</h4>
 
-    // initial calc
-    calculate();
+<div class="row">
 
-    // Cart helpers
-    function loadCart(){
-      try{
-        const raw = localStorage.getItem('svv_cart');
-        if(!raw) return [];
-        return JSON.parse(raw);
-      }catch(e){return [];}
-    }
-    function saveCart(cart){ localStorage.setItem('svv_cart', JSON.stringify(cart)); }
+<select id="transportOption">
+<option value="none">No transport</option>
+<option value="kasane_day">Kasane — $240/day</option>
+<option value="private_sa_kasane">SA → Kasane — $650</option>
+</select>
 
-    function renderCartPreview(){
-      const cart = loadCart();
-      if(!cart.length){ cartPreview.textContent = 'No items in cart.'; return; }
-      let html = '<ul style="padding-left:16px;margin:6px 0">';
-      cart.forEach((it,idx)=>{
-        html += `<li><strong>${it.title}</strong> — ${it.qty} × US$${it.unit_usd.toFixed(2)} = US$${it.subtotal_usd.toFixed(2)}</li>`;
-      });
-      html += '</ul>';
-      html += `<div style="margin-top:8px">Cart total: <strong>US$${cart.reduce((s,i)=>s+i.subtotal_usd,0).toFixed(2)}</strong></div>`;
-      cartPreview.innerHTML = html;
-    }
-    renderCartPreview();
+<input id="transportDays" type="number" min="1" value="2">
 
-    // Add to cart
-    document.getElementById('addToCart').addEventListener('click', ()=>{
-      const c = calculate();
-      // Build item
-      const title = `${c.tier.toUpperCase()} tier — ${c.nights} nights — ${c.pairs} couple(s)`;
-      const unit_usd = (c.baseUSD / Math.max(1,c.pairs)); // unit is per pair price
-      const subtotal_usd = c.subtotal;
-      const item = {
-        id: 'chobe_pkg_' + Date.now(),
-        title,
-        qty: 1,
-        unit_usd,
-        subtotal_usd,
-        meta: {
-          tier: c.tier,
-          nights: c.nights,
-          pairs: c.pairs,
-          extraGuests: c.extraGuests,
-          transport: transportOptionEl.value,
-          transportDays: Number(transportDaysEl.value) || 1,
-          extras: getSelectedExtras()
-        }
-      };
+</div>
 
-      const cart = loadCart();
-      cart.push(item);
-      saveCart(cart);
-      renderCartPreview();
-      alert('Added to cart — ' + title + '\\nProceed to checkout when ready.');
-    });
+<div class="extras">
 
-    // Go to checkout button (also saves current selection as cart item if cart empty prompt)
-    document.getElementById('goCheckout').addEventListener('click', ()=>{
-      const cart = loadCart();
-      if(!cart.length){
-        if(!confirm('Cart is empty. Add this selection to the cart and go to checkout?')){
-          return;
-        }
-        // auto-add
-        document.getElementById('addToCart').click();
-      }
-      // navigate to checkout (checkout.html should read localStorage.svv_cart)
-      window.location.href = 'checkout.html';
-    });
+<h4 style="color:var(--accent)">Extras</h4>
 
-    // Ensure page shows initial computed values
-    calculate();
-  </script>
+<label><input type="checkbox" class="extra" data-key="game" data-price="75"> Game Drive</label>
+<label><input type="checkbox" class="extra" data-key="boat" data-price="85"> Boat Cruise</label>
+<label><input type="checkbox" class="extra" data-key="park" data-price="30"> Park Fee</label>
+
+</div>
+
+<div class="totals">
+
+<div style="display:flex;justify-content:space-between">
+<span>Subtotal USD</span>
+<span id="subtotalUSD">$0.00</span>
+</div>
+
+<div style="display:flex;justify-content:space-between">
+<span>Total BWP</span>
+<span id="subtotalBWP">P0.00</span>
+</div>
+
+<button id="addToCart" class="btn">Add to Cart</button>
+<button id="goCheckout" class="btn secondary">Checkout</button>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="card">
+
+<h3 style="color:var(--accent)">Reference Prices</h3>
+
+<table>
+<tbody>
+<tr><td>Guest 2 Nights</td><td>$280</td></tr>
+<tr><td>Gold 3 Nights</td><td>$590</td></tr>
+<tr><td>Platinum 4 Nights</td><td>$1750</td></tr>
+</tbody>
+</table>
+
+<h4 style="margin-top:12px;color:var(--accent)">
+Chobe Park Tours (2026)
+</h4>
+
+<table>
+<tbody>
+<tr>
+<td>Half Day Tour</td>
+<td>US$75</td>
+</tr>
+<tr>
+<td>Full Day Tour</td>
+<td>US$105</td>
+</tr>
+</tbody>
+</table>
+
+<h4 style="margin-top:12px;color:var(--accent)">Cart</h4>
+
+<div id="cartPreview" class="small">
+No items in cart.
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div>
+Sources: Wise / XE / Botswana Government
+</div>
+
+<div style="margin-top:6px">
+Proceed to <a href="checkout.html" style="color:gold">Checkout</a>
+</div>
+
+<div style="margin-top:10px;font-size:.85rem">
+© 2026 Serorome Valley Ventures. All rights reserved.
+</div>
+
+</footer>
+
+</div>
+
+<script>
+
+const RATE = 14.22;
+
+document.getElementById("rateText").textContent =
+"1 USD = " + RATE + " BWP";
+
+const PRICES = {
+guesthouse:{2:280,3:300,4:390},
+gold:{2:430,3:590,4:750},
+platinum:{2:1000,3:1400,4:1750}
+};
+
+const tierEl=document.getElementById("tier");
+const nightsEl=document.getElementById("nights");
+const pairsEl=document.getElementById("pairs");
+const extraGuestsEl=document.getElementById("extraGuests");
+
+const subtotalUSD=document.getElementById("subtotalUSD");
+const subtotalBWP=document.getElementById("subtotalBWP");
+
+const extras=document.querySelectorAll(".extra");
+
+function calc(){
+
+let tier=tierEl.value;
+let nights=nightsEl.value;
+let pairs=+pairsEl.value||1;
+
+let base=PRICES[tier][nights]*pairs;
+
+let people=(pairs*2)+(+extraGuestsEl.value||0);
+
+let extraTotal=0;
+
+extras.forEach(e=>{
+ if(e.checked){
+   extraTotal+=Number(e.dataset.price)*people;
+ }
+});
+
+let total=base+extraTotal;
+
+subtotalUSD.textContent="$"+total.toFixed(2);
+subtotalBWP.textContent="P "+(total*RATE).toFixed(2);
+
+return total;
+}
+
+document.querySelectorAll("select,input")
+.forEach(e=>e.addEventListener("change",calc));
+
+calc();
+
+const cart=[];
+
+document.getElementById("addToCart").onclick=()=>{
+
+let total=calc();
+
+cart.push(total);
+
+document.getElementById("cartPreview").innerHTML=
+"Items: "+cart.length+
+"<br>Total: $"+cart.reduce((a,b)=>a+b,0).toFixed(2);
+
+alert("Added to cart");
+
+};
+
+document.getElementById("goCheckout").onclick=()=>{
+window.location="checkout.html";
+};
+
+</script>
+
 </body>
 </html>
-
